@@ -1,0 +1,96 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "name": "TTE B端圆角 Tokens",
+  "version": "0.1.0",
+  "source": {
+    "tool": "MasterGo",
+    "documentName": "TTE desgin 1.0",
+    "evidence": "圆角规范图",
+    "inputQuality": "L1",
+    "status": "基础圆角值与组件使用场景已整理"
+  },
+  "primitives": {
+    "radius": {
+      "none": {
+        "$type": "dimension",
+        "$value": "0px",
+        "evidence": "[统一建议]",
+        "description": "需要保持直角的布局或特殊容器"
+      },
+      "xs": {
+        "$type": "dimension",
+        "$value": "4px",
+        "sourceName": "borderRadiusXS",
+        "description": "小尺寸控件圆角"
+      },
+      "sm": {
+        "$type": "dimension",
+        "$value": "6px",
+        "sourceName": "borderRadiusSM",
+        "description": "基础组件圆角"
+      },
+      "md": {
+        "$type": "dimension",
+        "$value": "8px",
+        "sourceName": "borderRadius",
+        "description": "大尺寸组件圆角"
+      },
+      "lg": {
+        "$type": "dimension",
+        "$value": "12px",
+        "sourceName": "borderRadiusLG",
+        "description": "卡片、对话框和容器圆角"
+      },
+      "full": {
+        "$type": "dimension",
+        "$value": "9999px",
+        "sourceName": "borderRadiusFull",
+        "description": "胶囊型全圆角"
+      }
+    }
+  },
+  "semanticTokens": {
+    "radius": {
+      "control": {
+        "compact": {
+          "$value": "{primitives.radius.xs}",
+          "description": "小尺寸按钮、输入框、选择器、筛选项"
+        },
+        "default": {
+          "$value": "{primitives.radius.sm}",
+          "description": "常规输入框、选择器、标签和中尺寸按钮"
+        },
+        "large": {
+          "$value": "{primitives.radius.md}",
+          "description": "大尺寸按钮和大号选择组"
+        }
+      },
+      "surface": {
+        "card": {
+          "$value": "{primitives.radius.lg}",
+          "description": "卡片容器"
+        },
+        "dialog": {
+          "$value": "{primitives.radius.lg}",
+          "description": "对话框、抽屉和大容器"
+        },
+        "container": {
+          "$value": "{primitives.radius.lg}",
+          "description": "需要独立承载内容的容器"
+        }
+      },
+      "pill": {
+        "$value": "{primitives.radius.full}",
+        "description": "胶囊选择组、胶囊选项卡、小按钮和开关"
+      }
+    }
+  },
+  "usageRules": [
+    "组件优先使用 semanticTokens.radius，不直接填写 border-radius 数值。",
+    "紧凑控件使用 4px，常规控件使用 6px，大尺寸控件使用 8px。",
+    "卡片、对话框和容器使用 12px；不使用胶囊型圆角替代容器圆角。",
+    "胶囊型只用于选择组、选项卡、小按钮、标签和开关等横向短内容控件。",
+    "同一组件的容器、边框、背景和焦点环保持相同圆角轮廓。",
+    "禁止新增未登记的圆角值；特殊场景需要新增 Token 时先更新基础层和组件映射。"
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "component": {
+    "alert": {
+      "width": { "$type": "dimension", "$value": "400px" },
+      "radius": { "$type": "dimension", "$value": "{radius.md}" },
+      "gap": { "$type": "dimension", "$value": "{spacing.8}" },
+      "paddingInline": { "$type": "dimension", "$value": "{spacing.12}" },
+      "paddingBlock": { "$type": "dimension", "$value": "9px" },
+      "padding": { "$type": "dimension", "$value": "{spacing.12}" },
+      "copyGap": { "$type": "dimension", "$value": "2px" },
+      "textIndent": { "$type": "dimension", "$value": "{spacing.24}" },
+      "text": {
+        "color": { "$type": "color", "$value": "{color.content.primary}" },
+        "fontSize": { "$type": "dimension", "$value": "{font.size.5}" }
+      },
+      "borderWidth": { "$type": "dimension", "$value": "1px" },
+      "info": {
+        "background": { "$type": "color", "$value": "{color.status.info-bg}" },
+        "border": { "$type": "color", "$value": "{color.status.info-border}" },
+        "icon": { "$type": "color", "$value": "{color.action.primary}" }
+      },
+      "success": {
+        "background": { "$type": "color", "$value": "{color.status.success-bg}" },
+        "border": { "$type": "color", "$value": "{color.status.success-border}" },
+        "icon": { "$type": "color", "$value": "{color.status.success}" }
+      },
+      "warning": {
+        "background": { "$type": "color", "$value": "{color.status.warning-bg}" },
+        "border": { "$type": "color", "$value": "{color.status.warning-border}" },
+        "icon": { "$type": "color", "$value": "{color.status.warning}" }
+      },
+      "error": {
+        "background": { "$type": "color", "$value": "{color.status.error-bg}" },
+        "border": { "$type": "color", "$value": "{color.status.error-border}" },
+        "icon": { "$type": "color", "$value": "{color.status.error}" }
+      },
+      "plain": {
+        "background": { "$type": "color", "$value": "{color.fill.white}" },
+        "border": { "$type": "color", "$value": "{color.border.default}" },
+        "icon": { "$type": "color", "$value": "{color.content.primary}" }
+      },
+      "action": {
+        "height": { "$type": "dimension", "$value": "24px" },
+        "gap": { "$type": "dimension", "$value": "2px" },
+        "actionsGap": { "$type": "dimension", "$value": "{spacing.8}" },
+        "closeSize": { "$type": "dimension", "$value": "12px" },
+        "closeColor": { "$type": "color", "$value": "{color.content.secondary}" }
+      }
+    }
+  }
+}

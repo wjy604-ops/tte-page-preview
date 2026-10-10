@@ -1,0 +1,61 @@
+:root {
+  /* Button geometry confirmed from MasterGo component-set 244:86809. */
+  --component-button-height-small: 28px;
+  --component-button-height-middle: 36px;
+  --component-button-height-large: 40px;
+  --component-button-padding-small: 8px;
+  --component-button-padding-middle: 12px;
+  --component-button-padding-large: 12px;
+  --component-button-radius-small: 8px;
+  --component-button-radius-middle: 8px;
+  --component-button-radius-large: 8px;
+  --component-button-icon-size: 16px;
+  --component-button-icon-gap: 4px;
+  --component-button-icon-only-size-small: 16px;
+  --component-button-icon-only-size-middle: 20px;
+  --component-button-icon-only-size-large: 20px;
+  --component-button-font-family: var(--font-family-ui-regular);
+  --component-button-font-size: 14px;
+  --component-button-font-size-small: 12px;
+  --component-button-line-height: 22px;
+  --component-button-line-height-small: 20px;
+
+  /* Primary / neutral states. */
+  --component-button-primary-bg: var(--color-action-primary);
+  --component-button-primary-hover-bg: #5599fc;
+  --component-button-primary-active-bg: var(--color-action-primary-active);
+  --component-button-primary-disabled-bg: var(--color-brand-soft);
+  --component-button-primary-disabled-text: var(--color-content-on-dark);
+  --component-button-neutral-bg: var(--color-fill-white);
+  --component-button-neutral-hover-bg: var(--color-interaction-hover-bg);
+  --component-button-neutral-active-bg: var(--color-fill-hover-1);
+
+  /* Dashed / filled / text / link states. */
+  --component-button-dashed-bg: var(--color-fill-normal);
+  --component-button-dashed-hover-bg: var(--color-fill-hover-1);
+  --component-button-dashed-active-bg: #dde1e8;
+  --component-button-fill-bg: var(--color-fill-normal);
+  --component-button-fill-hover-bg: var(--color-fill-hover-1);
+  --component-button-fill-active-bg: #dde1e8;
+  --component-button-fill-disabled-bg: #f6f7f9;
+  --component-button-text-hover-bg: var(--color-fill-normal);
+  --component-button-text-active-bg: #eceff4;
+  --component-button-link-hover-text: #5599fc;
+
+  /* Icon-only button states confirmed from MasterGo component-set 244:98770. */
+  --component-button-icon-only-button-size-small: 32px;
+  --component-button-icon-only-button-size-middle: var(--component-button-height-middle);
+  --component-button-icon-only-button-size-large: var(--component-button-height-large);
+  --component-button-icon-only-bg: transparent;
+  --component-button-icon-only-text: rgba(15, 15, 15, 0.7);
+  --component-button-icon-only-hover-bg: var(--color-fill-normal);
+  --component-button-icon-only-active-bg: #eceff4;
+  --component-button-icon-only-disabled-bg: var(--color-fill-white);
+  --component-button-icon-only-disabled-text: rgba(15, 15, 15, 0.3);
+
+  /* Warning button states. */
+  --component-button-warning-bg: var(--color-status-error-bg);
+  --component-button-warning-text: var(--color-status-error);
+  --component-button-warning-hover-text: #ed5a61;
+  --component-button-warning-active-text: #b9171f;
+}

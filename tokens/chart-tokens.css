@@ -1,0 +1,469 @@
+:root {
+  --component-chart-card-width: 395px;
+  --component-chart-card-height: 322px;
+  --component-chart-card-bg: var(--color-fill-white);
+  --component-chart-card-border: var(--color-border-disabled);
+  --component-chart-card-radius: var(--radius-lg);
+  --component-chart-head-height: 56px;
+  --component-chart-title-size: var(--font-size-5);
+  --component-chart-title-line: var(--font-line-height-5);
+  --component-chart-title-color: var(--color-content-primary);
+  --component-chart-meta-size: var(--font-size-7);
+  --component-chart-meta-line: var(--font-line-height-7);
+  --component-chart-meta-color: var(--color-content-assist);
+  --component-chart-value-size: 32px;
+  --component-chart-value-line: 44px;
+  --component-chart-value-color: var(--color-content-primary);
+  --component-chart-donut-size: 200px;
+  --component-chart-legend-gap: var(--spacing-16);
+  --component-chart-swatch-width: 12px;
+  --component-chart-swatch-height: 6px;
+  --component-chart-swatch-radius: var(--radius-xs);
+  --component-chart-bar-height: 8px;
+  --component-chart-bar-radius: var(--radius-xs);
+  --component-chart-column-width: 20px;
+  --component-chart-column-plot: 120px;
+  --component-chart-row-hover: var(--color-interaction-hover-bg);
+  --component-chart-tip-bg: var(--color-fill-white);
+  --component-chart-tip-radius: var(--radius-md);
+  --component-chart-series-1: var(--color-data-01);
+  --component-chart-series-2: var(--color-data-03);
+  --component-chart-series-3: var(--color-data-02);
+  --component-chart-series-4: var(--color-data-04);
+  --component-chart-series-4-soft: #f2efff;
+  --component-chart-track: var(--color-brand-soft);
+  --component-chart-grid: var(--color-border-default);
+  --component-chart-axis-text: var(--color-content-assist);
+  --component-chart-axis-size: var(--font-size-7);
+  --component-chart-axis-line-height: var(--font-line-height-7);
+  --component-chart-label-text: var(--color-content-secondary);
+}
+
+.tte-chart-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  height: var(--component-chart-card-height);
+  margin-inline: auto;
+  overflow: hidden;
+  border: 1px solid var(--component-chart-card-border);
+  border-radius: var(--component-chart-card-radius);
+  background: var(--component-chart-card-bg);
+}
+.tte-chart-head {
+  display: flex;
+  height: var(--component-chart-head-height);
+  align-items: center;
+  gap: var(--spacing-16);
+  padding: var(--spacing-16) var(--spacing-8) var(--spacing-16) var(--spacing-16);
+}
+.tte-chart-head-main { display: flex; min-width: 0; flex: 1; align-items: flex-end; gap: var(--spacing-8); }
+.tte-chart-title {
+  margin: 0;
+  color: var(--component-chart-title-color);
+  font-size: var(--component-chart-title-size);
+  font-family: var(--font-family-ui-medium);
+  line-height: var(--component-chart-title-line);
+}
+.tte-chart-meta {
+  min-width: 0;
+  color: var(--component-chart-meta-color);
+  font-size: var(--component-chart-meta-size);
+  line-height: var(--component-chart-meta-line);
+}
+.tte-chart-body { display: grid; justify-items: center; gap: var(--spacing-12); padding: 8px 16px 20px; }
+.tte-chart-donut { position: relative; width: var(--component-chart-donut-size); height: var(--component-chart-donut-size); }
+.tte-chart-donut svg { display: block; width: 100%; height: 100%; }
+.tte-chart-arc { cursor: pointer; }
+.tte-chart-arc-halo { opacity: 0; pointer-events: none; }
+.tte-chart-arc-halo.is-active { opacity: 1; }
+.tte-chart-center {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+.tte-chart-total {
+  color: var(--component-chart-value-color);
+  font-family: var(--font-family-numeric-medium);
+  font-size: var(--component-chart-value-size);
+  font-weight: 400;
+  font-synthesis: none;
+  line-height: var(--component-chart-value-line);
+  font-variant-numeric: tabular-nums;
+}
+.tte-chart-total-label {
+  color: var(--component-chart-meta-color);
+  font-size: var(--component-chart-meta-size);
+  font-family: var(--font-family-ui-medium);
+  line-height: var(--component-chart-meta-line);
+}
+.tte-chart-legend {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--component-chart-legend-gap);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.tte-chart-legend li { display: inline-flex; align-items: center; gap: var(--spacing-8); color: var(--component-chart-title-color); font-size: var(--component-chart-meta-size); line-height: var(--component-chart-meta-line); }
+.tte-chart-swatch { display: block; width: var(--component-chart-swatch-width); height: var(--component-chart-swatch-height); border-radius: var(--component-chart-swatch-radius); background: var(--component-chart-series-1); }
+.tte-chart-swatch[data-series="2"] { background: var(--component-chart-series-2); }
+.tte-chart-swatch[data-series="3"] { background: var(--component-chart-series-3); }
+.tte-chart-swatch[data-series="4"] { background: var(--component-chart-series-4); }
+.tte-chart-swatch[data-series="seq"] { background: var(--component-chart-series-1); }
+.tte-chart-rows { display: grid; gap: 4px; width: 100%; padding-bottom: 12px; }
+.tte-chart-row {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-8);
+  padding: 4px 16px;
+  border-radius: var(--radius-xs);
+}
+.tte-chart-row:hover,
+.tte-chart-row.is-demo-hover { background: var(--component-chart-row-hover); }
+.tte-chart-row-label { flex: none; width: 48px; color: var(--component-chart-title-color); font-size: var(--component-chart-meta-size); line-height: var(--component-chart-meta-line); }
+.tte-chart-track { display: block; min-width: 0; flex: 1; height: var(--component-chart-bar-height); }
+.tte-chart-bar {
+  display: block;
+  height: 100%;
+  border-radius: var(--component-chart-bar-radius);
+  background: var(--component-chart-series-1);
+}
+.tte-chart-row-value {
+  flex: none;
+  min-width: 28px;
+  color: var(--component-chart-meta-color);
+  font-family: var(--font-family-numeric-medium);
+  font-size: var(--component-chart-meta-size);
+  font-weight: 400;
+  font-synthesis: none;
+  line-height: var(--component-chart-meta-line);
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+.tte-chart-column-scroll {
+  position: relative;
+  width: 100%;
+  min-width: 0;
+}
+.tte-chart-columns {
+  display: flex;
+  flex: none;
+  width: 100%;
+  min-width: 0;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 6px;
+  padding: 0 11px 16px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
+}
+.tte-chart-columns::-webkit-scrollbar { width: 0; height: 0; display: none; }
+.tte-chart-columns.is-overflow { justify-content: flex-start; }
+.tte-chart-column-thumb {
+  position: absolute;
+  z-index: 2;
+  bottom: var(--scrollbar-inset);
+  height: var(--scrollbar-size);
+  opacity: 0;
+  pointer-events: none;
+  transition: height .12s ease;
+}
+.tte-chart-column-thumb.is-on { opacity: 1; }
+.tte-chart-column {
+  position: relative;
+  display: flex;
+  flex: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0;
+  width: 30px;
+  border-radius: 0;
+  background: transparent;
+}
+.tte-chart-column-value,
+.tte-chart-column-label { white-space: nowrap; }
+.tte-chart-column:hover,
+.tte-chart-column.is-demo-hover { background: transparent; }
+.tte-chart-column-value {
+  color: var(--component-chart-title-color);
+  font-family: var(--font-family-numeric-medium);
+  font-size: var(--component-chart-meta-size);
+  font-weight: 400;
+  font-synthesis: none;
+  line-height: var(--component-chart-meta-line);
+  font-variant-numeric: tabular-nums;
+}
+.tte-chart-column-halo {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  width: 30px;
+  border-radius: 2px;
+  background: transparent;
+}
+.tte-chart-column:hover .tte-chart-column-halo,
+.tte-chart-column.is-demo-hover .tte-chart-column-halo { background: #e6f0ff; }
+.tte-chart-column-bar {
+  display: block;
+  width: var(--component-chart-column-width);
+  height: 100%;
+  border-radius: 2px;
+  background: var(--component-chart-series-1);
+}
+.tte-chart-column-label { margin-top: 2px; color: #737373; font-family: var(--font-family-numeric); font-size: var(--component-chart-meta-size); font-weight: var(--font-weight-medium); line-height: var(--component-chart-meta-line); }
+.tte-chart-tip {
+  position: absolute;
+  z-index: 2;
+  display: none;
+  width: max-content;
+  max-width: none;
+  padding: 8px 12px;
+  white-space: nowrap;
+  pointer-events: none;
+  border: 1px solid var(--component-chart-card-border);
+  border-radius: var(--component-chart-tip-radius);
+  background: color-mix(in srgb, var(--component-chart-tip-bg) 90%, transparent);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(20px);
+}
+.tte-chart-tip.is-open { position: fixed; z-index: 80; display: grid; gap: 4px; }
+.tte-chart-donut .tte-chart-tip { top: 12px; left: 12px; }
+.tte-chart-row .tte-chart-tip { top: 28px; left: 72px; }
+.tte-chart-column .tte-chart-tip { bottom: calc(100% - 8px); left: 50%; transform: translateX(-50%); }
+.tte-chart-tip-name { display: flex; align-items: center; gap: var(--spacing-8); color: var(--component-chart-title-color); font-size: var(--component-chart-meta-size); font-family: var(--font-family-ui-medium); line-height: var(--component-chart-meta-line); }
+.tte-chart-tip-values { display: flex; align-items: flex-end; gap: var(--spacing-8); }
+.tte-chart-tip-num { color: var(--component-chart-series-1); font-family: var(--font-family-numeric); font-size: var(--component-chart-meta-size); line-height: var(--component-chart-meta-line); font-variant-numeric: tabular-nums; }
+.tte-chart-tip-num[data-series="2"] { color: var(--component-chart-series-2); }
+.tte-chart-tip-num[data-series="3"] { color: var(--component-chart-series-3); }
+.tte-chart-tip-num[data-series="4"] { color: var(--component-chart-series-4); }
+.tte-chart-tip-pct { color: var(--component-chart-meta-color); font-family: var(--font-family-numeric); font-size: var(--component-chart-meta-size); line-height: var(--component-chart-meta-line); }
+.tte-chart-column-tip { align-items: flex-start; gap: 4px; }
+.tte-chart-column-tip-line { display: flex; align-items: baseline; gap: 4px; font-size: 12px; font-weight: 500; line-height: 20px; white-space: nowrap; }
+.tte-chart-column-tip-k { color: #282829; }
+.tte-chart-column-tip-v { color: #282829; font-family: var(--font-family-numeric); }
+.tte-chart-column-tip-line.is-case .tte-chart-column-tip-k,
+.tte-chart-column-tip-line.is-case .tte-chart-column-tip-v { color: #2e7fff; }
+.tte-chart-empty {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 0;
+  color: var(--component-chart-meta-color);
+  text-align: center;
+}
+.tte-chart-empty .tte-empty-art { width: 52px; height: 52px; }
+.tte-chart-empty svg { width: 48px; height: 48px; }
+.tte-chart-empty p { margin: 0; color: var(--component-chart-meta-color); font-size: var(--component-chart-title-size); font-family: var(--font-family-ui-medium); line-height: var(--component-chart-title-line); }
+.tte-chart-head .tte-button.tte-button-text.tte-button-sm { height: var(--component-button-height-small); min-height: var(--component-button-height-small); padding: 0 var(--component-button-padding-small); border-radius: var(--component-button-radius-small); }
+.tte-chart-actions { opacity: 0; transition: opacity 160ms ease; }
+.tte-chart-card:hover .tte-chart-actions,
+.tte-chart-card:focus-within .tte-chart-actions { opacity: 1; }
+.tte-chart-split { display: flex; flex: none; width: 100%; align-items: center; gap: var(--spacing-16); margin-block: auto; padding: 8px 16px 16px; }
+.tte-chart-split .tte-chart-donut { width: 160px; height: 160px; }
+.tte-chart-split .tte-chart-total { font-size: 26px; line-height: 34px; }
+.tte-chart-side { display: grid; min-width: 0; flex: 1; gap: 12px; max-height: 220px; overflow: auto; scrollbar-width: none; }
+.tte-chart-card:hover .tte-chart-side { scrollbar-width: thin; }
+.tte-chart-side-item { display: flex; align-items: center; gap: var(--spacing-8); }
+.tte-chart-side-name { min-width: 0; flex: 1; color: var(--component-chart-value-color); font-size: var(--component-chart-meta-size); line-height: var(--component-chart-meta-line); }
+.tte-chart-side-num { color: var(--component-chart-title-color); font-family: var(--font-family-numeric); font-size: var(--component-chart-meta-size); line-height: var(--component-chart-meta-line); font-variant-numeric: tabular-nums; }
+.tte-chart-legend li.is-active { background: var(--component-chart-row-hover); border-radius: var(--radius-xs); }
+.tte-chart-geo {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+.tte-chart-geo .tte-chart-crumb {
+  display: flex;
+  flex: none;
+  align-items: center;
+  box-sizing: border-box;
+  height: 22px;
+  margin-top: -1px;
+  padding: 0 16px 0 12px;
+}
+.tte-chart-geo-scroll {
+  position: relative;
+  display: flex;
+  min-height: 0;
+  flex: 1;
+  flex-direction: column;
+  margin-top: 8px;
+}
+.tte-chart-geo-scroll::before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 1px;
+  background: var(--component-chart-card-border);
+  opacity: 0;
+  pointer-events: none;
+}
+.tte-chart-geo.is-scrolled .tte-chart-geo-scroll::before { opacity: 1; }
+.tte-chart-geo-bar {
+  position: absolute;
+  z-index: 2;
+  right: var(--scrollbar-inset);
+  width: var(--scrollbar-size);
+  opacity: 0;
+  pointer-events: none;
+  transition: width .12s ease;
+}
+.tte-chart-geo-bar.is-on { opacity: 1; }
+.tte-chart-crumb-link,
+.tte-chart-crumb-current {
+  padding: 0 4px;
+  border: 0;
+  border-radius: 4px;
+  background: transparent;
+  font-size: 12px;
+  line-height: 20px;
+}
+.tte-chart-crumb-current { color: #282829; }
+.tte-chart-crumb-link { color: #737373; cursor: pointer; }
+.tte-chart-crumb-link:hover,
+.tte-chart-crumb-link:active { background: rgba(0, 0, 0, 0.03); }
+.tte-chart-crumb-sep { padding: 0 4px; color: #737373; font-size: 14px; line-height: 22px; }
+.tte-chart-geo .tte-chart-rows {
+  display: flex;
+  min-height: 0;
+  flex: 1;
+  flex-direction: column;
+  gap: 4px;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0 8px 16px;
+  overflow: auto;
+  scrollbar-width: none;
+}
+.tte-chart-geo .tte-chart-rows::-webkit-scrollbar { width: 0; height: 0; display: none; }
+.tte-chart-geo .tte-chart-row {
+  width: 100%;
+  padding: 4px 4px 4px 8px;
+  border: 0;
+  border-radius: 8px;
+  color: inherit;
+  background: transparent;
+  font: inherit;
+  text-align: left;
+}
+.tte-chart-geo .tte-chart-row[data-geo-drill] { cursor: pointer; }
+.tte-chart-geo .tte-chart-row:hover,
+.tte-chart-geo .tte-chart-row.is-demo-hover { background: rgba(0, 0, 0, 0.03); }
+.tte-chart-geo.is-leaf .tte-chart-row:hover,
+.tte-chart-geo.is-leaf .tte-chart-row.is-demo-hover { background: transparent; }
+.tte-chart-geo.is-leaf .tte-chart-row { padding-right: 8px; }
+.tte-chart-geo .tte-chart-row-label {
+  width: 3em;
+  overflow: hidden;
+  color: #282829;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.tte-chart-geo .tte-chart-row-label.is-truncated { cursor: default; }
+.tte-chart-name-tip {
+  position: fixed;
+  z-index: 80;
+  width: max-content;
+  max-width: var(--component-popover-max-width);
+  padding: var(--component-popover-padding-block) var(--component-popover-padding-inline);
+  border-radius: var(--component-popover-radius);
+  color: var(--component-popover-dark-text);
+  background: var(--component-popover-dark-bg);
+  box-shadow: var(--component-popover-dark-shadow);
+  font-size: var(--component-popover-font-size);
+  line-height: var(--component-popover-line-height);
+  pointer-events: none;
+  white-space: nowrap;
+}
+.tte-chart-name-tip[hidden] { display: none; }
+.tte-chart-name-tip::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: var(--arrow-left, 50%);
+  width: 8px;
+  height: 8px;
+  background: var(--component-popover-dark-bg);
+  transform: translateX(-50%) rotate(45deg);
+}
+.tte-chart-geo .tte-chart-bar { border-radius: 2px; }
+.tte-chart-row-end { display: flex; flex: none; align-items: flex-end; justify-content: flex-end; height: 18px; }
+.tte-chart-geo .tte-chart-row-end { align-items: center; height: auto; }
+.tte-chart-geo .tte-chart-row-end:has(.tte-chart-row-more) { align-items: flex-end; height: 18px; gap: 0; }
+.tte-chart-geo .tte-chart-row-end:has(.tte-chart-row-more) .tte-chart-row-value { width: 20px; min-width: 20px; transform: translateY(1.5px); }
+.tte-chart-geo .tte-chart-row-value { min-width: 20px; color: #a1a1a1; transform: translateY(0.5px); }
+.tte-chart-geo.is-leaf .tte-chart-row-value { text-align: right; }
+.tte-chart-row-more { display: block; width: 16px; height: 16px; flex: none; }
+.tte-chart-head-side { display: flex; flex: none; align-items: center; }
+.tte-chart-hw { min-height: 0; }
+.tte-chart-hw .tte-chart-actions { width: 0; min-width: 0; overflow: hidden; pointer-events: none; }
+.tte-chart-hw:hover .tte-chart-actions,
+.tte-chart-hw:focus-within .tte-chart-actions { width: auto; overflow: visible; pointer-events: auto; }
+.tte-chart-hw-scroll {
+  position: relative;
+  display: flex;
+  min-height: 0;
+  flex: 1;
+  flex-direction: column;
+}
+.tte-chart-hw-scroll::before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 1px;
+  background: var(--component-chart-card-border);
+  opacity: 0;
+  pointer-events: none;
+}
+.tte-chart-hw.is-scrolled .tte-chart-hw-scroll::before { opacity: 1; }
+.tte-chart-hw-bar-thumb {
+  position: absolute;
+  z-index: 2;
+  right: var(--scrollbar-inset);
+  width: var(--scrollbar-size);
+  opacity: 0;
+  pointer-events: none;
+  transition: width .12s ease;
+}
+.tte-chart-hw-bar-thumb.is-on { opacity: 1; }
+.tte-chart-hw-rows {
+  display: flex;
+  min-height: 0;
+  flex: 1;
+  flex-direction: column;
+  gap: 2px;
+  margin: 0;
+  padding: 0 16px 16px;
+  overflow: auto;
+  scrollbar-width: none;
+}
+.tte-chart-hw-rows::-webkit-scrollbar { width: 0; height: 0; display: none; }
+.tte-chart-hw-name { margin: 0; color: #282829; font-size: 12px; font-weight: 400; line-height: 20px; }
+.tte-chart-hw-line { display: flex; align-items: center; gap: 8px; min-height: 20px; }
+.tte-chart-hw-track { display: block; min-width: 0; flex: 1; height: 8px; }
+.tte-chart-hw-bar { display: block; height: 8px; border-radius: 2px; background: var(--component-chart-series-1); }
+.tte-chart-hw-value { flex: none; color: #a1a1a1; font-family: var(--font-family-numeric); font-size: 12px; font-weight: 500; line-height: 20px; font-variant-numeric: tabular-nums; }
+.tte-chart-column-value { color: var(--component-chart-meta-color); }
+.tte-chart-column-label { color: var(--component-chart-meta-color); font-family: var(--font-family-numeric); }

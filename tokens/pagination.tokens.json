@@ -1,0 +1,13 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "name": "TTE Pagination Component Tokens",
+  "version": "0.1.0",
+  "source": { "base": "shadcn/ui Pagination", "evidence": "MasterGo《TTE desgin 1.0》没有分页组件，尺寸对齐 32px 小控件" },
+  "component": {
+    "pagination": {
+      "itemSize": { "$type": "dimension", "$value": "32px" },
+      "gap": { "$type": "dimension", "$value": "8px" },
+      "radius": { "$type": "dimension", "$value": "6px" }
+    }
+  }
+}

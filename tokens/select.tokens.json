@@ -1,0 +1,17 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "name": "TTE Select Component Tokens",
+  "version": "0.1.0",
+  "source": { "base": "shadcn/ui Select + Combobox Multiple", "evidence": "触发器对齐 Input，菜单项复用 Dropdown 选中语义" },
+  "component": {
+    "select": {
+      "triggerHeight": { "$type": "dimension", "$value": "36px" },
+      "optionIconSize": { "$type": "dimension", "$value": "16px" },
+      "previewWidth": { "$type": "dimension", "$value": "280px" },
+      "scrollButtonHeight": { "$type": "dimension", "$value": "24px" },
+      "chipRadius": { "$type": "dimension", "$value": "4px" },
+      "multipleWidth": { "$type": "dimension", "$value": "392px" },
+      "menu": "component.dropdown.*"
+    }
+  }
+}

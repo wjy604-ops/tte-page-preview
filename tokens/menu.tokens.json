@@ -1,0 +1,14 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "name": "TTE Menu Component Tokens",
+  "version": "0.1.0",
+  "source": { "base": "shadcn/ui Navigation Menu", "evidence": "触发器高 36px、圆角 8px；悬停底色 color.fill.hover-1；面板与触发器间距 8px，同一时间只打开一个" },
+  "component": {
+    "menu": {
+      "triggerHeight": { "$type": "dimension", "$value": "36px" },
+      "triggerRadius": { "$type": "dimension", "$value": "8px" },
+      "popupOffset": { "$type": "dimension", "$value": "8px" },
+      "caretSize": { "$type": "dimension", "$value": "12px" }
+    }
+  }
+}

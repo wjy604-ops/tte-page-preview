@@ -1,0 +1,14 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "name": "TTE Popover Component Tokens",
+  "version": "0.1.0",
+  "source": { "base": "shadcn/ui Popover", "evidence": "浅色 / 深色气泡预览" },
+  "component": {
+    "popover": {
+      "maxWidth": { "$type": "dimension", "$value": "260px", "description": "内容超出时的上限；默认宽度跟随文字" },
+      "offset": { "$type": "dimension", "$value": "12px" },
+      "radius": { "$type": "dimension", "$value": "8px" },
+      "darkBackground": { "$type": "color", "$value": "#171717", "evidence": "深色气泡未进入语义色，隔离为组件 Token" }
+    }
+  }
+}

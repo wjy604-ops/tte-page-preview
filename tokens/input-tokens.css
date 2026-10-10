@@ -1,0 +1,31 @@
+:root {
+  /* Input geometry confirmed from MasterGo Input component set 244:96934. */
+  --component-input-height-small: 32px;
+  --component-input-height-middle: 36px;
+  --component-input-height-large: 40px;
+  --component-input-padding-small: 8px;
+  --component-input-padding-middle: 12px;
+  --component-input-padding-large: 12px;
+  --component-input-radius: var(--radius-control-large);
+  --component-input-icon-size: 16px;
+  --component-input-icon-gap: 4px;
+  --component-input-search-icon-gap: 8px;
+  --component-input-font-family: var(--font-family-ui-regular);
+  --component-input-font-size: 14px;
+  --component-input-line-height: 22px;
+
+  /* Input semantic states mapped to the existing TTE color system. */
+  --component-input-bg: var(--color-fill-white);
+  --component-input-border: var(--color-border-default);
+  --component-input-border-hover: var(--color-brand-hover);
+  --component-input-border-focus: var(--color-brand-normal);
+  --component-input-text: var(--color-content-primary);
+  --component-input-placeholder: var(--color-interaction-placeholder);
+  --component-input-disabled-bg: var(--color-interaction-disabled-bg);
+  --component-input-disabled-border: var(--color-interaction-disabled-border);
+  --component-input-disabled-text: var(--color-interaction-disabled-text);
+  --component-input-error-bg: var(--color-status-error-bg);
+  --component-input-error-border: var(--color-status-error);
+  --component-input-addon-bg: var(--color-fill-default);
+  --component-input-addon-text: var(--color-content-secondary);
+}

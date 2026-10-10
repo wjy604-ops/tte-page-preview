@@ -1,0 +1,43 @@
+:root {
+  /* Radio geometry from the P0 Radio preview and MasterGo page 239:13419. */
+  --component-radio-size: 20px;
+  --component-radio-ring-inset: 2px;
+  --component-radio-ring-width: 1px;
+  --component-radio-dot-size: 6px;
+  --component-radio-label-gap: var(--spacing-8);
+  --component-radio-group-gap: var(--spacing-8);
+  --component-radio-description-group-gap: var(--spacing-16);
+  --component-radio-copy-gap: var(--spacing-4);
+  --component-radio-font-size: var(--font-size-5);
+  --component-radio-line-height: var(--font-line-height-5);
+  --component-radio-description-size: var(--font-size-7);
+  --component-radio-description-line-height: var(--font-line-height-7);
+  --component-radio-card-width: 280px;
+  --component-radio-card-min-height: 58px;
+  --component-radio-card-padding-block: var(--spacing-8);
+  --component-radio-card-padding-inline: var(--spacing-16);
+  --component-radio-card-gap: var(--spacing-12);
+  --component-radio-card-radius: var(--radius-lg);
+  --component-radio-focus-ring-width: 3px;
+
+  /* Radio states. Interaction stays with Radix RadioGroup. */
+  --component-radio-border: var(--color-border-default);
+  --component-radio-bg: var(--color-surface-container);
+  --component-radio-hover-border: var(--color-action-primary);
+  --component-radio-selected-bg: var(--color-action-primary);
+  --component-radio-selected-border: var(--color-action-primary);
+  --component-radio-dot: var(--color-content-on-dark);
+  --component-radio-text: var(--color-content-primary);
+  --component-radio-description: var(--color-content-assist);
+  --component-radio-disabled-border: var(--color-interaction-disabled-border);
+  --component-radio-disabled-bg: var(--color-fill-hover-1);
+  --component-radio-disabled-text: var(--color-content-disabled);
+  --component-radio-selected-disabled-bg: var(--color-action-primary-soft);
+  --component-radio-selected-disabled-border: var(--color-action-primary-soft);
+  --component-radio-card-border: var(--color-interaction-disabled-border);
+  --component-radio-card-bg: var(--color-fill-white);
+  --component-radio-card-hover-bg: var(--color-fill-hover-2);
+  --component-radio-card-selected-border: var(--color-action-primary);
+  --component-radio-card-selected-bg: var(--color-fill-white);
+  --component-radio-focus-ring: var(--color-interaction-focus-ring);
+}

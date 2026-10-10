@@ -1,0 +1,61 @@
+:root {
+  /* Layout primitives */
+  --layout-primitive-base-unit: 8px;
+  --layout-primitive-header-height: 56px;
+  --layout-primitive-sider-expanded-width: 220px;
+  --layout-primitive-sider-collapsed-width: 68px;
+  --layout-primitive-content-max-width: 1360px;
+  --layout-primitive-content-padding-inline: 32px;
+  --layout-primitive-page-min-width: 1200px;
+  --layout-primitive-grid-columns-desktop: 24;
+  --layout-primitive-grid-columns-responsive: 12;
+  --layout-primitive-grid-gutter: 16px;
+  --layout-primitive-grid-page-offset: 32px;
+  --layout-primitive-responsive-grid-breakpoint: 1200px;
+  --layout-primitive-small-screen-breakpoint: 768px;
+
+  /* Semantic layout aliases */
+  --layout-container-content-max-width: var(--layout-primitive-content-max-width);
+  --layout-container-content-padding-inline: var(--layout-primitive-content-padding-inline);
+  --layout-container-content-alignment: center;
+  --layout-header-height: var(--layout-primitive-header-height);
+  --layout-sider-expanded-width: var(--layout-primitive-sider-expanded-width);
+  --layout-sider-collapsed-width: var(--layout-primitive-sider-collapsed-width);
+  --layout-page-min-width: var(--layout-primitive-page-min-width);
+  --layout-page-overflow-x: auto;
+  --layout-grid-desktop-columns: var(--layout-primitive-grid-columns-desktop);
+  --layout-grid-responsive-columns: var(--layout-primitive-grid-columns-responsive);
+  --layout-grid-gutter: var(--layout-primitive-grid-gutter);
+  --layout-grid-page-offset: var(--layout-primitive-grid-page-offset);
+
+  --layout-alignment-container: center;
+  --layout-alignment-content: start;
+  --layout-alignment-action: end;
+  --layout-alignment-data: end;
+  --layout-alignment-icon: center;
+
+  /* Composition alias; spacing-tokens.css can override the fallback. */
+  --layout-spacing-module-vertical-gap: var(--spacing-vertical-module, 16px);
+}
+
+/* Recommended content-container contract */
+.layout-content-container {
+  width: min(var(--layout-container-content-max-width), calc(100% - (2 * var(--layout-container-content-padding-inline))));
+  margin-inline: auto;
+}
+
+.layout-grid {
+  --layout-grid-columns: var(--layout-grid-desktop-columns);
+}
+
+@media (max-width: 1199px) {
+  .layout-grid {
+    --layout-grid-columns: var(--layout-grid-responsive-columns);
+  }
+}
+
+@media (min-width: 1200px) {
+  .layout-grid {
+    --layout-grid-columns: var(--layout-grid-desktop-columns);
+  }
+}

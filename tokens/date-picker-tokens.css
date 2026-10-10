@@ -1,0 +1,92 @@
+:root {
+  --component-date-trigger-height: var(--component-input-height-small);
+  --component-date-trigger-padding: var(--component-input-padding-small);
+  --component-date-trigger-radius: var(--component-input-radius);
+  --component-date-trigger-bg: var(--component-input-bg);
+  --component-date-trigger-border: var(--color-border-main);
+  --component-date-trigger-hover-border: var(--component-input-border-hover);
+  --component-date-trigger-text: var(--component-input-text);
+  --component-date-trigger-placeholder: var(--component-input-placeholder);
+  --component-date-trigger-disabled-bg: var(--component-input-disabled-bg);
+  --component-date-trigger-disabled-border: var(--component-input-disabled-border);
+  --component-date-trigger-disabled-text: var(--component-input-disabled-text);
+  --component-date-trigger-icon-size: var(--component-icon-size-small);
+  --component-date-trigger-width: 148px;
+  --component-date-panel-width: 284px;
+  --component-date-panel-offset: var(--spacing-8);
+  --component-date-panel-radius: var(--radius-md);
+  --component-date-panel-bg: var(--color-surface-container);
+  --component-date-panel-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  --component-date-day-size: 36px;
+  --component-date-day-radius: var(--radius-md);
+  --component-date-day-text: var(--color-content-primary);
+  --component-date-day-hover-bg: var(--color-fill-normal);
+  --component-date-day-selected-bg: var(--color-action-primary);
+  --component-date-day-selected-text: var(--color-content-on-dark);
+  --component-date-day-range-bg: var(--color-action-primary-soft);
+  --component-date-day-outside-text: var(--color-content-assist);
+  --component-date-day-today-border: var(--color-action-primary);
+  --component-date-weekday-text: var(--color-content-primary);
+  --component-date-font-size: var(--font-size-5);
+  --component-date-line-height: var(--font-line-height-5);
+  --component-date-caption-size: var(--font-size-5);
+  --component-date-focus-ring: var(--color-interaction-focus-ring);
+  --component-date-divider: var(--color-border-disabled);
+}
+
+.tte-date { position: relative; width: max-content; }
+.tte-date-trigger { display: flex; width: var(--component-date-trigger-width); height: var(--component-date-trigger-height); align-items: center; justify-content: space-between; gap: 4px; padding: 0 var(--component-date-trigger-padding); border: 1px solid var(--component-date-trigger-border); border-radius: var(--component-date-trigger-radius); color: var(--component-date-trigger-text); background: var(--component-date-trigger-bg); font: var(--component-date-font-size)/var(--component-date-line-height) var(--font-family-ui-regular); text-align: left; white-space: nowrap; }
+.tte-date-trigger > span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.tte-date-trigger[data-empty="true"] { color: var(--component-date-trigger-placeholder); }
+.tte-date-trigger[data-empty="false"] { color: var(--component-date-trigger-text); font-family: var(--font-family-numeric-medium); font-variant-numeric: tabular-nums; }
+.tte-date-trigger .tte-lucide { width: var(--component-date-trigger-icon-size); height: var(--component-date-trigger-icon-size); margin-left: auto; color: var(--color-content-assist); flex: none; }
+.tte-date-trigger .tte-date-icon-clear { display: none; color: var(--color-content-primary); }
+.tte-date-trigger[data-empty="false"]:hover:not(:disabled) .tte-date-icon-calendar { display: none; }
+.tte-date-trigger[data-empty="false"]:hover:not(:disabled) .tte-date-icon-clear { display: block; }
+.tte-date-trigger:hover { border-color: var(--component-date-trigger-hover-border); }
+.tte-date-trigger[data-empty="false"]:hover:not(:disabled) { border-color: #2e7fff; }
+.tte-date-trigger:focus-visible,
+.tte-date-nav:focus-visible,
+.tte-date-day:focus-visible { outline: 3px solid var(--component-date-focus-ring); outline-offset: 1px; }
+.tte-date-trigger:disabled { border-color: var(--component-date-trigger-disabled-border); color: var(--component-date-trigger-disabled-text); background: var(--component-date-trigger-disabled-bg); cursor: not-allowed; }
+.tte-date-range-fields { display: flex; align-items: center; gap: 4px; }
+.tte-date-range-sep { color: var(--color-content-primary); font: var(--component-date-font-size)/var(--component-date-line-height) var(--font-family-ui-medium); }
+.tte-date-panel { position: absolute; top: calc(100% + var(--component-date-panel-offset)); left: 0; z-index: 5; width: var(--component-date-panel-width); overflow: visible; border-radius: var(--component-date-panel-radius); background: var(--component-date-panel-bg); box-shadow: var(--component-date-panel-shadow); }
+.tte-date-panel[hidden] { display: none; }
+.tte-date-caption { display: flex; align-items: center; justify-content: space-between; padding: 9px 8px; border-bottom: 1px solid var(--component-date-divider); color: var(--color-content-primary); font: var(--component-date-caption-size)/var(--component-date-line-height) var(--font-family-ui-medium); }
+.tte-date-title-num { font-family: var(--font-family-numeric-medium); }
+.tte-date-nav-group { display: flex; align-items: center; gap: 4px; }
+.tte-date-nav { display: inline-flex; width: 16px; height: 16px; align-items: center; justify-content: center; padding: 0; border: 0; color: var(--color-content-assist); background: transparent; }
+.tte-date-nav .tte-lucide { width: 16px; height: 16px; }
+.tte-date-grid { display: grid; grid-template-columns: repeat(7, var(--component-date-day-size)); padding: 8px 16px; }
+.tte-date-weekday,
+.tte-date-day { display: flex; width: var(--component-date-day-size); height: var(--component-date-day-size); align-items: center; justify-content: center; }
+.tte-date-weekday { color: var(--component-date-weekday-text); font: var(--component-date-font-size)/var(--component-date-line-height) var(--font-family-ui-medium); }
+.tte-date-day { border: 1px solid transparent; border-radius: var(--component-date-day-radius); color: var(--component-date-day-text); background: transparent; font: var(--component-date-font-size)/var(--component-date-line-height) var(--font-family-numeric-medium); font-variant-numeric: tabular-nums; }
+.tte-date-day:hover:not([aria-selected="true"]) { background: var(--component-date-day-hover-bg); }
+.tte-date-day[data-outside="true"] { color: var(--component-date-day-outside-text); }
+.tte-date-day[data-today="true"]:not([aria-selected="true"]):not([data-outside="true"]):not([data-disabled="true"]):not([data-in-range="true"]) { border-color: #2e7fff; border-radius: 8px; color: #282829; background: transparent; }
+.tte-date-day[data-disabled="true"],
+.tte-date-day[data-disabled="true"]:hover { color: var(--color-content-disabled); background: transparent; border-color: transparent; cursor: not-allowed; }
+.tte-date-day[aria-selected="true"] { border-color: transparent; color: var(--component-date-day-selected-text); background: var(--component-date-day-selected-bg); }
+.tte-date-day[data-in-range="true"],
+.tte-date-day[data-in-range="true"]:hover { border-radius: 0; color: var(--component-date-day-text); background: var(--component-date-day-range-bg); }
+.tte-date-day[data-range="start"] { border-radius: var(--component-date-day-radius) 0 0 var(--component-date-day-radius); }
+.tte-date-day[data-range="end"] { border-radius: 0 var(--component-date-day-radius) var(--component-date-day-radius) 0; }
+.tte-date-day[data-range="single"] { border-radius: var(--component-date-day-radius); }
+.tte-date-day[data-today="true"][data-disabled="true"]:not([data-outside="true"]):not([aria-selected="true"]),
+.tte-date-day[data-today="true"][data-disabled="true"]:not([data-outside="true"]):not([aria-selected="true"]):hover { border-color: #2e7fff; border-radius: var(--component-date-day-radius); color: #a1a1a1; background: transparent; cursor: not-allowed; }
+.tte-date[data-date-mode="day"] .tte-date-trigger { width: 110px; }
+.tte-date[data-date-mode="span"] .tte-date-trigger { width: 202px; }
+.tte-date-time { display: flex; width: 100%; box-sizing: border-box; align-items: center; justify-content: space-between; gap: 8px; padding: 9px 16px; border-top: 1px solid var(--component-date-divider); }
+.tte-date-time-label { flex: 0 0 auto; color: var(--color-content-assist); font: var(--font-size-5)/var(--font-line-height-5) var(--font-family-ui-regular); }
+.tte-date-time-controls { display: flex; min-width: 0; align-items: center; gap: 4px; }
+.tte-date-time-sep { flex: 0 0 auto; color: var(--color-content-assist); font: var(--font-size-5)/var(--font-line-height-5) var(--font-family-ui-regular); }
+.tte-date-time .tte-date-time-select { width: 72px; max-width: 72px; flex: 0 0 72px; }
+.tte-date-time-select .tte-select-trigger { width: 72px; min-height: 32px; height: 32px; padding: 0 6px; font: var(--font-size-5)/var(--font-line-height-5) var(--font-family-numeric-medium); }
+.tte-date-time-select:focus-within,
+.tte-date-time-select .tte-select-trigger:focus,
+.tte-date-time-select .tte-select-trigger:focus-visible { outline: none; }
+.tte-date-time-select .tte-select-menu { top: auto; right: 0; bottom: calc(100% + 4px); left: auto; width: 96px; z-index: 6; transform-origin: bottom center; }
+.tte-date-time-select .tte-select-option:disabled,
+.tte-date-time-select .tte-select-option:disabled:hover { color: var(--color-content-disabled); background: transparent; cursor: not-allowed; }

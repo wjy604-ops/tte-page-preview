@@ -1,0 +1,21 @@
+:root {
+  --component-avatar-size-20: 20px;
+  --component-avatar-size-24: 24px;
+  --component-avatar-size-32: 32px;
+  --component-avatar-size-40: 40px;
+  --component-avatar-size-48: 48px;
+  --component-avatar-font-20: 9px;
+  --component-avatar-font-24: 10px;
+  --component-avatar-font-32: var(--font-size-7);
+  --component-avatar-font-40: var(--font-size-5);
+  --component-avatar-font-48: var(--font-size-4);
+  --component-avatar-radius: var(--radius-full);
+  --component-avatar-border-width: 2px;
+  --component-avatar-border: var(--color-surface-container);
+  --component-avatar-ring: var(--color-border-default);
+  --component-avatar-fallback-bg: var(--color-brand-soft);
+  --component-avatar-fallback-text: var(--color-brand-active);
+  --component-avatar-font-family: var(--font-family-ui-bold);
+  --component-avatar-group-overlap: calc(var(--spacing-8) * -1);
+  --component-avatar-group-gap: var(--spacing-12);
+}

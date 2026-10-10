@@ -1,0 +1,21 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "name": "TTE Checkbox Component Tokens",
+  "version": "0.1.0",
+  "source": {
+    "tool": "MasterGo",
+    "documentName": "TTE desgin 1.0",
+    "pageId": "210:12550",
+    "evidence": "Checkbox 基本 / 描述 / 禁用 / 组织 / 列表预览，交互沿用 shadcn Checkbox"
+  },
+  "component": {
+    "checkbox": {
+      "size": { "$type": "dimension", "$value": "16px" },
+      "radius": { "$type": "dimension", "$value": "{radius.xs}" },
+      "icon": { "$type": "dimension", "$value": "12px" },
+      "listRowMinHeight": { "$type": "dimension", "$value": "48px" },
+      "selectedDisabledBackground": { "$type": "color", "$value": "#b8d1fb", "evidence": "预览中的选中禁用填充；语义色未覆盖，先隔离为组件 Token" },
+      "focusRingWidth": { "$type": "dimension", "$value": "3px" }
+    }
+  }
+}

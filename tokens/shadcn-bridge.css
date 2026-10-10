@@ -1,0 +1,33 @@
+/*
+ * TTE × shadcn/ui bridge
+ *
+ * Canonical source of truth remains tokens/*-tokens.css and tokens/*.json.
+ * These aliases only allow shadcn-style source code to consume TTE semantics.
+ */
+:root {
+  --background: var(--color-surface-page);
+  --foreground: var(--color-content-primary);
+
+  --card: var(--color-surface-container);
+  --card-foreground: var(--color-content-primary);
+
+  --primary: var(--color-action-primary);
+  --primary-foreground: var(--color-content-on-dark);
+  --primary-hover: var(--color-action-primary-hover);
+  --primary-active: var(--color-action-primary-active);
+
+  --secondary: var(--color-fill-default);
+  --secondary-foreground: var(--color-content-primary);
+  --muted: var(--color-fill-default);
+  --muted-foreground: var(--color-content-secondary);
+  --accent: var(--color-fill-hover-2);
+  --accent-foreground: var(--color-content-primary);
+
+  --border: var(--color-border-default);
+  --input: var(--color-border-default);
+  --ring: var(--color-interaction-focus-ring);
+  --destructive: var(--color-status-error);
+  --destructive-foreground: var(--color-content-on-dark);
+  /* Kept for shadcn destructive recipes outside the TTE Button adapter. */
+  --color-status-error-hover: var(--color-status-error);
+}

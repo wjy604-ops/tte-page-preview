@@ -1,0 +1,160 @@
+/*
+  Hierarchy comes from the font file itself: Regular, Medium, or Bold.
+  Each cut is registered as its own family, so components do not switch levels with font-weight.
+  Latin and CJK are split by unicode-range so each script uses that typeface's own file.
+*/
+
+@font-face {
+  font-family: "TTE UI Regular";
+  src: local("Helvetica Neue"), local("HelveticaNeue"), local("Inter Regular"), local("Inter");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "TTE UI Regular";
+  src: local("PingFang SC"), local("PingFang SC Regular"), local("PingFangSC-Regular"), local("Microsoft YaHei");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+3000-303F, U+3400-4DBF, U+4E00-9FFF, U+F900-FAFF, U+FF00-FFEF;
+}
+@font-face {
+  font-family: "TTE UI Medium";
+  src: local("Helvetica Neue Medium"), local("HelveticaNeue-Medium"), local("Inter Medium"), local("Inter-Medium");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "TTE UI Medium";
+  src: local("PingFang SC Medium"), local("PingFangSC-Medium"), local("Microsoft YaHei");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+3000-303F, U+3400-4DBF, U+4E00-9FFF, U+F900-FAFF, U+FF00-FFEF;
+}
+@font-face {
+  font-family: "TTE UI Bold";
+  src: local("Helvetica Neue Bold"), local("HelveticaNeue-Bold"), local("Inter Bold"), local("Inter-Bold");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "TTE UI Bold";
+  src: local("PingFang SC Semibold"), local("PingFangSC-Semibold"), local("Microsoft YaHei Bold"), local("Microsoft YaHei");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+3000-303F, U+3400-4DBF, U+4E00-9FFF, U+F900-FAFF, U+FF00-FFEF;
+}
+@font-face {
+  font-family: "TTE DIN Regular";
+  src: url("../assets/fonts/DIN-Regular-2.otf") format("opentype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "TTE DIN Medium";
+  src: url("../assets/fonts/DIN-Medium-2.otf") format("opentype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "TTE DIN Bold";
+  src: url("../assets/fonts/din-bold-2.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* Named face stacks. The first family is the cut; later names are platform fallbacks. */
+  --font-family-ui-regular: "TTE UI Regular", "Helvetica Neue", Inter, "PingFang SC", "Microsoft YaHei", sans-serif;
+  --font-family-ui-medium: "TTE UI Medium", "Helvetica Neue Medium", "Inter Medium", "PingFang SC Medium", "Microsoft YaHei", sans-serif;
+  --font-family-ui-bold: "TTE UI Bold", "Helvetica Neue Bold", "Inter Bold", "PingFang SC Semibold", "Microsoft YaHei Bold", sans-serif;
+  --font-family-ui: var(--font-family-ui-regular);
+  --font-family-numeric-regular: "TTE DIN Regular", "DIN-Regular", "Helvetica Neue", Inter, sans-serif;
+  --font-family-numeric-medium: "TTE DIN Medium", "DIN-Medium", "Helvetica Neue", Inter, sans-serif;
+  --font-family-numeric-bold: "TTE DIN Bold", "DIN-Bold", "Helvetica Neue", Inter, sans-serif;
+  --font-family-numeric: var(--font-family-numeric-medium);
+
+  /* Font size primitives */
+  --font-size-1: 32px;
+  --font-size-2: 24px;
+  --font-size-3: 20px;
+  --font-size-4: 16px;
+  --font-size-5: 14px;
+  --font-size-6: 13px;
+  --font-size-7: 12px;
+
+  /* Line-height primitives */
+  --font-line-height-1: 44px;
+  --font-line-height-2: 32px;
+  --font-line-height-3: 28px;
+  --font-line-height-4: 24px;
+  --font-line-height-5: 22px;
+  --font-line-height-6: 22px;
+  --font-line-height-7: 20px;
+
+  /* Numeric behavior primitives */
+  --font-numeric-variant: tabular-nums;
+  --font-numeric-feature-settings: "tnum" 1;
+
+  /* Semantic typography aliases. The family already selects Regular, Medium, or Bold. */
+  --typography-page-title-family: var(--font-family-ui-bold);
+  --typography-page-title-size: var(--font-size-2);
+  --typography-page-title-line-height: var(--font-line-height-2);
+
+  --typography-page-description-family: var(--font-family-ui-regular);
+  --typography-page-description-size: var(--font-size-5);
+  --typography-page-description-line-height: var(--font-line-height-5);
+
+  --typography-navigation-item-family: var(--font-family-ui-regular);
+  --typography-navigation-item-size: var(--font-size-5);
+  --typography-navigation-item-line-height: var(--font-line-height-5);
+  --typography-navigation-item-selected-family: var(--font-family-ui-medium);
+
+  --typography-button-label-family: var(--font-family-ui-medium);
+  --typography-button-label-size: var(--font-size-5);
+  --typography-button-label-line-height: var(--font-line-height-5);
+
+  --typography-card-title-family: var(--font-family-ui-medium);
+  --typography-card-title-size: var(--font-size-3);
+  --typography-card-title-line-height: var(--font-line-height-3);
+
+  --typography-content-meta-family: var(--font-family-ui-regular);
+  --typography-content-meta-size: var(--font-size-6);
+  --typography-content-meta-line-height: var(--font-line-height-6);
+
+  --typography-content-tag-family: var(--font-family-ui-regular);
+  --typography-content-tag-size: var(--font-size-7);
+  --typography-content-tag-line-height: var(--font-line-height-7);
+
+  --typography-metric-label-family: var(--font-family-ui-regular);
+  --typography-metric-label-size: var(--font-size-7);
+  --typography-metric-label-line-height: var(--font-line-height-7);
+
+  --typography-metric-value-family: var(--font-family-ui-regular);
+  --typography-metric-value-size: var(--font-size-5);
+  --typography-metric-value-line-height: var(--font-line-height-5);
+
+  /* Metric presets｜字号可按组件场景选择，不绑定单一全局尺寸 */
+  --typography-metric-numeric-family: var(--font-family-numeric-medium);
+  --typography-metric-numeric-regular-family: var(--font-family-numeric-regular);
+  --typography-metric-numeric-bold-family: var(--font-family-numeric-bold);
+  --typography-metric-numeric-variant: var(--font-numeric-variant);
+  --typography-metric-numeric-feature-settings: var(--font-numeric-feature-settings);
+  --typography-metric-numeric-large-size: var(--font-size-1);
+  --typography-metric-numeric-large-line-height: var(--font-line-height-1);
+  --typography-metric-numeric-medium-size: var(--font-size-2);
+  --typography-metric-numeric-medium-line-height: var(--font-line-height-2);
+  --typography-metric-numeric-small-size: var(--font-size-3);
+  --typography-metric-numeric-small-line-height: var(--font-line-height-3);
+}

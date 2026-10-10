@@ -1,0 +1,24 @@
+:root {
+  /* Spacing primitives */
+  --spacing-0: 0px;
+  --spacing-4: 4px;
+  --spacing-8: 8px;
+  --spacing-12: 12px;
+  --spacing-16: 16px;
+  --spacing-24: 24px;
+  --spacing-28: 28px;
+  --spacing-32: 32px;
+  --spacing-36: 36px;
+  --spacing-40: 40px;
+
+  /* Component size presets */
+  --spacing-component-small: var(--spacing-12);
+  --spacing-component-middle: var(--spacing-16);
+  --spacing-component-large: var(--spacing-24);
+
+  /* Semantic spacing aliases */
+  --spacing-horizontal-button-group: var(--spacing-12);
+  --spacing-horizontal-form-field: var(--spacing-8);
+  --spacing-vertical-form-field: var(--spacing-12);
+  --spacing-vertical-module: var(--spacing-16);
+}

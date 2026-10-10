@@ -1,0 +1,35 @@
+:root {
+  /* Trigger follows Input middle size. Menu item states reuse Dropdown tokens. */
+  --component-select-trigger-height: var(--component-input-height-middle);
+  --component-select-trigger-padding-inline: var(--spacing-12);
+  --component-select-trigger-padding-block: calc((var(--component-select-trigger-height) - 2px - var(--component-select-chip-height)) / 2);
+  --component-select-trigger-gap: var(--spacing-8);
+  --component-select-trigger-radius: var(--radius-md);
+  --component-select-trigger-font-size: var(--font-size-5);
+  --component-select-trigger-line-height: var(--font-line-height-5);
+  --component-select-trigger-bg: var(--color-surface-container);
+  --component-select-trigger-text: var(--color-content-primary);
+  --component-select-trigger-border: var(--component-input-border);
+  --component-select-trigger-border-hover: var(--color-action-primary);
+  --component-select-trigger-placeholder: var(--color-content-assist);
+  --component-select-trigger-icon: var(--color-content-assist);
+  --component-select-trigger-icon-size: 16px;
+  --component-select-option-icon-size: 16px;
+  --component-select-trigger-disabled-text: var(--color-content-disabled);
+  --component-select-trigger-disabled-border: var(--color-interaction-disabled-border);
+  --component-select-trigger-disabled-bg: var(--color-interaction-disabled-bg);
+  --component-select-menu-offset: var(--spacing-4);
+  --component-select-chip-height: 24px;
+  --component-select-chip-radius: var(--radius-xs);
+  --component-select-chip-bg: var(--color-fill-normal);
+  --component-select-chip-text: var(--color-content-primary);
+  --component-select-chip-close: var(--color-content-secondary);
+  --component-select-multiple-width: 392px;
+  --component-select-scroll-button-height: 24px;
+  --component-select-group-label-size: var(--font-size-7);
+  --component-select-group-label-line-height: var(--font-line-height-7);
+  --component-select-group-label-text: var(--color-content-assist);
+  --component-select-separator: var(--color-border-default);
+  --component-select-focus-ring: var(--color-interaction-focus-ring);
+  --component-select-preview-width: 280px;
+}

@@ -1,0 +1,27 @@
+{
+  "component": {
+    "empty": {
+      "gap": { "$type": "dimension", "$value": "{spacing.16}" },
+      "headerGap": { "$type": "dimension", "$value": "{spacing.8}" },
+      "padding": { "$type": "dimension", "$value": "{spacing.24}" },
+      "radius": { "$type": "dimension", "$value": "{radius.surface.card}" },
+      "border": { "$type": "color", "$value": "{color.border.default}" },
+      "media": {
+        "size": { "$type": "dimension", "$value": "{spacing.40}" },
+        "radius": { "$type": "dimension", "$value": "{radius.md}" },
+        "background": { "$type": "color", "$value": "{color.fill.normal}" },
+        "color": { "$type": "color", "$value": "{color.content.secondary}" },
+        "iconSize": { "$type": "dimension", "$value": "{component.icon.size.large}" }
+      },
+      "title": {
+        "color": { "$type": "color", "$value": "{color.content.primary}" },
+        "fontSize": { "$type": "dimension", "$value": "{font.size.4}" },
+        "fontFamily": { "$type": "fontFamily", "$value": "{primitives.font.face.medium}" }
+      },
+      "description": {
+        "color": { "$type": "color", "$value": "{color.content.secondary}" },
+        "fontSize": { "$type": "dimension", "$value": "{font.size.5}" }
+      }
+    }
+  }
+}

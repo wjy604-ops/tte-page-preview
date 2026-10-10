@@ -1,0 +1,21 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "name": "TTE Radio Component Tokens",
+  "version": "0.1.0",
+  "source": {
+    "tool": "MasterGo",
+    "documentName": "TTE desgin 1.0",
+    "pageId": "239:13419",
+    "evidence": "Radio 单选按钮 / 带描述 / 选择卡预览，交互沿用 shadcn RadioGroup"
+  },
+  "component": {
+    "radio": {
+      "size": { "$type": "dimension", "$value": "20px" },
+      "dot": { "$type": "dimension", "$value": "6px" },
+      "ringWidth": { "$type": "dimension", "$value": "1px" },
+      "cardWidth": { "$type": "dimension", "$value": "280px" },
+      "cardRadius": { "$type": "dimension", "$value": "{radius.lg}" },
+      "focusRingWidth": { "$type": "dimension", "$value": "3px", "evidence": "与 Button 的 shadcn focus ring 宽度一致；设计稿未单独画出键盘焦点" }
+    }
+  }
+}

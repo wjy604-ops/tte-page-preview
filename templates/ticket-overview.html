@@ -1,0 +1,965 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ticket总览</title>
+  <link rel="stylesheet" href="../tokens/color-tokens.css">
+  <link rel="stylesheet" href="../tokens/typography-tokens.css">
+  <link rel="stylesheet" href="../tokens/spacing-tokens.css">
+  <link rel="stylesheet" href="../tokens/radius-tokens.css">
+  <link rel="stylesheet" href="../tokens/layout-tokens.css">
+  <link rel="stylesheet" href="../tokens/scrollbar-tokens.css">
+  <link rel="stylesheet" href="../tokens/button-tokens.css">
+  <link rel="stylesheet" href="../tokens/icon-tokens.css">
+  <link rel="stylesheet" href="../tokens/dropdown-tokens.css?v=dropdown-component">
+  <link rel="stylesheet" href="../tokens/popover-tokens.css">
+  <link rel="stylesheet" href="../tokens/menu-tokens.css">
+  <link rel="stylesheet" href="../tokens/sidebar-tokens.css?v=inset-border">
+  <link rel="stylesheet" href="../tokens/page-header-tokens.css">
+  <link rel="stylesheet" href="../tokens/input-tokens.css">
+  <link rel="stylesheet" href="../tokens/checkbox-tokens.css">
+  <link rel="stylesheet" href="../tokens/tag-tokens.css">
+  <link rel="stylesheet" href="../tokens/avatar-tokens.css">
+  <link rel="stylesheet" href="../tokens/table-tokens.css?v=head-filter">
+  <link rel="stylesheet" href="../tokens/pagination-tokens.css">
+  <link rel="stylesheet" href="../tokens/empty-tokens.css">
+  <link rel="stylesheet" href="shell.css">
+  <link rel="stylesheet" href="ticket.css">
+</head>
+<body>
+  <div class="tte-sidebar-provider app-frame" data-sidebar data-state="expanded" data-collapsible="icon">
+    <aside class="tte-sidebar" aria-label="侧边栏">
+      <div class="tte-sidebar-header">
+        <div class="tte-sidebar-brand"><img class="tte-sidebar-brand-full" src="../assets/brand/sidebar-logo.svg" alt="TicketToExperience" width="188" height="22"><img class="tte-sidebar-brand-short" src="../assets/brand/sidebar-logo-collapsed.svg" alt="TTE" width="40" height="22"></div>
+      </div>
+      <div class="tte-sidebar-content">
+        <div class="tte-sidebar-group">
+          <ul class="tte-sidebar-menu">
+            <li class="tte-sidebar-menu-item"><button class="tte-sidebar-menu-button" type="button" aria-current="page"><svg class="tte-sidebar-icon" data-icon="Ticket总览" viewBox="0 0 24 24" aria-hidden="true"></svg><span>Ticket总览</span></button><div class="tte-popover-content dark tte-sidebar-tip" role="tooltip">Ticket总览</div></li>
+            <li class="tte-sidebar-menu-item"><button class="tte-sidebar-menu-button" type="button"><svg class="tte-sidebar-icon" data-icon="研发自测单" viewBox="0 0 24 24" aria-hidden="true"></svg><span>研发自测单总览</span></button><div class="tte-popover-content dark tte-sidebar-tip" role="tooltip">研发自测单总览</div></li>
+            <li class="tte-sidebar-menu-item"><button class="tte-sidebar-menu-button" type="button"><svg class="tte-sidebar-icon" data-icon="项目测试单据" viewBox="0 0 24 24" aria-hidden="true"></svg><span>项目测试单据总览</span></button><div class="tte-popover-content dark tte-sidebar-tip" role="tooltip">项目测试单据总览</div></li>
+            <li class="tte-sidebar-menu-item"><button class="tte-sidebar-menu-button" type="button"><svg class="tte-sidebar-icon" data-icon="日志记录" viewBox="0 0 24 24" aria-hidden="true"></svg><span>行程报告记录</span></button><div class="tte-popover-content dark tte-sidebar-tip" role="tooltip">行程报告记录</div></li>
+            <li class="tte-sidebar-menu-item"><p class="ticket-side-label">支持与反馈</p></li>
+            <li class="tte-sidebar-menu-item"><button class="tte-sidebar-menu-button" type="button"><svg class="tte-sidebar-icon" data-icon="意见反馈" viewBox="0 0 24 24" aria-hidden="true"></svg><span>意见反馈</span></button><div class="tte-popover-content dark tte-sidebar-tip" role="tooltip">意见反馈</div></li>
+            <li class="tte-sidebar-menu-item"><button class="tte-sidebar-menu-button" type="button"><svg class="tte-sidebar-icon" data-icon="API key" viewBox="0 0 24 24" aria-hidden="true"></svg><span>获取 API Key</span></button><div class="tte-popover-content dark tte-sidebar-tip" role="tooltip">获取 API Key</div></li>
+          </ul>
+        </div>
+      </div>
+      <div class="tte-sidebar-footer">
+        <div class="tte-sidebar-menu-item">
+          <button class="tte-sidebar-menu-button" type="button" data-sidebar-collapse><svg class="tte-sidebar-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3,6L3,18Q3,19.242641,3.87867993,20.121323Q4.7573593,21,6,21L18,21Q19.242641,21,20.121321,20.121321Q21,19.242641,21,18L21,6Q21,4.757359,20.121323,3.87867987Q19.242641,3,18,3L6,3Q4.7573595,3,3.8786796900000002,3.87867975Q3,4.7573595,3,6ZM14.000188,5L6,5Q5,5,5,6L5,18Q5,19,6,19L14.000012,19L14.000188,5ZM15.999812,19L15.999988,5L18,5Q19,5,19,6L19,18Q19,19,18,19L15.999812,19ZM10.7069654,10.7070093C10.8944645,10.5195107,10.9997997,10.2652073,10.9997997,10.000044299999999C10.9997997,9.4478698,10.5521746,9.0002441,10,9.0002441C9.734836600000001,9.0002441,9.480533600000001,9.1055799,9.2928934,9.2929373L7.2928934,11.2929373C6.902369,11.6834621,6.902369,12.3166265,7.2928934,12.7071514L9.2930346,14.70701C9.480533600000001,14.894508,9.734836600000001,14.999845,10,14.999845C10.5521746,14.999845,10.9997997,14.552219,10.9997997,14.000044C10.9997997,13.73488,10.8944645,13.480577,10.7071066,13.292937L9.414213700000001,12.0000439L10.7069654,10.7070093Z" fill-rule="evenodd" fill="currentColor"/></svg><span>收起</span></button>
+          <div class="tte-popover-content dark tte-sidebar-tip" role="tooltip">收起</div>
+        </div>
+      </div>
+    </aside>
+    <div class="app-column">
+      <header class="app-topnav">
+        <nav class="app-topnav-links" aria-label="产品导航">
+          <button class="tte-button tte-button-fill tte-button-md" type="button" data-top-link>首页</button>
+          <button class="tte-button tte-button-fill tte-button-md" type="button" data-top-link>TTE管理系统</button>
+          <button class="tte-button tte-button-fill tte-button-md" type="button" data-top-link aria-current="page">单据管理</button>
+          <button class="tte-button tte-button-fill tte-button-md" type="button" data-top-link>场景树</button>
+          <button class="tte-button tte-button-fill tte-button-md" type="button" data-top-link>数据生产及标签管理</button>
+          <button class="tte-button tte-button-fill tte-button-md" type="button" data-top-link>模型训练部署</button>
+          <button class="tte-button tte-button-fill tte-button-md" type="button" data-top-link>评测任务管理</button>
+          <nav class="tte-nav-menu" data-nav-menu aria-label="AEP">
+            <ul class="tte-nav-menu-list">
+              <li class="tte-nav-menu-item" data-nav-item="aep">
+                <button class="tte-nav-menu-trigger" type="button" data-nav-trigger aria-expanded="false">AEP<svg class="tte-lucide tte-nav-menu-caret" data-lucide="chevron-down" aria-hidden="true"></svg></button>
+              </li>
+            </ul>
+            <div class="tte-nav-menu-popup" data-nav-popup hidden>
+              <div class="tte-nav-menu-surface">
+                <div class="tte-nav-menu-panel" data-nav-content="aep" hidden>
+                  <div class="tte-nav-menu-grid is-icons">
+                    <a class="tte-nav-menu-link" href="#aep-ingest"><span>数据接入</span></a>
+                    <a class="tte-nav-menu-link" href="#aep-tasks"><span>任务编排</span></a>
+                    <a class="tte-nav-menu-link" href="#aep-results"><span>结果查看</span></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </nav>
+        </nav>
+        <div class="app-topnav-end">
+          <button class="tte-button tte-button-secondary tte-button-icon-only" type="button" aria-label="文档"><svg class="tte-lucide" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h7l5 5v13H7z"/><path d="M14 3v5h5"/></svg></button>
+          <button class="tte-button tte-button-secondary tte-button-icon-only" type="button" aria-label="通知"><svg class="tte-lucide" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9a6 6 0 0 1 12 0c0 7 3 7 3 7H3s3 0 3-7"/><path d="M10 19a2 2 0 0 0 4 0"/></svg></button>
+          <div class="app-user"><span class="app-user-avatar" aria-hidden="true"></span>Jiaqian.Xiao<svg class="tte-lucide" data-lucide="chevron-down" aria-hidden="true"></svg></div>
+        </div>
+      </header>
+      <div class="tte-sidebar-inset">
+        <main class="ticket-page">
+          <header class="ticket-heading">
+            <svg class="tte-sidebar-icon" data-icon="单据" viewBox="0 0 24 24" aria-hidden="true"></svg>
+            <h1 class="tte-page-header-title">Ticket总览</h1>
+          </header>
+          <div class="ticket-toolbar">
+            <div class="ticket-scopes" role="group" aria-label="单据范围">
+              <button class="tte-button tte-button-secondary ticket-scope" type="button" data-scope="all" aria-pressed="true">全部</button>
+              <button class="tte-button tte-button-secondary ticket-scope" type="button" data-scope="followed" aria-pressed="false">我关注的<span class="is-count" data-follow-count>40</span></button>
+              <button class="tte-button tte-button-secondary ticket-scope" type="button" data-scope="mine" aria-pressed="false">我跟进的<span class="is-count">58</span></button>
+              <button class="tte-button tte-button-secondary ticket-scope" type="button" data-scope="pending" aria-pressed="false">待分拣<span class="is-count">29380</span></button>
+            </div>
+            <button class="tte-button tte-button-secondary ticket-report" type="button"><svg class="tte-sidebar-icon" data-icon="文件" viewBox="0 0 24 24" aria-hidden="true"></svg>生成报告</button>
+          </div>
+          <div class="ticket-filters">
+            <label class="ticket-filter" data-filter="id"><span class="is-name">Ticket ID</span><input type="text" placeholder="请输入" aria-label="Ticket ID"><button class="ticket-filter-clear" type="button" hidden aria-label="清除 Ticket ID"><svg class="tte-sidebar-icon" data-icon="关闭" viewBox="0 0 24 24" aria-hidden="true"></svg></button></label>
+            <label class="ticket-filter" data-filter="asset"><span class="is-name">资产 ID</span><input type="text" placeholder="请输入" aria-label="资产 ID"><button class="ticket-filter-clear" type="button" hidden aria-label="清除资产 ID"><svg class="tte-sidebar-icon" data-icon="关闭" viewBox="0 0 24 24" aria-hidden="true"></svg></button></label>
+            <label class="ticket-filter" data-filter="person"><span class="is-name">提单人</span><input type="text" placeholder="请输入" aria-label="提单人"><button class="ticket-filter-clear" type="button" hidden aria-label="清除提单人"><svg class="tte-sidebar-icon" data-icon="关闭" viewBox="0 0 24 24" aria-hidden="true"></svg></button></label>
+            <label class="ticket-filter" data-filter="trip"><span class="is-name">行程 ID</span><input type="text" placeholder="请输入" aria-label="行程 ID"><button class="ticket-filter-clear" type="button" hidden aria-label="清除行程 ID"><svg class="tte-sidebar-icon" data-icon="关闭" viewBox="0 0 24 24" aria-hidden="true"></svg></button></label>
+            <div class="ticket-filter is-select" data-filter="time" data-filter-mode="single">
+              <button class="ticket-filter-trigger" type="button" aria-haspopup="listbox" aria-expanded="false"><span class="is-name">提单时间</span><span class="is-divider" hidden></span><span class="is-value" hidden></span><svg class="tte-lucide is-chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+              <button class="ticket-filter-clear" type="button" hidden aria-label="清除提单时间"><svg class="tte-sidebar-icon" data-icon="关闭" viewBox="0 0 24 24" aria-hidden="true"></svg></button>
+              <div class="dropdown-menu ticket-filter-menu" hidden role="menu" aria-label="提单时间"></div>
+            </div>
+            <label class="ticket-filter" data-filter="vin"><span class="is-name">VIN</span><input type="text" placeholder="请输入" aria-label="VIN"><button class="ticket-filter-clear" type="button" hidden aria-label="清除 VIN"><svg class="tte-sidebar-icon" data-icon="关闭" viewBox="0 0 24 24" aria-hidden="true"></svg></button></label>
+            <div class="ticket-filter is-select" data-filter="status">
+              <button class="ticket-filter-trigger" type="button" aria-haspopup="listbox" aria-expanded="false"><span class="is-name">状态</span><span class="is-divider" hidden></span><span class="is-value" hidden></span><svg class="tte-lucide is-chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+              <button class="ticket-filter-clear" type="button" hidden aria-label="清除状态"><svg class="tte-sidebar-icon" data-icon="关闭" viewBox="0 0 24 24" aria-hidden="true"></svg></button>
+              <div class="dropdown-menu ticket-filter-menu" hidden role="menu" aria-label="状态"></div>
+            </div>
+            <label class="ticket-filter" data-filter="desc"><span class="is-name">描述</span><input type="text" placeholder="请输入" aria-label="描述"><button class="ticket-filter-clear" type="button" hidden aria-label="清除描述"><svg class="tte-sidebar-icon" data-icon="关闭" viewBox="0 0 24 24" aria-hidden="true"></svg></button></label>
+            <label class="ticket-filter" data-filter="follower"><span class="is-name">跟进人</span><input type="text" placeholder="请输入" aria-label="跟进人"><button class="ticket-filter-clear" type="button" hidden aria-label="清除跟进人"><svg class="tte-sidebar-icon" data-icon="关闭" viewBox="0 0 24 24" aria-hidden="true"></svg></button></label>
+            <div class="ticket-filter is-select" data-filter="model">
+              <button class="ticket-filter-trigger" type="button" aria-haspopup="listbox" aria-expanded="false"><span class="is-name">车型</span><span class="is-divider" hidden></span><span class="is-value" hidden></span><svg class="tte-lucide is-chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+              <button class="ticket-filter-clear" type="button" hidden aria-label="清除车型"><svg class="tte-sidebar-icon" data-icon="关闭" viewBox="0 0 24 24" aria-hidden="true"></svg></button>
+              <div class="dropdown-menu ticket-filter-menu" hidden role="menu" aria-label="车型"></div>
+            </div>
+            <div class="ticket-filter is-select" data-filter="priority">
+              <button class="ticket-filter-trigger" type="button" aria-haspopup="listbox" aria-expanded="false"><span class="is-name">优先级</span><span class="is-divider" hidden></span><span class="is-value" hidden></span><svg class="tte-lucide is-chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+              <button class="ticket-filter-clear" type="button" hidden aria-label="清除优先级"><svg class="tte-sidebar-icon" data-icon="关闭" viewBox="0 0 24 24" aria-hidden="true"></svg></button>
+              <div class="dropdown-menu ticket-filter-menu" hidden role="menu" aria-label="优先级"></div>
+            </div>
+            <div class="ticket-more" data-more-filters>
+              <button class="tte-button tte-button-secondary ticket-action" type="button" data-more-filters-trigger aria-haspopup="true" aria-expanded="false"><svg class="tte-sidebar-icon" data-icon="加号" viewBox="0 0 24 24" aria-hidden="true"></svg>更多筛选器</button>
+              <div class="ticket-more-menu" data-more-menu hidden>
+                <div class="ticket-more-head"><span class="is-title">有效筛选</span><span class="is-hint">可拖拽进行排序</span></div>
+                <div class="ticket-more-list" data-more-active></div>
+                <div class="ticket-more-sep"></div>
+                <div class="ticket-more-head"><span class="is-title">可用筛选</span></div>
+                <div class="ticket-more-list" data-more-idle></div>
+              </div>
+            </div>
+            <button class="tte-button tte-button-secondary ticket-action" type="button" data-ticket-clear><svg class="tte-sidebar-icon" data-icon="刷新" viewBox="0 0 24 24" aria-hidden="true"></svg>清空筛选器</button>
+            <button class="tte-button tte-button-secondary ticket-action" type="button" data-ticket-select-all aria-pressed="false"><svg class="tte-lucide ticket-select-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-ticket-select-label>全选单据</span></button>
+          </div>
+          <div class="ticket-board">
+            <div class="ticket-hscroll">
+            <div class="tte-table-scroll" data-table>
+              <table class="tte-table is-pinned ticket-table">
+                <caption>Ticket 列表</caption>
+                <thead>
+                  <tr>
+                    <th class="is-check is-pin is-pin-left" scope="col"><label class="tte-checkbox"><input type="checkbox" data-table-select-all aria-label="选择全部单据"><span class="checkbox-box" aria-hidden="true"></span></label></th>
+                    <th class="is-id is-pin is-pin-left" scope="col">Ticket ID</th>
+                    <th class="is-desc" scope="col">描述</th>
+                    <th class="is-trip" scope="col">行程 ID</th>
+                    <th class="is-user" scope="col">提单人</th>
+                    <th class="is-asset" scope="col">资产 ID</th>
+                    <th class="is-feishu" scope="col">飞书项目</th>
+                    <th class="is-status" scope="col"><button class="tte-table-head-trigger" type="button" data-head-filter="status" aria-haspopup="listbox" aria-expanded="false">状态<svg class="tte-lucide" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button></th>
+                    <th class="is-vin" scope="col">VIN</th>
+                    <th class="is-time" scope="col"><button class="tte-table-sort" type="button" data-table-sort="created" aria-sort="none" aria-label="按提单时间排序"><span class="tte-table-sorter" aria-hidden="true"><i class="is-up"></i><i class="is-down"></i></span>提单时间</button></th>
+                    <th class="is-time" scope="col"><button class="tte-table-sort" type="button" data-table-sort="updated" aria-sort="none" aria-label="按更新时间排序"><span class="tte-table-sorter" aria-hidden="true"><i class="is-up"></i><i class="is-down"></i></span>更新时间</button></th>
+                    <th class="is-model" scope="col"><button class="tte-table-head-trigger" type="button" data-head-filter="model" aria-haspopup="listbox" aria-expanded="false">车型<svg class="tte-lucide" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button></th>
+                    <th class="is-sensor" scope="col">传感器构型</th>
+                    <th class="is-priority" scope="col"><button class="tte-table-head-trigger" type="button" data-head-filter="priority" aria-haspopup="listbox" aria-expanded="false">优先级<svg class="tte-lucide" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button></th>
+                    <th class="is-actions" scope="col">操作</th>
+                  </tr>
+                </thead>
+                <tbody data-ticket-rows></tbody>
+              </table>
+            </div>
+            <div class="ticket-scroll-x" hidden><i aria-hidden="true"></i></div>
+            </div>
+            <nav class="tte-pagination ticket-pager" data-pagination data-pagination-style="web" data-page="1" data-page-count="10" data-total="100" data-page-size="10" aria-label="分页"></nav>
+          </div>
+        </main>
+      </div>
+    </div>
+  </div>
+  <script src="ticket-icons.js"></script>
+  <script src="morphicons.js"></script>
+  <script src="scroll-thumb.js"></script>
+  <script>
+    const records = [
+      ["0010010512029441", "--", "2610090900518", "林", "--", "", "已创建", "blue", "LFPH4CPP6T1J56750", "2026-10-09 12:02:46", "2026-10-09 12:02:48", "P567", "--"],
+      ["001001051784192", "无效音频", "26100912000024", "杨", "--", "查看", "已创建", "blue", "LK6ADAE29SE826207", "2026-10-09 12:02:32", "2026-10-09 12:02:37", "Robovan-SGMW-001", "--"],
+      ["001001051734528", "不安全", "26100911000305", "赵", "--", "", "已创建", "blue", "LFPH3APP4T2A17723", "2026-10-09 12:02:29", "2026-10-09 12:02:30", "P301-THORx2", "--"],
+      ["001001051538432", "导航更新不及时", "26100911000412", "周", "--", "查看", "已创建", "blue", "LFPH3APP0T2A38875", "2026-10-09 12:02:17", "2026-10-09 12:02:25", "P301-THORx2", "--"],
+      ["001001051440128", "云端介入，退出", "26100911000389", "吴", "--", "查看", "已创建", "blue", "LSFAM3507TD512010", "2026-10-09 12:02:11", "2026-10-09 12:02:16", "SAIC_MAXUS_01", "--"],
+      ["001001051407360", "正常功能，广区路口让行", "26100909000518", "林", "--", "", "已创建", "blue", "LFPH4CPP6T1J56750", "2026-10-09 12:02:05", "2026-10-09 12:02:10", "P567", "--"],
+      ["001001051390464", "--", "26100911000062", "陈", "--", "查看", "已创建", "blue", "LZGJD4Z17SX029414", "2026-10-09 12:01:59", "2026-10-09 12:02:14", "X5000", "--"],
+      ["0010010509015328", "正常功能广区侧向来车", "26100909000518", "林", "--", "", "已创建", "blue", "LFPH4CPP6T1J56750", "2026-10-09 12:01:37", "2026-10-09 12:01:40", "P567", "--"],
+      ["001001050653184", "2026-10-09 12:02:00", "26100910000327", "刘", "--", "查看", "已创建", "blue", "LK6ADAE45RB756122", "2026-10-09 12:01:24", "2026-10-09 12:01:28", "F410S-SA8650", "--"],
+      ["001001050489344", "测试TTE打点", "26100912000005", "李", "--", "查看", "上传中", "orange", "LFV3B2G75T7800013", "2026-10-09 12:01:13", "2026-10-09 12:02:36", "AUDI", "--"],
+      ["001001050412208", "跟车距离过近", "26100913000018", "王", "--", "查看", "已创建", "blue", "LFPH4CPP6T1J56750", "2026-10-09 12:00:58", "2026-10-09 12:01:06", "P567", "--"],
+      ["001001050398771", "--", "26100913000042", "孙", "--", "", "已创建", "blue", "P301-THORx2VIN001", "2026-10-09 12:00:41", "2026-10-09 12:00:49", "P301-THORx2", "--"],
+      ["001001050276550", "施工占道绕行", "26100914000007", "郑", "--", "查看", "已创建", "blue", "LSFAM3507TD512088", "2026-10-09 12:00:22", "2026-10-09 12:00:31", "SAIC_MAXUS_01", "--"],
+      ["001001050188203", "无效音频", "26100914000019", "何", "--", "", "已创建", "blue", "LK6ADAE29SE826300", "2026-10-09 11:59:48", "2026-10-09 12:00:02", "Robovan-SGMW-001", "--"],
+      ["001001050102776", "匝道汇出减速", "26100915000003", "高", "--", "查看", "已创建", "blue", "LZGJD4Z17SX029500", "2026-10-09 11:59:16", "2026-10-09 11:59:40", "X5000", "--"]
+    ];
+    const mountIcons = (root = document) => {
+      root.querySelectorAll("[data-icon]:not([data-icon-ready])").forEach((node) => {
+        const markup = window.TTE_TICKET_ICONS?.[node.dataset.icon];
+        if (!markup) return;
+        node.setAttribute("viewBox", "0 0 24 24");
+        node.innerHTML = markup;
+        node.dataset.iconReady = "true";
+      });
+    };
+    const icon = (name) => `<svg class="tte-sidebar-icon" data-icon="${name}" viewBox="0 0 24 24" aria-hidden="true"></svg>`;
+    const ACTION_ICONS = {
+      详情: '<path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/>',
+      变更: '<circle cx="18" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><path d="M13 6h3a2 2 0 0 1 2 2v7"/><path d="M11 18H8a2 2 0 0 1-2-2V9"/>',
+      关注: '<path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>'
+    };
+    const lucide = (name) => `<svg class="tte-lucide" viewBox="0 0 24 24" aria-hidden="true">${ACTION_ICONS[name]}</svg>`;
+    const action = (label, extra = "") => `<button class="tte-button tte-button-icon tte-button-icon-only tte-button-sm ticket-action-icon" type="button" aria-label="${label}"${extra}>${lucide(label)}</button>`;
+    const followed = new Set();
+    const FOLLOW_BASE = 40;
+    const followCountEl = document.querySelector("[data-follow-count]");
+    const syncFollowCount = () => { followCountEl.textContent = String(FOLLOW_BASE + followed.size); };
+    const currentScope = () => document.querySelector(".ticket-scope[aria-pressed='true']")?.dataset.scope || "all";
+    const uniqueById = (rows) => {
+      const seen = new Set();
+      return rows.filter((row) => {
+        if (seen.has(row[0])) return false;
+        seen.add(row[0]);
+        return true;
+      });
+    };
+    const actionTip = document.createElement("div");
+    actionTip.className = "tte-popover-content dark ticket-action-tip";
+    actionTip.setAttribute("role", "tooltip");
+    actionTip.hidden = true;
+    document.body.append(actionTip);
+    const hideActionTip = () => { actionTip.hidden = true; };
+    const showActionTip = (button) => {
+      actionTip.textContent = button.getAttribute("aria-label") || "";
+      actionTip.hidden = false;
+      const box = button.getBoundingClientRect();
+      actionTip.style.left = `${box.left + box.width / 2}px`;
+      actionTip.style.top = `${box.top}px`;
+    };
+    const blank = (value) => !value || value === "--";
+    const dashCell = (value, className = "") => {
+      const empty = blank(value);
+      const cls = [className, empty ? "is-empty" : ""].filter(Boolean).join(" ");
+      return `<td${cls ? ` class="${cls}"` : ""}>${empty ? "--" : value}</td>`;
+    };
+    const SELECT_CHECK = [["path", { d: "M20 6 9 17l-5-5" }]];
+    const SELECT_CLEAR = [["path", { d: "M18 6 6 18" }], ["path", { d: "m6 6 12 12" }]];
+    const selectAllButton = document.querySelector("[data-ticket-select-all]");
+    const selectAllLabel = selectAllButton.querySelector("[data-ticket-select-label]");
+    let selectMorph = null;
+    let selectAllOn = false;
+    const syncSelectAll = (animate) => {
+      const boxes = [...document.querySelectorAll("[data-ticket-row]")];
+      const on = boxes.length > 0 && boxes.every((box) => box.checked);
+      const header = document.querySelector("[data-table-select-all]");
+      if (header) header.checked = on;
+      if (on === selectAllOn) return;
+      selectAllOn = on;
+      selectAllButton.setAttribute("aria-pressed", String(on));
+      selectAllLabel.textContent = on ? "取消全选" : "全选单据";
+      if (!selectMorph) return;
+      const icon = on ? SELECT_CLEAR : SELECT_CHECK;
+      if (animate) selectMorph.morphTo(icon, "snappy");
+      else selectMorph.set(icon);
+    };
+    const body = document.querySelector("[data-ticket-rows]");
+    const pager = document.querySelector("[data-pagination]");
+    const total = Number(pager.dataset.total);
+    let page = Number(pager.dataset.page) || 1;
+    let pageSize = Number(pager.dataset.pageSize) || 10;
+    const pageCount = () => Math.max(1, Math.ceil(total / pageSize));
+    const chevron = (name) => `<svg class="tte-lucide" viewBox="0 0 24 24" aria-hidden="true">${name === "left" ? '<path d="m15 18-6-6 6-6"></path>' : name === "right" ? '<path d="m9 18 6-6-6-6"></path>' : '<path d="m6 9 6 6 6-6"></path>'}</svg>`;
+    const textFilters = { id: "", asset: "", person: "", trip: "", vin: "", desc: "", follower: "" };
+    const choiceFilters = { time: [], status: [], model: [], priority: [] };
+    const SORT_INDEX = { created: 9, updated: 10 };
+    let sortKey = "";
+    let sortDir = "none";
+    const sortRows = (rows) => {
+      if (!sortKey || sortDir === "none") return rows;
+      const index = SORT_INDEX[sortKey];
+      return [...rows].sort((a, b) => {
+        const cmp = String(a[index]).localeCompare(String(b[index]), "en");
+        return sortDir === "ascending" ? cmp : -cmp;
+      });
+    };
+    const filtering = () => Object.values(textFilters).some(Boolean) || Object.values(choiceFilters).some((values) => values.length);
+    const matches = (row) => {
+      const [id, desc, trip, person, asset, , status, , vin, created, , model] = row;
+      const includes = (value, query) => String(value).toLowerCase().includes(query.trim().toLowerCase());
+      if (textFilters.id && !includes(id, textFilters.id)) return false;
+      if (textFilters.asset && !includes(asset, textFilters.asset)) return false;
+      if (textFilters.person && !includes(person, textFilters.person)) return false;
+      if (textFilters.trip && !includes(trip, textFilters.trip)) return false;
+      if (textFilters.vin && !includes(vin, textFilters.vin)) return false;
+      if (textFilters.desc && !includes(desc, textFilters.desc)) return false;
+      if (textFilters.follower) return false;
+      if (choiceFilters.status.length && !choiceFilters.status.includes(status)) return false;
+      if (choiceFilters.model.length && !choiceFilters.model.includes(model)) return false;
+      if (choiceFilters.priority.length && !choiceFilters.priority.includes("普通")) return false;
+      if (choiceFilters.time.length && !created.startsWith("2026-10-09")) return false;
+      return true;
+    };
+    const renderRows = () => {
+      const start = (page - 1) * pageSize;
+      const followedRows = uniqueById(records).filter((row) => followed.has(row[0]));
+      const scoped = currentScope() === "followed"
+        ? (filtering() ? followedRows.filter(matches) : followedRows)
+        : (filtering() ? records.filter(matches) : null);
+      const ordered = sortRows(scoped || records);
+      const slice = scoped
+        ? ordered.slice(start, start + pageSize)
+        : Array.from({ length: pageSize }, (_, index) => ordered[(start + index) % ordered.length]);
+      if (!slice.length) {
+        pager.hidden = true;
+        body.innerHTML = `<tr class="ticket-empty-row"><td colspan="15"><div class="tte-empty" data-ticket-empty>
+              <div class="tte-empty-header">
+                <img class="tte-empty-art" src="../assets/empty/empty-search.svg" alt="" width="80" height="80">
+                <h3 class="tte-empty-title">没有匹配结果</h3>
+                <p class="tte-empty-description">换个关键词，或清空筛选后再查。</p>
+              </div>
+              <div class="tte-empty-content">
+                <button class="tte-button tte-button-secondary tte-button-md" type="button" data-ticket-clear>清空条件</button>
+              </div>
+            </div></td></tr>`;
+        const all = document.querySelector("[data-table-select-all]");
+        all.checked = false;
+        all.onchange = null;
+        syncSelectAll(false);
+        return;
+      }
+      pager.hidden = false;
+      body.innerHTML = slice.map(([id, desc, trip, person, asset, feishu, status, tone, vin, created, updated, model, sensor]) => `
+        <tr>
+          <td class="is-check is-pin is-pin-left"><label class="tte-checkbox"><input type="checkbox" data-ticket-row aria-label="选择 ${id}"><span class="checkbox-box" aria-hidden="true"></span></label></td>
+          <td class="is-id is-pin is-pin-left"><a class="ticket-id" href="#${id}">${icon("单据")}${id}</a></td>
+          ${dashCell(desc, "is-desc is-ellipsis")}
+          ${dashCell(trip, "is-trip")}
+          <td class="is-user${blank(person) ? " is-empty" : ""}">${blank(person) ? "--" : `<span class="ticket-user"><span class="tte-avatar" aria-hidden="true">${person}</span></span>`}</td>
+          ${dashCell(asset, "is-asset")}
+          <td class="${blank(feishu) ? "is-empty" : ""}">${feishu ? `<button class="ticket-text-link" type="button">${feishu}</button>` : "--"}</td>
+          <td><span class="tte-tag ${tone}">${status}</span></td>
+          ${dashCell(vin, "is-vin")}
+          <td class="is-time">${created}</td>
+          <td class="is-time">${updated}</td>
+          ${dashCell(model)}
+          ${dashCell(sensor, "is-sensor")}
+          <td><span class="tte-tag gray">普通</span></td>
+          <td class="is-actions"><div class="tte-table-actions">${action("详情")} ${action("变更")} ${action("关注", ` data-ticket-follow="${id}" aria-pressed="${followed.has(id)}"`)}</div></td>
+        </tr>`).join("");
+      mountIcons(body);
+      const all = document.querySelector("[data-table-select-all]");
+      const boxes = () => [...document.querySelectorAll("[data-ticket-row]")];
+      all.onchange = () => {
+        boxes().forEach((box) => { box.checked = all.checked; });
+        syncSelectAll(true);
+      };
+      boxes().forEach((box) => { box.onchange = () => { syncSelectAll(true); }; });
+      syncSelectAll(false);
+    };
+    const pageItems = (current, count) => {
+      if (count <= 7) return Array.from({ length: count }, (_, index) => index + 1);
+      const items = [1];
+      const start = Math.max(2, current - 2);
+      const end = Math.min(count - 1, current + 2);
+      if (start > 2) items.push("…");
+      for (let n = start; n <= end; n += 1) items.push(n);
+      if (end < count - 1) items.push("…");
+      items.push(count);
+      return items;
+    };
+    const renderPager = () => {
+      const followedMode = currentScope() === "followed";
+      const visibleTotal = followedMode ? followed.size : total;
+      const count = followedMode ? Math.max(1, Math.ceil(Math.max(followed.size, 1) / pageSize)) : pageCount();
+      pager.replaceChildren();
+      const totalText = document.createElement("span");
+      totalText.className = "tte-page-total";
+      totalText.textContent = `共${visibleTotal}条`;
+      const previous = document.createElement("button");
+      previous.type = "button";
+      previous.className = "tte-page tte-page-icon";
+      previous.disabled = page === 1;
+      previous.setAttribute("aria-label", "上一页");
+      previous.innerHTML = chevron("left");
+      previous.addEventListener("click", () => { page -= 1; renderRows(); renderPager(); });
+      const next = document.createElement("button");
+      next.type = "button";
+      next.className = "tte-page tte-page-icon";
+      next.disabled = page === count;
+      next.setAttribute("aria-label", "下一页");
+      next.innerHTML = chevron("right");
+      next.addEventListener("click", () => { page += 1; renderRows(); renderPager(); });
+      pager.append(totalText, previous);
+      pageItems(page, count).forEach((item) => {
+        if (item === "…") {
+          const ellipsis = document.createElement("span");
+          ellipsis.className = "tte-page-ellipsis";
+          ellipsis.textContent = "…";
+          ellipsis.setAttribute("aria-hidden", "true");
+          pager.append(ellipsis);
+          return;
+        }
+        const button = document.createElement("button");
+        button.type = "button";
+        button.className = "tte-page";
+        button.textContent = String(item);
+        if (item === page) button.setAttribute("aria-current", "page");
+        button.addEventListener("click", () => { page = item; renderRows(); renderPager(); });
+        pager.append(button);
+      });
+      const size = document.createElement("div");
+      size.className = "tte-page-size";
+      const control = document.createElement("div");
+      control.className = "tte-select-control";
+      const trigger = document.createElement("button");
+      trigger.type = "button";
+      trigger.className = "tte-select-trigger";
+      trigger.setAttribute("aria-expanded", "false");
+      trigger.setAttribute("aria-haspopup", "listbox");
+      trigger.setAttribute("aria-label", "每页条数");
+      trigger.innerHTML = `<span class="tte-select-value">${pageSize} 条/页</span>${chevron("down")}`;
+      const menu = document.createElement("div");
+      menu.className = "dropdown-menu";
+      menu.hidden = true;
+      menu.setAttribute("role", "menu");
+      menu.setAttribute("aria-label", "每页条数");
+      [10, 15, 20, 50].forEach((countOption) => {
+        const option = document.createElement("button");
+        option.type = "button";
+        option.className = "dropdown-menu-item";
+        option.setAttribute("role", "menuitemradio");
+        const picked = countOption === pageSize;
+        option.setAttribute("aria-checked", String(picked));
+        option.innerHTML = `<span>${countOption} 条/页</span><span class="dropdown-menu-check${picked ? " is-visible" : ""}"><svg class="tte-lucide" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>`;
+        option.addEventListener("click", () => {
+          pageSize = countOption;
+          pager.dataset.pageSize = String(countOption);
+          page = 1;
+          menu.hidden = true;
+          trigger.setAttribute("aria-expanded", "false");
+          renderRows();
+          renderPager();
+        });
+        menu.append(option);
+      });
+      const placeMenu = () => {
+        menu.classList.remove("is-drop-up");
+        menu.hidden = false;
+        const room = window.innerHeight - trigger.getBoundingClientRect().bottom;
+        menu.classList.toggle("is-drop-up", room < menu.offsetHeight + 8);
+      };
+      trigger.addEventListener("click", (event) => {
+        event.stopPropagation();
+        const open = menu.hidden;
+        closeFilterMenus();
+        if (!open) {
+          menu.hidden = true;
+          menu.classList.remove("is-drop-up");
+          trigger.setAttribute("aria-expanded", "false");
+          return;
+        }
+        placeMenu();
+        trigger.setAttribute("aria-expanded", "true");
+      });
+      control.addEventListener("pointerdown", (event) => event.stopPropagation());
+      control.append(trigger, menu);
+      size.append(control);
+      pager.append(next, size);
+    };
+    const filterSummary = (values) => {
+      if (values.length > 3) return `${values[0]} 及其他${values.length - 1}个`;
+      return values.join("，");
+    };
+    const closeMoreMenu = () => {
+      const menu = document.querySelector("[data-more-menu]");
+      const trigger = document.querySelector("[data-more-filters-trigger]");
+      if (menu) menu.hidden = true;
+      trigger?.setAttribute("aria-expanded", "false");
+    };
+    const closeFilterMenus = () => {
+      document.querySelectorAll(".ticket-filter-menu").forEach((menu) => { menu.hidden = true; });
+      document.querySelectorAll(".ticket-filter.is-open").forEach((item) => {
+        item.classList.remove("is-open");
+        item.querySelector(".ticket-filter-trigger")?.setAttribute("aria-expanded", "false");
+      });
+      document.querySelectorAll("[data-head-menu]").forEach((menu) => { menu.hidden = true; });
+      document.querySelectorAll("[data-head-filter]").forEach((trigger) => trigger.setAttribute("aria-expanded", "false"));
+      closeMoreMenu();
+    };
+    const paintHeadFilter = (key) => {
+      const trigger = document.querySelector(`[data-head-filter="${key}"]`);
+      const menu = document.querySelector(`[data-head-menu="${key}"]`);
+      const values = choiceFilters[key] || [];
+      trigger?.classList.toggle("is-filled", values.length > 0);
+      menu?.querySelectorAll(".dropdown-menu-item").forEach((option) => {
+        const selected = values.includes(option.dataset.value);
+        option.setAttribute("aria-checked", String(selected));
+        option.querySelector(".dropdown-menu-check")?.classList.toggle("is-visible", selected);
+      });
+    };
+    const paintChoice = (field) => {
+      const key = field.dataset.filter;
+      const values = choiceFilters[key];
+      const value = field.querySelector(".is-value");
+      const divider = field.querySelector(".is-divider");
+      const clear = field.querySelector(".ticket-filter-clear");
+      const filled = values.length > 0;
+      field.classList.toggle("is-filled", filled);
+      value.hidden = !filled;
+      divider.hidden = !filled;
+      clear.hidden = !filled;
+      value.textContent = filterSummary(values);
+      paintHeadFilter(key);
+      field.querySelectorAll(".dropdown-menu-item").forEach((option) => {
+        const selected = values.includes(option.dataset.value);
+        option.setAttribute("aria-checked", String(selected));
+        option.querySelector(".dropdown-menu-check").classList.toggle("is-visible", selected);
+      });
+    };
+    const applyFilters = () => { page = 1; renderRows(); renderPager(); };
+    document.querySelectorAll(".ticket-filter:not(.is-select)").forEach((field) => {
+      const input = field.querySelector("input");
+      const clear = field.querySelector(".ticket-filter-clear");
+      const key = field.dataset.filter;
+      input.addEventListener("input", () => {
+        textFilters[key] = input.value;
+        const filled = Boolean(input.value);
+        field.classList.toggle("is-filled", filled);
+        clear.hidden = !filled;
+        applyFilters();
+      });
+      clear.addEventListener("click", () => {
+        input.value = "";
+        textFilters[key] = "";
+        field.classList.remove("is-filled");
+        clear.hidden = true;
+        applyFilters();
+        input.focus();
+      });
+    });
+    const choiceOptions = {
+      time: ["今天", "近7天", "近30天"],
+      status: ["已创建", "已上树", "待分拣", "上传中"],
+      model: [...new Set(records.map((row) => row[11]))],
+      priority: ["普通"]
+    };
+    document.querySelectorAll(".ticket-filter.is-select").forEach((field) => {
+      const key = field.dataset.filter;
+      const menu = field.querySelector(".ticket-filter-menu");
+      const trigger = field.querySelector(".ticket-filter-trigger");
+      const clear = field.querySelector(".ticket-filter-clear");
+      choiceOptions[key].forEach((name) => {
+        const option = document.createElement("button");
+        option.type = "button";
+        option.className = "dropdown-menu-item";
+        option.dataset.value = name;
+        option.setAttribute("role", "menuitemcheckbox");
+        option.setAttribute("aria-checked", "false");
+        option.innerHTML = `<span>${name}</span><span class="dropdown-menu-check"><svg class="tte-lucide" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>`;
+        option.addEventListener("click", () => {
+          const values = choiceFilters[key];
+          if (field.dataset.filterMode === "single") {
+            choiceFilters[key] = values[0] === name ? [] : [name];
+            closeFilterMenus();
+          } else {
+            choiceFilters[key] = values.includes(name) ? values.filter((item) => item !== name) : [...values, name];
+          }
+          paintChoice(field);
+          applyFilters();
+        });
+        menu.append(option);
+      });
+      trigger.addEventListener("click", (event) => {
+        event.stopPropagation();
+        const open = menu.hidden;
+        closeFilterMenus();
+        if (open) {
+          menu.hidden = false;
+          field.classList.add("is-open");
+          trigger.setAttribute("aria-expanded", "true");
+        }
+      });
+      clear.addEventListener("click", (event) => {
+        event.stopPropagation();
+        choiceFilters[key] = [];
+        paintChoice(field);
+        closeFilterMenus();
+        applyFilters();
+      });
+      field.addEventListener("pointerdown", (event) => event.stopPropagation());
+    });
+    const placeHeadMenu = (trigger, menu) => {
+      const box = trigger.getBoundingClientRect();
+      menu.style.left = `${Math.round(box.left)}px`;
+      menu.style.top = `${Math.round(box.bottom + 4)}px`;
+    };
+    document.querySelectorAll("[data-head-filter]").forEach((trigger) => {
+      const key = trigger.dataset.headFilter;
+      const menu = document.createElement("div");
+      menu.className = "dropdown-menu tte-table-head-menu";
+      menu.hidden = true;
+      menu.dataset.headMenu = key;
+      menu.setAttribute("role", "menu");
+      menu.setAttribute("aria-label", trigger.textContent.trim());
+      (choiceOptions[key] || []).forEach((name) => {
+        const option = document.createElement("button");
+        option.type = "button";
+        option.className = "dropdown-menu-item";
+        option.dataset.value = name;
+        option.setAttribute("role", "menuitemcheckbox");
+        option.setAttribute("aria-checked", "false");
+        option.innerHTML = `<span>${name}</span><span class="dropdown-menu-check"><svg class="tte-lucide" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>`;
+        option.addEventListener("click", () => {
+          const values = choiceFilters[key];
+          choiceFilters[key] = values.includes(name) ? values.filter((item) => item !== name) : [...values, name];
+          const field = document.querySelector(`.ticket-filter.is-select[data-filter="${key}"]`);
+          if (field) paintChoice(field);
+          else paintHeadFilter(key);
+          applyFilters();
+        });
+        menu.append(option);
+      });
+      document.body.append(menu);
+      trigger.addEventListener("pointerdown", (event) => event.stopPropagation());
+      menu.addEventListener("pointerdown", (event) => event.stopPropagation());
+      trigger.addEventListener("click", (event) => {
+        event.stopPropagation();
+        const open = menu.hidden;
+        closeFilterMenus();
+        if (!open) return;
+        placeHeadMenu(trigger, menu);
+        menu.hidden = false;
+        trigger.setAttribute("aria-expanded", "true");
+      });
+      paintHeadFilter(key);
+    });
+    document.querySelectorAll("[data-table-sort]").forEach((button) => {
+      button.addEventListener("click", () => {
+        const key = button.dataset.tableSort;
+        const current = button.getAttribute("aria-sort");
+        const next = current === "ascending" ? "descending" : current === "descending" ? "none" : "ascending";
+        document.querySelectorAll("[data-table-sort]").forEach((other) => {
+          other.setAttribute("aria-sort", other === button ? next : "none");
+        });
+        sortKey = next === "none" ? "" : key;
+        sortDir = next;
+        const label = button.textContent.trim();
+        button.setAttribute("aria-label", next === "none" ? `按${label}排序` : next === "ascending" ? `按${label}升序` : `按${label}降序`);
+        applyFilters();
+      });
+    });
+    const FILTER_LABELS = {
+      desc: "描述",
+      id: "Ticket ID",
+      trip: "行程 ID",
+      person: "提单人",
+      follower: "跟进人",
+      status: "状态",
+      model: "车型",
+      time: "提单时间",
+      asset: "资产 ID",
+      priority: "优先级",
+      vin: "VIN"
+    };
+    const moreActiveKeys = ["desc", "id", "trip", "person", "follower"];
+    const moreIdleKeys = ["status", "model", "time", "asset", "priority", "vin"];
+    const moreRoot = document.querySelector("[data-more-filters]");
+    const moreTrigger = moreRoot.querySelector("[data-more-filters-trigger]");
+    const moreMenu = moreRoot.querySelector("[data-more-menu]");
+    const moreActive = moreRoot.querySelector("[data-more-active]");
+    const moreIdle = moreRoot.querySelector("[data-more-idle]");
+    const moreGrip = '<svg class="tte-lucide" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="5" r="1"/><circle cx="9" cy="12" r="1"/><circle cx="9" cy="19" r="1"/><circle cx="15" cy="5" r="1"/><circle cx="15" cy="12" r="1"/><circle cx="15" cy="19" r="1"/></svg>';
+    const filterField = (key) => document.querySelector(`.ticket-filter[data-filter="${key}"]`);
+    const clearHiddenFilter = (key) => {
+      if (key in textFilters) {
+        textFilters[key] = "";
+        const field = filterField(key);
+        if (field && !field.classList.contains("is-select")) {
+          field.querySelector("input").value = "";
+          field.classList.remove("is-filled");
+          field.querySelector(".ticket-filter-clear").hidden = true;
+        }
+      }
+      if (key in choiceFilters) {
+        choiceFilters[key] = [];
+        const field = filterField(key);
+        if (field) paintChoice(field);
+      }
+    };
+    const applyMoreFilters = () => {
+      moreActiveKeys.forEach((key) => {
+        const field = filterField(key);
+        if (!field) return;
+        field.hidden = false;
+        moreRoot.before(field);
+      });
+      moreIdleKeys.forEach((key) => {
+        const field = filterField(key);
+        if (field) field.hidden = true;
+      });
+    };
+    const paintMoreMenu = () => {
+      moreActive.replaceChildren();
+      moreIdle.replaceChildren();
+      moreActiveKeys.forEach((key) => moreActive.append(moreItem(key, true)));
+      moreIdleKeys.forEach((key) => moreIdle.append(moreItem(key, false)));
+    };
+    const toggleMoreFilter = (key, on) => {
+      if (on) {
+        const idleAt = moreIdleKeys.indexOf(key);
+        if (idleAt >= 0) moreIdleKeys.splice(idleAt, 1);
+        if (!moreActiveKeys.includes(key)) moreActiveKeys.push(key);
+      } else {
+        const activeAt = moreActiveKeys.indexOf(key);
+        if (activeAt >= 0) moreActiveKeys.splice(activeAt, 1);
+        if (!moreIdleKeys.includes(key)) moreIdleKeys.push(key);
+        clearHiddenFilter(key);
+      }
+      paintMoreMenu();
+      applyMoreFilters();
+      applyFilters();
+    };
+    const bindMoreDrag = (row, grip) => {
+      grip.addEventListener("pointerdown", (event) => {
+        if (event.button !== 0) return;
+        event.preventDefault();
+        event.stopPropagation();
+        const list = moreActive;
+        row.classList.add("is-dragging");
+        const move = (moveEvent) => {
+          const siblings = [...list.children].filter((item) => item !== row);
+          const y = moveEvent.clientY;
+          const before = siblings.find((item) => {
+            const box = item.getBoundingClientRect();
+            return y < box.top + box.height / 2;
+          });
+          if (before) list.insertBefore(row, before);
+          else list.append(row);
+        };
+        const stop = () => {
+          row.classList.remove("is-dragging");
+          document.removeEventListener("pointermove", move);
+          document.removeEventListener("pointerup", stop);
+          moreActiveKeys.splice(0, moreActiveKeys.length, ...[...list.children].map((item) => item.dataset.key));
+          applyMoreFilters();
+        };
+        document.addEventListener("pointermove", move);
+        document.addEventListener("pointerup", stop);
+      });
+    };
+    const moreItem = (key, checked) => {
+      const row = document.createElement("div");
+      row.className = "ticket-more-item";
+      row.dataset.key = key;
+      row.innerHTML = `<label class="tte-checkbox"><input type="checkbox"${checked ? " checked" : ""} aria-label="${FILTER_LABELS[key]}"><span class="checkbox-box" aria-hidden="true"></span><span>${FILTER_LABELS[key]}</span></label>`;
+      if (checked) {
+        const grip = document.createElement("button");
+        grip.type = "button";
+        grip.className = "ticket-more-grip";
+        grip.setAttribute("aria-label", `拖拽排序 ${FILTER_LABELS[key]}`);
+        grip.innerHTML = moreGrip;
+        row.append(grip);
+        bindMoreDrag(row, grip);
+      }
+      row.querySelector("input").addEventListener("change", (event) => {
+        toggleMoreFilter(key, event.target.checked);
+      });
+      return row;
+    };
+    moreRoot.addEventListener("pointerdown", (event) => event.stopPropagation());
+    moreTrigger.addEventListener("click", () => {
+      const open = moreMenu.hidden;
+      closeFilterMenus();
+      moreMenu.hidden = !open;
+      moreTrigger.setAttribute("aria-expanded", String(open));
+    });
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") closeFilterMenus();
+    });
+    paintMoreMenu();
+    applyMoreFilters();
+    document.addEventListener("click", (event) => {
+      const follow = event.target.closest("[data-ticket-follow]");
+      if (follow) {
+        const id = follow.dataset.ticketFollow;
+        const on = follow.getAttribute("aria-pressed") !== "true";
+        follow.setAttribute("aria-pressed", String(on));
+        if (on) followed.add(id);
+        else followed.delete(id);
+        syncFollowCount();
+        if (currentScope() === "followed") {
+          page = 1;
+          renderRows();
+          renderPager();
+        }
+        return;
+      }
+      if (!event.target.closest("[data-ticket-clear]")) return;
+      Object.keys(textFilters).forEach((key) => { textFilters[key] = ""; });
+      Object.keys(choiceFilters).forEach((key) => { choiceFilters[key] = []; });
+      document.querySelectorAll(".ticket-filter:not(.is-select)").forEach((field) => {
+        field.querySelector("input").value = "";
+        field.classList.remove("is-filled");
+        field.querySelector(".ticket-filter-clear").hidden = true;
+      });
+      document.querySelectorAll(".ticket-filter.is-select").forEach(paintChoice);
+      closeFilterMenus();
+      applyFilters();
+    });
+    mountIcons();
+    selectMorph = globalThis.TTEMorphicons.createMorph(selectAllButton.querySelector("path"), selectAllOn ? SELECT_CLEAR : SELECT_CHECK);
+    document.addEventListener("pointerdown", () => {
+      closeFilterMenus();
+      document.querySelectorAll(".ticket-pager .dropdown-menu").forEach((menu) => {
+        menu.hidden = true;
+        menu.classList.remove("is-drop-up");
+      });
+      document.querySelectorAll(".ticket-pager .tte-select-trigger").forEach((trigger) => trigger.setAttribute("aria-expanded", "false"));
+    });
+    renderRows();
+    renderPager();
+    selectAllButton.addEventListener("click", () => {
+      const boxes = [...document.querySelectorAll("[data-ticket-row]")];
+      const next = boxes.length > 0 && !boxes.every((box) => box.checked);
+      boxes.forEach((box) => { box.checked = next; });
+      syncSelectAll(true);
+    });
+    document.querySelectorAll(".ticket-scope").forEach((button) => {
+      button.addEventListener("click", () => {
+        document.querySelectorAll(".ticket-scope").forEach((item) => item.setAttribute("aria-pressed", String(item === button)));
+        page = 1;
+        renderRows();
+        renderPager();
+      });
+    });
+    document.addEventListener("pointerover", (event) => {
+      const button = event.target.closest(".ticket-action-icon");
+      if (button) showActionTip(button);
+    });
+    document.addEventListener("pointerout", (event) => {
+      const button = event.target.closest(".ticket-action-icon");
+      if (button && !button.contains(event.relatedTarget)) hideActionTip();
+    });
+    const scroll = document.querySelector("[data-table]");
+    const followHeadMenus = () => {
+      document.querySelectorAll("[data-head-menu]").forEach((menu) => {
+        if (menu.hidden) return;
+        const trigger = document.querySelector(`[data-head-filter="${menu.dataset.headMenu}"]`);
+        if (trigger) placeHeadMenu(trigger, menu);
+      });
+    };
+    scroll.addEventListener("scroll", followHeadMenus, { passive: true });
+    window.addEventListener("scroll", followHeadMenus, true);
+    const ping = () => {
+      scroll.classList.toggle("is-ping-left", scroll.scrollLeft > 1);
+      scroll.classList.toggle("is-ping-right", scroll.scrollWidth - scroll.clientWidth - scroll.scrollLeft > 1);
+      scroll.style.setProperty("--ticket-empty-width", `${scroll.clientWidth}px`);
+    };
+    const hbar = document.querySelector(".ticket-scroll-x");
+    const hthumb = hbar.querySelector("i");
+    const placeHorizontal = () => {
+      const overflow = scroll.scrollWidth - scroll.clientWidth;
+      if (overflow <= 1) {
+        hbar.hidden = true;
+        return;
+      }
+      hbar.hidden = false;
+      const track = hbar.clientWidth || Math.max(0, scroll.clientWidth - 8);
+      const size = Math.max(24, Math.min(track, Math.round(track * scroll.clientWidth / scroll.scrollWidth)));
+      const offset = (scroll.scrollLeft / overflow) * (track - size);
+      hthumb.style.width = `${size}px`;
+      hthumb.style.left = `${offset}px`;
+      hbar.hidden = false;
+    };
+    window.TTEScrollThumb.enable(hthumb, {
+      axis: "x",
+      metrics() {
+        const overflow = scroll.scrollWidth - scroll.clientWidth;
+        const track = hbar.clientWidth || Math.max(0, scroll.clientWidth - 8);
+        const size = Math.max(24, Math.min(track, Math.round(track * scroll.clientWidth / Math.max(scroll.scrollWidth, 1))));
+        return { overflow, travel: Math.max(1, track - size), scroll: scroll.scrollLeft };
+      },
+      setScroll(value) { scroll.scrollLeft = value; },
+      place: placeHorizontal
+    });
+    scroll.addEventListener("scroll", () => { hideActionTip(); ping(); placeHorizontal(); }, { passive: true });
+    window.addEventListener("resize", () => { hideActionTip(); ping(); placeHorizontal(); });
+    ping();
+    placeHorizontal();
+    const pageScroll = document.querySelector(".app-column > .tte-sidebar-inset");
+    const thumb = document.createElement("div");
+    thumb.className = "ticket-scroll-thumb";
+    thumb.setAttribute("aria-hidden", "true");
+    document.body.append(thumb);
+    let hideTimer = 0;
+    const placePageThumb = () => {
+      const rect = pageScroll.getBoundingClientRect();
+      const style = getComputedStyle(pageScroll);
+      const borderTop = parseFloat(style.borderTopWidth) || 0;
+      const borderRight = parseFloat(style.borderRightWidth) || 0;
+      const borderBottom = parseFloat(style.borderBottomWidth) || 0;
+      const inset = 4;
+      const overflow = pageScroll.scrollHeight - pageScroll.clientHeight;
+      if (overflow <= 1 || rect.height < 12) {
+        thumb.classList.remove("is-on");
+        return false;
+      }
+      const track = Math.max(0, rect.height - borderTop - borderBottom - inset * 2);
+      const size = Math.max(24, Math.min(track, Math.round(track * pageScroll.clientHeight / pageScroll.scrollHeight)));
+      const offset = inset + (pageScroll.scrollTop / overflow) * (track - size);
+      thumb.style.height = `${size}px`;
+      thumb.style.left = `${rect.right - borderRight - inset - 4}px`;
+      thumb.style.top = `${rect.top + borderTop + offset}px`;
+      return true;
+    };
+    let pageGrip;
+    pageGrip = window.TTEScrollThumb.enable(thumb, {
+      axis: "y",
+      metrics() {
+        const style = getComputedStyle(pageScroll);
+        const borderTop = parseFloat(style.borderTopWidth) || 0;
+        const borderBottom = parseFloat(style.borderBottomWidth) || 0;
+        const inset = 4;
+        const overflow = pageScroll.scrollHeight - pageScroll.clientHeight;
+        const track = Math.max(0, pageScroll.getBoundingClientRect().height - borderTop - borderBottom - inset * 2);
+        const size = Math.max(24, Math.min(track, Math.round(track * pageScroll.clientHeight / Math.max(pageScroll.scrollHeight, 1))));
+        return { overflow, travel: Math.max(1, track - size), scroll: pageScroll.scrollTop };
+      },
+      setScroll(value) { pageScroll.scrollTop = value; },
+      place: placePageThumb,
+      hold(active) {
+        if (active) {
+          clearTimeout(hideTimer);
+          thumb.classList.add("is-on");
+        } else {
+          clearTimeout(hideTimer);
+          hideTimer = setTimeout(() => { if (!pageGrip.busy()) thumb.classList.remove("is-on"); }, 1000);
+        }
+      }
+    });
+    const showPageThumb = () => {
+      if (!placePageThumb()) return;
+      thumb.classList.add("is-on");
+      if (pageGrip.busy()) return;
+      clearTimeout(hideTimer);
+      hideTimer = setTimeout(() => { if (!pageGrip.busy()) thumb.classList.remove("is-on"); }, 1000);
+    };
+    pageScroll.addEventListener("scroll", () => { hideActionTip(); showPageThumb(); }, { passive: true });
+    pageScroll.addEventListener("pointerleave", (event) => {
+      if (pageGrip.busy() || event.relatedTarget === thumb) return;
+      clearTimeout(hideTimer);
+      thumb.classList.remove("is-on");
+    });
+    window.addEventListener("resize", () => { if (thumb.classList.contains("is-on")) placePageThumb(); });
+  </script>
+  <script src="sidebar-icons.js"></script>
+  <script src="shell.js"></script>
+</body>
+</html>

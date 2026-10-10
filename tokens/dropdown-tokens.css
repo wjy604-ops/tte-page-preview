@@ -1,0 +1,48 @@
+:root {
+  /* Dropdown geometry and states mapped from the TTE Dropdown component set. */
+  --component-dropdown-menu-min-width: 160px;
+  --component-dropdown-menu-max-height: 480px;
+  --component-dropdown-menu-padding: 4px;
+  --component-dropdown-menu-radius: 8px;
+  --component-dropdown-menu-border: var(--color-border-normal);
+  --component-dropdown-menu-bg: var(--color-fill-white);
+  --component-dropdown-menu-shadow: 0 8px 24px rgba(15, 15, 15, 0.12), 0 2px 6px rgba(15, 15, 15, 0.06);
+  --component-dropdown-item-height: 32px;
+  --component-dropdown-item-padding-inline: 12px;
+  --component-dropdown-item-gap: 8px;
+  --component-dropdown-item-radius: 4px;
+  --component-dropdown-item-font-family: var(--font-family-ui-regular);
+  --component-dropdown-item-font-size: 14px;
+  --component-dropdown-item-line-height: 22px;
+  --component-dropdown-item-text: var(--color-content-primary);
+  --component-dropdown-item-icon: var(--color-content-secondary);
+  --component-dropdown-item-hover-bg: var(--color-fill-normal);
+  --component-dropdown-item-hover-text: var(--color-content-primary);
+  --component-dropdown-item-selected-bg: var(--color-interaction-selected-bg);
+  --component-dropdown-item-selected-text: var(--color-interaction-selected-text);
+  --component-dropdown-item-selected-icon: var(--color-content-primary);
+  --component-dropdown-item-disabled-bg: var(--color-fill-white);
+  --component-dropdown-item-disabled-text: var(--color-content-disabled);
+  --component-dropdown-item-disabled-icon: var(--color-content-disabled);
+  --component-dropdown-separator: var(--color-border-normal);
+  --component-dropdown-label-text: var(--color-content-assist);
+  --component-dropdown-submenu-indicator: var(--color-content-assist);
+}
+
+.dropdown-menu { position: absolute; z-index: 3; top: calc(100% + 4px); right: 0; left: auto; width: max-content; min-width: 100%; padding: var(--component-dropdown-menu-padding); border: 1px solid var(--component-dropdown-menu-border); border-radius: var(--component-dropdown-menu-radius); background: var(--component-dropdown-menu-bg); box-shadow: var(--component-dropdown-menu-shadow); }
+.dropdown-menu[hidden] { display: none; }
+.dropdown-menu-item[hidden], .dropdown-menu-separator[hidden] { display: none; }
+.dropdown-menu.align-right { right: 0; left: auto; }
+.dropdown-menu-item { display: flex; width: 100%; height: var(--component-dropdown-item-height); align-items: center; gap: var(--component-dropdown-item-gap); padding: 0 var(--component-dropdown-item-padding-inline); border: 0; border-radius: var(--component-dropdown-item-radius); color: var(--component-dropdown-item-text); background: transparent; font: var(--component-dropdown-item-font-size)/var(--component-dropdown-item-line-height) var(--component-dropdown-item-font-family); text-align: left; white-space: nowrap; }
+.dropdown-menu-item:hover, .dropdown-menu-item:focus-visible { color: var(--component-dropdown-item-hover-text); background: var(--component-dropdown-item-hover-bg); outline: 0; }
+.dropdown-menu-item.is-selected, .dropdown-menu-item[aria-checked="true"] { color: var(--component-dropdown-item-text); background: transparent; }
+.dropdown-menu-item:disabled, .dropdown-menu-item.is-disabled { color: var(--component-dropdown-item-disabled-text); background: var(--component-dropdown-item-disabled-bg); cursor: not-allowed; }
+.dropdown-menu-item > .tte-lucide { width: 16px; height: 16px; flex: 0 0 auto; color: var(--component-dropdown-item-icon); }
+.dropdown-menu-item:disabled > .tte-lucide,
+.dropdown-menu-item.is-disabled > .tte-lucide { color: inherit; }
+.dropdown-menu-item.is-selected > .tte-lucide, .dropdown-menu-item[aria-checked="true"] > .tte-lucide { color: var(--component-dropdown-item-selected-icon); }
+.dropdown-menu-check { display: grid; width: 16px; height: 16px; flex: 0 0 auto; place-items: center; margin-left: auto; color: var(--component-dropdown-item-selected-icon); }
+.dropdown-menu-check .tte-lucide { width: 16px; height: 16px; }
+.dropdown-menu-check:not(.is-visible) { visibility: hidden; }
+.dropdown-menu-separator { height: 1px; margin: 4px 0; background: var(--component-dropdown-separator); }
+.dropdown-menu-label { height: 28px; padding: 0 var(--component-dropdown-item-padding-inline); color: var(--component-dropdown-label-text); font-size: 12px; line-height: 28px; }

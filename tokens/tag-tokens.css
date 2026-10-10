@@ -1,0 +1,57 @@
+:root {
+  --component-tag-height: 24px;
+  --component-tag-padding-inline: var(--spacing-8);
+  --component-tag-gap: var(--spacing-4);
+  --component-tag-font-size: var(--font-size-7);
+  --component-tag-font-family: var(--font-family-ui-regular);
+  --component-tag-line-height: var(--font-line-height-5);
+  --component-tag-radius-pill: var(--radius-pill);
+  --component-tag-radius-square: var(--radius-md);
+  --component-tag-close-size: 16px;
+  --component-tag-close-icon-size: 12px;
+  --component-tag-close-hover-bg: rgba(15, 15, 15, 0.08);
+
+  --component-tag-blue-text: var(--color-brand-active);
+  --component-tag-blue-border: #cfe0ff;
+  --component-tag-blue-bg: var(--color-brand-soft);
+  --component-tag-green-text: #087b55;
+  --component-tag-green-border: #bfe8d4;
+  --component-tag-green-bg: #effaf3;
+  --component-tag-red-text: var(--color-status-error);
+  --component-tag-red-border: var(--color-status-error-border);
+  --component-tag-red-bg: var(--color-status-error-bg);
+  --component-tag-orange-text: #bd6405;
+  --component-tag-orange-border: var(--color-status-warning-border);
+  --component-tag-orange-bg: var(--color-status-warning-bg);
+  --component-tag-purple-text: #6848d8;
+  --component-tag-purple-border: #d4c9ff;
+  --component-tag-purple-bg: #f1eeff;
+  --component-tag-gray-text: var(--color-content-secondary);
+  --component-tag-gray-border: var(--color-border-default);
+  --component-tag-gray-bg: var(--color-fill-default);
+  --component-tag-trend-up-strong-text: #064c32;
+  --component-tag-trend-up-strong-bg: #cdf8e4;
+  --component-tag-trend-up-strong-border: #8be3bf;
+  --component-tag-trend-up-text: #489f56;
+  --component-tag-trend-up-bg: #f2fdf5;
+  --component-tag-trend-up-border: #beead6;
+  --component-tag-trend-flat-text: #838383;
+  --component-tag-trend-flat-bg: #f1f1f1;
+  --component-tag-trend-flat-border: #c5c5c5;
+  --component-tag-trend-down-text: #f72d2a;
+  --component-tag-trend-down-bg: #ffeeee;
+  --component-tag-trend-down-border: #ffc1bc;
+  --component-tag-trend-down-strong-text: #bb0704;
+  --component-tag-trend-down-strong-bg: #ffd2d2;
+  --component-tag-trend-down-strong-border: #ff8a81;
+  --component-tag-trend-percent-up-text: #30923f;
+  --component-tag-trend-percent-flat-text: #7b7b7b;
+  --component-tag-trend-text-flat: #737373;
+
+  --component-tag-selectable-text: var(--color-content-secondary);
+  --component-tag-selectable-border: var(--color-border-default);
+  --component-tag-selectable-bg: var(--color-fill-white);
+  --component-tag-selectable-hover-text: var(--color-content-primary);
+  --component-tag-selectable-hover-border: var(--color-action-primary);
+  --component-tag-focus-ring: var(--color-interaction-focus-ring);
+}

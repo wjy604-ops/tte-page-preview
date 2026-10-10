@@ -1,0 +1,22 @@
+:root {
+  --scrollbar-size: 4px;
+  --scrollbar-size-hover: 8px;
+  --scrollbar-inset: 4px;
+  --scrollbar-thumb: #e2e2e2;
+  --scrollbar-thumb-radius: 86px;
+  --scrollbar-min-length: 24px;
+  --scrollbar-hide-delay: 1000ms;
+}
+
+.tte-scroll-grip {
+  border-radius: var(--scrollbar-thumb-radius);
+  background: var(--scrollbar-thumb);
+  cursor: grab;
+  touch-action: none;
+}
+.tte-scroll-grip.is-on { pointer-events: auto; }
+.tte-scroll-grip.is-drag { cursor: grabbing; }
+.tte-scroll-grip[data-axis="y"].is-hot,
+.tte-scroll-grip[data-axis="y"].is-drag { width: var(--scrollbar-size-hover); }
+.tte-scroll-grip[data-axis="x"].is-hot,
+.tte-scroll-grip[data-axis="x"].is-drag { height: var(--scrollbar-size-hover); }

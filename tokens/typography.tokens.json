@@ -1,0 +1,409 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "name": "TTE B端字体 Tokens",
+  "version": "0.1.0",
+  "source": {
+    "tool": "MasterGo",
+    "documentName": "TTE desgin 1.0",
+    "evidence": "字体规范图 + 模型排行榜页面设计稿",
+    "inputQuality": "L2",
+    "status": "UI 字体仍待补充文件；DIN Regular、Medium、Bold 已入库"
+  },
+  "fontAssets": {
+    "ui": {
+      "familyName": "TTE UI",
+      "platformFamilies": {
+        "macOS": [
+          "Helvetica Neue",
+          "PingFang SC"
+        ],
+        "Windows": [
+          "Inter",
+          "Microsoft YaHei"
+        ]
+      },
+      "requiredFiles": [
+        "assets/fonts/Inter/Inter-Regular.woff2",
+        "assets/fonts/Inter/Inter-Medium.woff2",
+        "assets/fonts/Inter/Inter-Bold.woff2",
+        "assets/fonts/HelveticaNeue/HelveticaNeue-Regular.woff2",
+        "assets/fonts/HelveticaNeue/HelveticaNeue-Medium.woff2",
+        "assets/fonts/HelveticaNeue/HelveticaNeue-Bold.woff2",
+        "assets/fonts/PingFangSC/PingFangSC-Regular.woff2",
+        "assets/fonts/PingFangSC/PingFangSC-Medium.woff2",
+        "assets/fonts/PingFangSC/PingFangSC-Semibold.woff2",
+        "assets/fonts/MicrosoftYaHei/MicrosoftYaHei-Regular.woff2",
+        "assets/fonts/MicrosoftYaHei/MicrosoftYaHei-Bold.woff2"
+      ],
+      "status": "manifest-only",
+      "verificationStatus": "needs-font-files-and-license",
+      "faces": {
+        "regular": [
+          "Helvetica Neue",
+          "Inter Regular",
+          "PingFang SC",
+          "Microsoft YaHei"
+        ],
+        "medium": [
+          "Helvetica Neue Medium",
+          "Inter Medium",
+          "PingFang SC Medium",
+          "Microsoft YaHei"
+        ],
+        "bold": [
+          "Helvetica Neue Bold",
+          "Inter Bold",
+          "PingFang SC Semibold",
+          "Microsoft YaHei Bold"
+        ]
+      }
+    },
+    "numeric": {
+      "familyName": "TTE DIN",
+      "sourceFamily": "DIN",
+      "foundry": "FontFont DIN, Albert-Jan Pool, 1995",
+      "files": {
+        "regular": "assets/fonts/DIN-Regular-2.otf",
+        "medium": "assets/fonts/DIN-Medium-2.otf",
+        "bold": "assets/fonts/din-bold-2.ttf"
+      },
+      "alternateNotInScale": "assets/fonts/DIN-RegularAlternate-2.otf",
+      "status": "files-supplied",
+      "verificationStatus": "faces-registered",
+      "note": "档位以字体文件为准，不读取文件内部 OS/2 字重。DIN-RegularAlternate 是备用字形，不进入三档。"
+    }
+  },
+  "primitives": {
+    "font": {
+      "family": {
+        "ui": {
+          "$type": "fontFamily",
+          "$value": [
+            "Helvetica Neue",
+            "Inter",
+            "PingFang SC",
+            "Microsoft YaHei",
+            "sans-serif"
+          ],
+          "description": "普通中文、英文和混合文本字体栈"
+        },
+        "numeric": {
+          "$type": "fontFamily",
+          "$value": [
+            "TTE DIN Medium",
+            "DIN-Medium",
+            "Helvetica Neue",
+            "Inter",
+            "sans-serif"
+          ],
+          "description": "默认重点数字，使用 DIN Medium 文件"
+        }
+      },
+      "size": {
+        "1": {
+          "$type": "dimension",
+          "$value": "32px",
+          "description": "大标题或重点数据的可选尺寸"
+        },
+        "2": {
+          "$type": "dimension",
+          "$value": "24px",
+          "description": "页面标题、重要区块标题"
+        },
+        "3": {
+          "$type": "dimension",
+          "$value": "20px",
+          "description": "卡片标题、模块标题"
+        },
+        "4": {
+          "$type": "dimension",
+          "$value": "16px",
+          "description": "强调正文、重要字段信息"
+        },
+        "5": {
+          "$type": "dimension",
+          "$value": "14px",
+          "description": "默认正文、按钮文字、导航文字"
+        },
+        "6": {
+          "$type": "dimension",
+          "$value": "13px",
+          "description": "密集信息、负责人信息、辅助内容"
+        },
+        "7": {
+          "$type": "dimension",
+          "$value": "12px",
+          "description": "标签、徽标、次要说明"
+        }
+      },
+      "line-height": {
+        "1": {
+          "$type": "dimension",
+          "$value": "44px"
+        },
+        "2": {
+          "$type": "dimension",
+          "$value": "32px"
+        },
+        "3": {
+          "$type": "dimension",
+          "$value": "28px"
+        },
+        "4": {
+          "$type": "dimension",
+          "$value": "24px"
+        },
+        "5": {
+          "$type": "dimension",
+          "$value": "22px"
+        },
+        "6": {
+          "$type": "dimension",
+          "$value": "22px"
+        },
+        "7": {
+          "$type": "dimension",
+          "$value": "20px"
+        }
+      },
+      "numeric": {
+        "tabular": {
+          "$type": "string",
+          "$value": "tabular-nums",
+          "description": "数字等宽显示，保证金额、指标和列表数据对齐"
+        },
+        "feature-settings": {
+          "$type": "string",
+          "$value": "\"tnum\" 1",
+          "description": "兼容性补充写法，不要求业务组件重复声明"
+        }
+      },
+      "face": {
+        "regular": {
+          "$type": "fontFamily",
+          "$value": [
+            "TTE UI Regular",
+            "Helvetica Neue",
+            "Inter",
+            "PingFang SC",
+            "Microsoft YaHei",
+            "sans-serif"
+          ],
+          "description": "Regular 字体文件。正文、辅助信息和普通数字使用这一档。"
+        },
+        "medium": {
+          "$type": "fontFamily",
+          "$value": [
+            "TTE UI Medium",
+            "Helvetica Neue Medium",
+            "Inter Medium",
+            "PingFang SC Medium",
+            "Microsoft YaHei",
+            "sans-serif"
+          ],
+          "description": "Medium 字体文件。按钮、导航选中、字段标题和卡片标题使用这一档。"
+        },
+        "bold": {
+          "$type": "fontFamily",
+          "$value": [
+            "TTE UI Bold",
+            "Helvetica Neue Bold",
+            "Inter Bold",
+            "PingFang SC Semibold",
+            "Microsoft YaHei Bold",
+            "sans-serif"
+          ],
+          "description": "Bold 字体文件。页面标题和需要明确强调的内容使用这一档。苹方没有 Bold 文件，使用它自带的 Semibold。"
+        }
+      },
+      "numericFace": {
+        "regular": {
+          "$type": "fontFamily",
+          "$value": [
+            "TTE DIN Regular",
+            "DIN-Regular",
+            "Helvetica Neue",
+            "Inter",
+            "sans-serif"
+          ],
+          "description": "DIN Regular 文件。次要指标、表格编号和需要 DIN 的日期数字。"
+        },
+        "medium": {
+          "$type": "fontFamily",
+          "$value": [
+            "TTE DIN Medium",
+            "DIN-Medium",
+            "Helvetica Neue",
+            "Inter",
+            "sans-serif"
+          ],
+          "description": "DIN Medium 文件。默认重点数字：金额、指标和排行。"
+        },
+        "bold": {
+          "$type": "fontFamily",
+          "$value": [
+            "TTE DIN Bold",
+            "DIN-Bold",
+            "Helvetica Neue",
+            "Inter",
+            "sans-serif"
+          ],
+          "description": "DIN Bold 文件。核心大数字，与标题同级的强调数字。"
+        }
+      }
+    }
+  },
+  "semanticTokens": {
+    "typography": {
+      "page": {
+        "title": {
+          "$type": "typography",
+          "$value": {
+            "fontFamily": "{primitives.font.face.bold}",
+            "fontSize": "{primitives.font.size.2}",
+            "lineHeight": "{primitives.font.line-height.2}"
+          },
+          "description": "页面主标题，例如模型排行榜"
+        },
+        "description": {
+          "$type": "typography",
+          "$value": {
+            "fontFamily": "{primitives.font.face.regular}",
+            "fontSize": "{primitives.font.size.5}",
+            "lineHeight": "{primitives.font.line-height.5}"
+          }
+        }
+      },
+      "navigation": {
+        "item": {
+          "$type": "typography",
+          "$value": {
+            "fontFamily": "{primitives.font.face.regular}",
+            "fontSize": "{primitives.font.size.5}",
+            "lineHeight": "{primitives.font.line-height.5}"
+          }
+        },
+        "item-selected": {
+          "$type": "typography",
+          "$value": {
+            "fontFamily": "{primitives.font.face.medium}",
+            "fontSize": "{primitives.font.size.5}",
+            "lineHeight": "{primitives.font.line-height.5}"
+          }
+        }
+      },
+      "button": {
+        "label": {
+          "$type": "typography",
+          "$value": {
+            "fontFamily": "{primitives.font.face.medium}",
+            "fontSize": "{primitives.font.size.5}",
+            "lineHeight": "{primitives.font.line-height.5}"
+          }
+        }
+      },
+      "card": {
+        "title": {
+          "$type": "typography",
+          "$value": {
+            "fontFamily": "{primitives.font.face.medium}",
+            "fontSize": "{primitives.font.size.3}",
+            "lineHeight": "{primitives.font.line-height.3}"
+          }
+        }
+      },
+      "content": {
+        "meta": {
+          "$type": "typography",
+          "$value": {
+            "fontFamily": "{primitives.font.face.regular}",
+            "fontSize": "{primitives.font.size.6}",
+            "lineHeight": "{primitives.font.line-height.6}"
+          }
+        },
+        "tag": {
+          "$type": "typography",
+          "$value": {
+            "fontFamily": "{primitives.font.face.regular}",
+            "fontSize": "{primitives.font.size.7}",
+            "lineHeight": "{primitives.font.line-height.7}"
+          }
+        }
+      },
+      "metric": {
+        "label": {
+          "$type": "typography",
+          "$value": {
+            "fontFamily": "{primitives.font.face.regular}",
+            "fontSize": "{primitives.font.size.7}",
+            "lineHeight": "{primitives.font.line-height.7}"
+          }
+        },
+        "value": {
+          "$type": "typography",
+          "$value": {
+            "fontFamily": "{primitives.font.face.regular}",
+            "fontSize": "{primitives.font.size.5}",
+            "lineHeight": "{primitives.font.line-height.5}"
+          },
+          "description": "普通评分、数量和列表数据"
+        },
+        "numeric-large": {
+          "$type": "typography",
+          "$value": {
+            "fontFamily": "{primitives.font.numericFace.medium}",
+            "fontSize": "{primitives.font.size.1}",
+            "lineHeight": "{primitives.font.line-height.1}",
+            "fontVariantNumeric": "{primitives.font.numeric.tabular}"
+          },
+          "description": "大数据看板或核心指标的默认预设；可按场景切换尺寸"
+        },
+        "numeric-medium": {
+          "$type": "typography",
+          "$value": {
+            "fontFamily": "{primitives.font.numericFace.medium}",
+            "fontSize": "{primitives.font.size.2}",
+            "lineHeight": "{primitives.font.line-height.2}",
+            "fontVariantNumeric": "{primitives.font.numeric.tabular}"
+          },
+          "description": "卡片重点指标的默认预设；可按场景切换尺寸"
+        },
+        "numeric-small": {
+          "$type": "typography",
+          "$value": {
+            "fontFamily": "{primitives.font.numericFace.medium}",
+            "fontSize": "{primitives.font.size.3}",
+            "lineHeight": "{primitives.font.line-height.3}",
+            "fontVariantNumeric": "{primitives.font.numeric.tabular}"
+          },
+          "description": "紧凑指标或辅助数字的默认预设；可按场景切换尺寸"
+        },
+        "numeric-regular": {
+          "$type": "typography",
+          "$value": {
+            "fontFamily": "{primitives.font.numericFace.regular}",
+            "fontVariantNumeric": "{primitives.font.numeric.tabular}"
+          },
+          "description": "次要 DIN 数字。字号仍从 Level 1～7 按场景选择。"
+        },
+        "numeric-emphasis": {
+          "$type": "typography",
+          "$value": {
+            "fontFamily": "{primitives.font.numericFace.bold}",
+            "fontVariantNumeric": "{primitives.font.numeric.tabular}"
+          },
+          "description": "核心大数字。字号仍从 Level 1～7 按场景选择，常用 Level 1。"
+        }
+      }
+    }
+  },
+  "usageRules": [
+    "组件优先使用 semanticTokens.typography，不直接填写字号和行高，也不用 font-weight 切换层级。",
+    "文字层级只在 Regular、Medium、Bold 三档字体文件中选择。",
+    "基础字号只从 1～7 级中选择；重点数字不绑定单一字号，由组件场景选择尺寸。",
+    "普通文本使用对应档位的 ui 字体。需要强调的数字使用 DIN 的 Regular、Medium 或 Bold 文件，默认是 Medium。",
+    "所有 DIN 数字必须启用 tabular-nums，保证金额、指标和列表数据对齐。",
+    "中文正文优先使用 Regular 或 Medium，Bold 只用于标题和明确强调。",
+    "表格不建立独立字体 Token，复用正文、辅助文字和数字角色。"
+  ]
+}

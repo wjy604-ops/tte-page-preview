@@ -1,0 +1,24 @@
+{
+  "component": {
+    "popup": {
+      "width": { "$type": "dimension", "$value": "400px" },
+      "widthForm": { "$type": "dimension", "$value": "480px" },
+      "radius": { "$type": "dimension", "$value": "{radius.surface.dialog}" },
+      "padding": { "$type": "dimension", "$value": "{spacing.24}" },
+      "gap": { "$type": "dimension", "$value": "{spacing.16}" },
+      "footerGap": { "$type": "dimension", "$value": "{spacing.horizontal.button-group}" },
+      "mask": { "$type": "color", "$value": "{color.overlay.mask}" },
+      "background": { "$type": "color", "$value": "{color.surface.container}" },
+      "border": { "$type": "color", "$value": "{color.border.default}" },
+      "shadow": { "$type": "shadow", "$value": "{component.popover.light.shadow}" },
+      "title": {
+        "color": { "$type": "color", "$value": "{color.content.primary}" },
+        "fontSize": { "$type": "dimension", "$value": "{font.size.4}" }
+      },
+      "body": {
+        "color": { "$type": "color", "$value": "{color.content.secondary}" },
+        "fontSize": { "$type": "dimension", "$value": "{font.size.5}" }
+      }
+    }
+  }
+}

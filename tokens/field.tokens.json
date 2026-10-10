@@ -1,0 +1,21 @@
+{
+  "component": {
+    "field": {
+      "gap": { "$type": "dimension", "$value": "{spacing.8}" },
+      "groupGap": { "$type": "dimension", "$value": "{spacing.vertical.module}" },
+      "inlineGap": { "$type": "dimension", "$value": "{spacing.horizontal.form.field}" },
+      "width": { "$type": "dimension", "$value": "420px" },
+      "label": {
+        "color": { "$type": "color", "$value": "{color.content.primary}" },
+        "fontSize": { "$type": "dimension", "$value": "{font.size.5}" }
+      },
+      "description": {
+        "color": { "$type": "color", "$value": "{color.content.assist}" },
+        "fontSize": { "$type": "dimension", "$value": "{font.size.7}" }
+      },
+      "error": {
+        "color": { "$type": "color", "$value": "{color.status.error}" }
+      }
+    }
+  }
+}

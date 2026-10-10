@@ -1,0 +1,18 @@
+:root {
+  /* Radius primitives */
+  --radius-none: 0px;
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-full: 9999px;
+
+  /* Semantic radius aliases */
+  --radius-control-compact: var(--radius-xs);
+  --radius-control-default: var(--radius-sm);
+  --radius-control-large: var(--radius-md);
+  --radius-surface-card: var(--radius-lg);
+  --radius-surface-dialog: var(--radius-lg);
+  --radius-surface-container: var(--radius-lg);
+  --radius-pill: var(--radius-full);
+}

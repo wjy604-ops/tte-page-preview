@@ -1,0 +1,28 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "name": "TTE Icon Component Tokens",
+  "version": "0.1.0",
+  "source": {
+    "tool": "Lucide + MasterGo",
+    "documentName": "TTE desgin 1.0",
+    "evidence": "Lucide icon specification and TTE component preview rules"
+  },
+  "component": {
+    "icon": {
+      "viewBox": { "$type": "dimension", "$value": "24px", "evidence": "[已确认规律]" },
+      "strokeWidth": { "$type": "dimension", "$value": "2px", "evidence": "[已确认规律]" },
+      "linecap": { "$type": "string", "$value": "round", "evidence": "[已确认规律]" },
+      "linejoin": { "$type": "string", "$value": "round", "evidence": "[已确认规律]" },
+      "size": {
+        "small": { "$type": "dimension", "$value": "16px", "evidence": "[统一建议]" },
+        "middle": { "$type": "dimension", "$value": "20px", "evidence": "[统一建议]" },
+        "large": { "$type": "dimension", "$value": "24px", "evidence": "[统一建议]" }
+      },
+      "color": {
+        "default": { "$type": "color", "$value": "{color.content.assist}", "evidence": "[已确认规律]" },
+        "primary": { "$type": "color", "$value": "{color.content.primary}", "evidence": "[已确认规律]" },
+        "disabled": { "$type": "color", "$value": "{color.content.disabled}", "evidence": "[已确认规律]" }
+      }
+    }
+  }
+}

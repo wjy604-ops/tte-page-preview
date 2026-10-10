@@ -1,0 +1,101 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "name": "TTE Button Component Tokens",
+  "version": "0.5.0",
+  "source": {
+    "tool": "MasterGo",
+    "documentName": "TTE desgin 1.0",
+    "documentId": "204524623968506",
+    "pageId": "136:64004",
+    "layerId": "244:86809",
+    "evidence": "基础按钮 component-set"
+  },
+  "component": {
+    "button": {
+      "size": {
+        "small": { "$type": "dimension", "$value": "28px", "evidence": "[已确认规律]" },
+        "middle": { "$type": "dimension", "$value": "36px", "evidence": "[已确认规律]" },
+        "large": { "$type": "dimension", "$value": "40px", "evidence": "[已确认规律]" }
+      },
+      "padding": {
+        "small": { "$type": "dimension", "$value": "8px", "evidence": "[已确认规律]" },
+        "middle": { "$type": "dimension", "$value": "12px", "evidence": "[已确认规律]" },
+        "large": { "$type": "dimension", "$value": "12px", "evidence": "[已确认规律]" }
+      },
+      "radius": {
+        "small": { "$type": "dimension", "$value": "8px", "evidence": "[已确认规律]" },
+        "middle": { "$type": "dimension", "$value": "8px", "evidence": "[已确认规律]" },
+        "large": { "$type": "dimension", "$value": "8px", "evidence": "[已确认规律]" }
+      },
+      "icon": {
+        "size": { "$type": "dimension", "$value": "16px", "evidence": "[已确认规律]" },
+        "gap": { "$type": "dimension", "$value": "4px", "evidence": "[已确认规律]" }
+      },
+      "typography": {
+        "fontFamily": { "$type": "fontFamily", "$value": "{primitives.font.face.regular}", "evidence": "[已确认规律] Regular 字体文件" },
+        "fontSize": { "$type": "dimension", "$value": "14px", "evidence": "[已确认规律]" },
+        "fontSizeSmall": { "$type": "dimension", "$value": "12px", "evidence": "[已确认规律]" },
+        "lineHeight": { "$type": "dimension", "$value": "22px", "evidence": "[已确认规律]" },
+        "lineHeightSmall": { "$type": "dimension", "$value": "20px", "evidence": "[已确认规律]" }
+      },
+      "iconOnly": {
+        "types": {
+          "icon": { "$value": "图标按钮", "evidence": "MasterGo layer 244:98770" },
+          "fill": { "$value": "填充按钮", "evidence": "MasterGo layer 244:98770" },
+          "secondary": { "$value": "次按钮", "evidence": "MasterGo layer 244:98770" }
+        },
+        "buttonSize": {
+          "small": { "$type": "dimension", "$value": "32px", "evidence": "[已确认规律]" },
+          "middle": { "$type": "dimension", "$value": "36px", "evidence": "[已确认规律]" },
+          "large": { "$type": "dimension", "$value": "40px", "evidence": "[已确认规律]" }
+        },
+        "size": {
+          "small": { "$type": "dimension", "$value": "16px", "evidence": "[已确认规律]" },
+          "middle": { "$type": "dimension", "$value": "20px", "evidence": "[已确认规律]" },
+          "large": { "$type": "dimension", "$value": "20px", "evidence": "[已确认规律]" }
+        },
+        "normalBackground": { "$type": "color", "$value": "transparent", "evidence": "[已确认规律]" },
+        "normalText": { "$type": "color", "$value": "rgba(15,15,15,0.7)", "evidence": "[已确认规律]" },
+        "hoverBackground": { "$type": "color", "$value": "#F7F8FA", "evidence": "[已确认规律]" },
+        "activeBackground": { "$type": "color", "$value": "#ECEFF4", "evidence": "[已确认规律]" },
+        "disabledBackground": { "$type": "color", "$value": "#FFFFFF", "evidence": "[已确认规律]" },
+        "disabledText": { "$type": "color", "$value": "rgba(15,15,15,0.3)", "evidence": "[已确认规律]" }
+      },
+      "color": {
+        "primary": {
+          "normal": { "$type": "color", "$value": "#2E7FFF", "evidence": "[已确认规律]" },
+          "hover": { "$type": "color", "$value": "#5599FC", "evidence": "[已确认规律]" },
+          "active": { "$type": "color", "$value": "#1A63DC", "evidence": "[已确认规律]" },
+          "disabledBackground": { "$type": "color", "$value": "#E6F0FF", "evidence": "[已确认规律]" },
+          "disabledText": { "$type": "color", "$value": "#FFFFFF", "evidence": "[已确认规律]" }
+        },
+        "neutral": {
+          "normalBackground": { "$type": "color", "$value": "#FFFFFF", "evidence": "[已确认规律]" },
+          "hoverBackground": { "$type": "color", "$value": "#F7F8FA", "evidence": "[已确认规律]" },
+          "activeBackground": { "$type": "color", "$value": "#ECEEF1", "evidence": "[已确认规律]" }
+        },
+        "fill": {
+          "normalBackground": { "$type": "color", "$value": "#F7F8FA", "evidence": "[已确认规律]" },
+          "hoverBackground": { "$type": "color", "$value": "#ECEEF1", "evidence": "[已确认规律]" },
+          "activeBackground": { "$type": "color", "$value": "#DDE1E8", "evidence": "[已确认规律]" },
+          "disabledBackground": { "$type": "color", "$value": "#F6F7F9", "evidence": "[已确认规律]" }
+        },
+        "text": {
+          "hoverBackground": { "$type": "color", "$value": "#F7F8FA", "evidence": "[已确认规律]" },
+          "activeBackground": { "$type": "color", "$value": "#ECEFF4", "evidence": "[已确认规律]" }
+        },
+        "link": {
+          "normal": { "$type": "color", "$value": "#2E7FFF", "evidence": "[已确认规律]" },
+          "hover": { "$type": "color", "$value": "#5599FC", "evidence": "[已确认规律]" },
+          "active": { "$type": "color", "$value": "#1A63DC", "evidence": "[已确认规律]" }
+        },
+        "warning": {
+          "background": { "$type": "color", "$value": "#FFEEEE", "evidence": "[已确认规律]" },
+          "normal": { "$type": "color", "$value": "#D9363E", "evidence": "[已确认规律]" },
+          "hover": { "$type": "color", "$value": "#ED5A61", "evidence": "[已确认规律]" },
+          "active": { "$type": "color", "$value": "#B9171F", "evidence": "[已确认规律]" }
+        }
+      }
+    }
+  }
+}

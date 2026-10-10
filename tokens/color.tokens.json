@@ -1,0 +1,193 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "name": "TTE B端颜色 Tokens",
+  "version": "0.3.0",
+  "source": {
+    "tool": "MasterGo",
+    "documentName": "TTE desgin 1.0",
+    "documentId": "204524623968506",
+    "evidence": "最新颜色规范图",
+    "mode": "模式 1"
+  },
+  "sourceTokens": {
+    "color": {
+      "brand": {
+        "normal": { "$type": "color", "$value": "#2e7fff", "sourceName": "Color/Brand/primary", "description": "品牌主色" },
+        "hover": { "$type": "color", "$value": "#428fff", "sourceName": "Color/Brand/hover", "description": "悬停状态" },
+        "active": { "$type": "color", "$value": "#1a63dc", "sourceName": "Color/Brand/active", "description": "按下、选中或激活状态" },
+        "soft": { "$type": "color", "$value": "#e6f0ff", "sourceName": "Color/Brand/soft", "description": "品牌色浅背景" }
+      },
+      "text": {
+        "normal": { "$type": "color", "$value": "#0f0f0f", "sourceName": "Color/Text/Main", "description": "主文字、主标题" },
+        "secondary": { "$type": "color", "$value": "rgba(15, 15, 15, 0.7)", "sourceName": "Color/Text/Normal", "description": "常规文字、副标题等" },
+        "subtle": { "$type": "color", "$value": "rgba(15, 15, 15, 0.6)", "sourceName": "Color/Text/Subtle", "description": "60% 透明度。介于常规文字和辅助文字之间，用于未选中导航的文字和图标", "evidence": "[统一建议]" },
+        "assist": { "$type": "color", "$value": "rgba(15, 15, 15, 0.5)", "sourceName": "Color/Text/Assist", "description": "辅助说明和帮助信息" },
+        "disabled": { "$type": "color", "$value": "rgba(15, 15, 15, 0.3)", "sourceName": "Color/Text/Disable", "description": "disable、提示文字等" },
+        "white": { "$type": "color", "$value": "#ffffff", "sourceName": "Color/Text/write", "description": "白色文字，用于主色按钮、深色背景等" }
+      },
+      "border": {
+        "main": { "$type": "color", "$value": "#c9cdd4", "sourceName": "Color/Border/Main", "description": "重描边" },
+        "normal": { "$type": "color", "$value": "#e5e6eb", "sourceName": "Color/Border/Normal", "description": "输入框、选择器边框" },
+        "disabled": { "$type": "color", "$value": "#ececf0", "sourceName": "Color/Border/Disabled", "description": "不可用边框和分割线" }
+      },
+      "fill": {
+        "main": { "$type": "color", "$value": "#dadce1", "sourceName": "Color/Fill/Main", "description": "重/特殊场景填充" },
+        "hover-1": { "$type": "color", "$value": "#eceef1", "sourceName": "Color/Fill/hover-1", "description": "深层级悬停填充" },
+        "hover-2": { "$type": "color", "$value": "#f2f3f5", "sourceName": "Color/Fill/hover-2", "description": "浅层级悬停填充" },
+        "normal": { "$type": "color", "$value": "#f7f8fa", "sourceName": "Color/Fill/Normal", "description": "普通浅色填充" },
+        "white": { "$type": "color", "$value": "#ffffff", "sourceName": "Color/Fill/write", "description": "白色填充" }
+      },
+      "bg": {
+        "layout": { "$type": "color", "$value": "#fafafa", "sourceName": "Color/Bg/Layout", "description": "页面布局背景" },
+        "container": { "$type": "color", "$value": "#ffffff", "sourceName": "Color/Bg/Container", "description": "组件容器和卡片背景" },
+        "popover": { "$type": "color", "$value": "rgba(0, 0, 0, 0.9)", "sourceName": "Color/Bg/Popover", "description": "90% 黑，气泡卡片和 Tooltip 背景" },
+        "mask": { "$type": "color", "$value": "rgba(0, 0, 0, 0.4)", "sourceName": "Color/Bg/Mask", "description": "Modal、Drawer 等浮层遮罩" }
+      },
+      "success": {
+        "normal": { "$type": "color", "$value": "#0e9c6c", "sourceName": "Color/Success/normal", "description": "成功前景色" },
+        "border": { "$type": "color", "$value": "#8be3bf", "sourceName": "Color/Success/Border", "description": "成功状态边框" },
+        "bg": { "$type": "color", "$value": "#f2fdf5", "sourceName": "Color/Success/bg", "description": "成功状态背景" }
+      },
+      "warning": {
+        "normal": { "$type": "color", "$value": "#f0820c", "sourceName": "Color/Warning/normal", "description": "警告前景色" },
+        "border": { "$type": "color", "$value": "#f4c89a", "sourceName": "Color/Warning/Border", "description": "警告状态边框" },
+        "bg": { "$type": "color", "$value": "#fdf2e7", "sourceName": "Color/Warning/bg", "description": "警告状态背景" }
+      },
+      "error": {
+        "normal": { "$type": "color", "$value": "#d9363e", "sourceName": "Color/Error/normal", "description": "错误前景色" },
+        "border": { "$type": "color", "$value": "#ffc1bc", "sourceName": "Color/Error/Border", "description": "错误浅背景边框", "verificationStatus": "confirmed-from-reference-image" },
+        "bg": { "$type": "color", "$value": "#ffeeee", "sourceName": "Color/Error/bg", "description": "错误状态背景" }
+      },
+      "data": {
+        "01": { "$type": "color", "$value": "#2e7fff", "sourceName": "Color/Data/01" },
+        "02": { "$type": "color", "$value": "#20a957", "sourceName": "Color/Data/02" },
+        "03": { "$type": "color", "$value": "#f0820c", "sourceName": "Color/Data/03" },
+        "04": { "$type": "color", "$value": "#7c5cfc", "sourceName": "Color/Data/04" },
+        "05": { "$type": "color", "$value": "#d9363e", "sourceName": "Color/Data/05" },
+        "06": { "$type": "color", "$value": "#14b8a6", "sourceName": "Color/Data/06" },
+        "07": { "$type": "color", "$value": "#d46b8c", "sourceName": "Color/Data/07" },
+        "08": { "$type": "color", "$value": "#86909c", "sourceName": "Color/Data/08" }
+      }
+    }
+  },
+  "canonicalTokens": {
+    "color": {
+      "error": {
+        "border": { "$type": "color", "$value": "#ffc1bc", "evidence": "[已确认规律]", "description": "错误状态的规范边框值，来自最新颜色规范图" }
+      },
+      "info": {
+        "normal": { "$type": "color", "$value": "#1a63dc", "evidence": "[统一建议]", "description": "信息提示前景色，复用品牌 active" },
+        "border": { "$type": "color", "$value": "#a8c9ff", "evidence": "[统一建议]", "description": "信息提示边框" },
+        "bg": { "$type": "color", "$value": "#e6f0ff", "evidence": "[统一建议]", "description": "信息提示背景，复用品牌 soft" }
+      },
+      "interaction": {
+        "focus-ring": { "$type": "color", "$value": "rgba(46, 127, 255, 0.4)", "evidence": "[统一建议]", "description": "键盘焦点环，不作为组件实心填充" },
+        "hover-bg": { "$type": "color", "$value": "#f7f8fa", "evidence": "[已确认]", "description": "白底上的列表行、表格行和次按钮悬停。复用 Fill/Normal。禁止改用 hover-1 或 hover-2。固定列和操作列与整行同色" },
+        "selected-bg": { "$type": "color", "$value": "#e6f0ff", "evidence": "[统一建议]", "description": "选中项浅色背景" },
+        "selected-border": { "$type": "color", "$value": "#2e7fff", "evidence": "[统一建议]", "description": "选中项强调边框" },
+        "selected-text": { "$type": "color", "$value": "#1a63dc", "evidence": "[统一建议]", "description": "选中项文字或图标" },
+        "placeholder": { "$type": "color", "$value": "rgba(15, 15, 15, 0.5)", "evidence": "[统一建议]", "description": "输入控件空值提示；语义独立于 disabled" },
+        "disabled-text": { "$type": "color", "$value": "rgba(15, 15, 15, 0.3)", "evidence": "[统一建议]", "description": "不可操作控件的文字或图标" },
+        "disabled-bg": { "$type": "color", "$value": "#f7f8fa", "evidence": "[统一建议]", "description": "不可操作控件背景" },
+        "disabled-border": { "$type": "color", "$value": "#ececf0", "evidence": "[统一建议]", "description": "不可操作控件边框" }
+      },
+      "action": {
+        "primary-disabled": { "$type": "color", "$value": "#dadce1", "evidence": "[统一建议]", "description": "主按钮禁用背景，复用 Fill/Main" },
+        "primary-disabled-text": { "$type": "color", "$value": "rgba(15, 15, 15, 0.3)", "evidence": "[统一建议]", "description": "主按钮禁用文字" },
+        "primary-disabled-border": { "$type": "color", "$value": "#ececf0", "evidence": "[统一建议]", "description": "主按钮禁用边框" },
+        "link": { "$type": "color", "$value": "#2e7fff", "evidence": "[统一建议]", "description": "链接默认色" },
+        "link-hover": { "$type": "color", "$value": "#428fff", "evidence": "[统一建议]", "description": "链接悬停色" },
+        "link-active": { "$type": "color", "$value": "#1a63dc", "evidence": "[统一建议]", "description": "链接按下或激活色" }
+      }
+    }
+  },
+  "semanticAliases": {
+    "color.action.primary": { "$value": "{color.brand.normal}" },
+    "color.action.primary-hover": { "$value": "{color.brand.hover}" },
+    "color.action.primary-active": { "$value": "{color.brand.active}" },
+    "color.action.primary-soft": { "$value": "{color.brand.soft}" },
+    "color.content.primary": { "$value": "{color.text.normal}" },
+    "color.content.secondary": { "$value": "{color.text.secondary}" },
+    "color.content.subtle": { "$value": "{color.text.subtle}" },
+    "color.content.assist": { "$value": "{color.text.assist}" },
+    "color.content.disabled": { "$value": "{color.text.disabled}" },
+    "color.content.on-dark": { "$value": "{color.text.white}" },
+    "color.border.default": { "$value": "{color.border.normal}" },
+    "color.fill.default": { "$value": "{color.fill.normal}" },
+    "color.surface.page": { "$value": "{color.bg.layout}" },
+    "color.surface.container": { "$value": "{color.bg.container}" },
+    "color.surface.popover": { "$value": "{color.bg.popover}" },
+    "color.overlay.mask": { "$value": "{color.bg.mask}" },
+    "color.status.success": { "$value": "{color.success.normal}" },
+    "color.status.success-border": { "$value": "{color.success.border}" },
+    "color.status.success-bg": { "$value": "{color.success.bg}" },
+    "color.status.warning": { "$value": "{color.warning.normal}" },
+    "color.status.warning-border": { "$value": "{color.warning.border}" },
+    "color.status.warning-bg": { "$value": "{color.warning.bg}" },
+    "color.status.error": { "$value": "{color.error.normal}" },
+    "color.status.error-border": { "$value": "{canonicalTokens.color.error.border}", "evidence": "[统一建议]" },
+    "color.status.error-bg": { "$value": "{color.error.bg}" },
+    "color.status.info": { "$value": "{canonicalTokens.color.info.normal}", "evidence": "[统一建议]" },
+    "color.status.info-border": { "$value": "{canonicalTokens.color.info.border}", "evidence": "[统一建议]" },
+    "color.status.info-bg": { "$value": "{canonicalTokens.color.info.bg}", "evidence": "[统一建议]" },
+    "color.interaction.focus-ring": { "$value": "{canonicalTokens.color.interaction.focus-ring}", "evidence": "[统一建议]" },
+    "color.interaction.selected-bg": { "$value": "{canonicalTokens.color.interaction.selected-bg}", "evidence": "[统一建议]" },
+    "color.interaction.selected-border": { "$value": "{canonicalTokens.color.interaction.selected-border}", "evidence": "[统一建议]" },
+    "color.interaction.selected-text": { "$value": "{canonicalTokens.color.interaction.selected-text}", "evidence": "[统一建议]" },
+    "color.interaction.placeholder": { "$value": "{canonicalTokens.color.interaction.placeholder}", "evidence": "[统一建议]" },
+    "color.interaction.disabled-text": { "$value": "{canonicalTokens.color.interaction.disabled-text}", "evidence": "[统一建议]" },
+    "color.interaction.disabled-bg": { "$value": "{canonicalTokens.color.interaction.disabled-bg}", "evidence": "[统一建议]" },
+    "color.interaction.disabled-border": { "$value": "{canonicalTokens.color.interaction.disabled-border}", "evidence": "[统一建议]" },
+    "color.action.primary-disabled": { "$value": "{canonicalTokens.color.action.primary-disabled}", "evidence": "[统一建议]" },
+    "color.action.primary-disabled-text": { "$value": "{canonicalTokens.color.action.primary-disabled-text}", "evidence": "[统一建议]" },
+    "color.action.primary-disabled-border": { "$value": "{canonicalTokens.color.action.primary-disabled-border}", "evidence": "[统一建议]" },
+    "color.action.link": { "$value": "{canonicalTokens.color.action.link}", "evidence": "[统一建议]" },
+    "color.action.link-hover": { "$value": "{canonicalTokens.color.action.link-hover}", "evidence": "[统一建议]" },
+    "color.action.link-active": { "$value": "{canonicalTokens.color.action.link-active}", "evidence": "[统一建议]" }
+  },
+  "legacyAliases": {
+    "Color/Brand/1": "{color.brand.normal}",
+    "Color/Brand/2": "{color.brand.hover}",
+    "Color/Brand/3": "{color.brand.active}",
+    "Color/Brand/4": "{color.brand.soft}",
+    "Color/Text/1": "{color.text.normal}",
+    "Color/Text/2": "{color.text.secondary}",
+    "Color/Text/3": "{color.text.assist}",
+    "Color/Text/4": "{color.text.disabled}",
+    "Color/Text/5": "{color.text.white}",
+    "Color/Border/1": "{color.border.main}",
+    "Color/Border/2": "{color.border.normal}",
+    "Color/Border/3": "{color.border.disabled}",
+    "Color/Fill/1": "{color.fill.main}",
+    "Color/Fill/2": "{color.fill.hover-1}",
+    "Color/Fill/3": "{color.fill.normal}",
+    "Color/Fill/4": "{color.fill.white}",
+    "Color/Bg/1": "{color.bg.popover}",
+    "Color/Bg/2": "{color.bg.mask}",
+    "Color/Bg/3": "{color.bg.layout}",
+    "Color/Bg/4": "{color.bg.container}",
+    "Color/Bg/5": "{color.bg.container}",
+    "Color/Success/1": "{color.success.normal}",
+    "Color/Success/2": "{color.success.border}",
+    "Color/Success/3": "{color.success.bg}",
+    "Color/Warning/1": "{color.warning.normal}",
+    "Color/Warning/2": "{color.warning.border}",
+    "Color/Warning/3": "{color.warning.bg}",
+    "Color/Error/1": "{color.error.normal}",
+    "Color/Error/2": "{color.error.border}",
+    "Color/Error/3": "{color.error.bg}"
+  },
+  "usageRules": [
+    "组件新代码只使用语义命名，禁止新增数字后缀 Token。",
+    "normal、Border、bg 分别表达功能色前景、边界和容器背景，必须成组使用。",
+    "页面使用 color.bg.layout，组件容器使用 color.bg.container，Popover 和 Mask 仅限浮层上下文。",
+    "Data 色仅用于图表序列，不替代成功、警告、错误等产品语义。",
+    "每个可交互组件必须明确 normal、hover、active、focus、selected、disabled 六种状态；非适用状态要在组件契约中显式声明。",
+    "Info 使用 color.status.info、color.status.info-border、color.status.info-bg 三件套，不再借用 Success、Warning 或 Error。",
+    "focus 只使用 color.interaction.focus-ring 绘制焦点环；不得用 selected 或 hover 颜色代替键盘焦点。",
+    "placeholder 使用 color.interaction.placeholder；disabled 必须同时定义 text、bg、border，不能把 placeholder 当作 disabled。",
+    "主按钮禁用态使用 color.action.primary-disabled、primary-disabled-text、primary-disabled-border；禁用态禁止保留可点击的 hover/active 反馈。",
+    "链接使用 color.action.link、link-hover、link-active，禁止把普通正文色直接当作可交互链接色。",
+    "白底上的列表行、表格行和次按钮悬停必须使用 color.interaction.hover-bg（#f7f8fa，Color/Fill/Normal）。整行一起变色，固定列和操作列不能留白。禁止用 Color/Fill/hover-1 或 hover-2 代替。"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "name": "TTE Chart Component Tokens",
+  "version": "0.1.0",
+  "source": { "base": "MasterGo 场景树系统 88:41043", "evidence": "卡片 395、圆角 12、条高 8；分类色 Data/01、03、02、04；单序列 Data/01" },
+  "component": {
+    "chart": {
+      "cardWidth": { "$type": "dimension", "$value": "395px" },
+      "barHeight": { "$type": "dimension", "$value": "8px" },
+      "barRadius": { "$type": "dimension", "$value": "4px" }
+    }
+  }
+}

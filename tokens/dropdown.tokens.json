@@ -1,0 +1,47 @@
+{
+  "component": "dropdown",
+  "source": "MasterGo TTE desgin 1.0 · page 244:93777 · layer 332:40254",
+  "foundation": "shadcn/ui DropdownMenu + Radix UI composition",
+  "tokens": {
+    "menu": {
+      "minWidth": "160px",
+      "maxHeight": "480px",
+      "padding": "4px",
+      "radius": "8px",
+      "background": "{color.fill.white}",
+      "border": "{color.border.normal}",
+      "shadow": "0 8px 24px rgba(15, 15, 15, 0.12), 0 2px 6px rgba(15, 15, 15, 0.06)"
+    },
+    "item": {
+      "height": "32px",
+      "paddingInline": "12px",
+      "gap": "8px",
+      "radius": "4px",
+      "fontSize": "14px",
+      "fontFamily": "{primitives.font.face.regular}",
+      "lineHeight": "22px"
+    },
+    "state": {
+      "defaultText": "{color.content.primary}",
+      "hoverBackground": "{color.fill.normal}",
+      "selectedBackground": "{color.interaction.selected.bg}",
+      "selectedText": "{color.interaction.selected.text}",
+      "selectedIcon": "{color.content.primary}",
+      "disabledText": "{color.content.disabled}"
+    }
+  },
+  "variants": [
+    "basic",
+    "with-search",
+    "with-icon",
+    "grouped",
+    "multi-select",
+    "submenu"
+  ],
+  "states": [
+    "default",
+    "hover",
+    "selected",
+    "disabled"
+  ]
+}

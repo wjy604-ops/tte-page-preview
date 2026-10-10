@@ -1,0 +1,16 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "name": "TTE Tabs Component Tokens",
+  "version": "0.1.0",
+  "source": { "base": "shadcn/ui Tabs", "evidence": "分段选中项距轨道 2px，圆角 6px，阴影 0 4px 10px rgba(0, 0, 0, 0.05)" },
+  "component": {
+    "tabs": {
+      "triggerMinHeight": { "$type": "dimension", "$value": "36px" },
+      "indicatorHeight": { "$type": "dimension", "$value": "2px" },
+      "segmentHeight": { "$type": "dimension", "$value": "36px" },
+      "segmentPadding": { "$type": "dimension", "$value": "2px" },
+      "segmentItemRadius": { "$type": "dimension", "$value": "{radius.sm}" },
+      "segmentItemFontSize": { "$type": "dimension", "$value": "13px" }
+    }
+  }
+}

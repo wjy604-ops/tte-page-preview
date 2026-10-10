@@ -1,0 +1,41 @@
+:root {
+  --component-pagination-gap: var(--spacing-8);
+  --component-pagination-item-size: 32px;
+  --component-pagination-radius: var(--radius-sm);
+  --component-pagination-font-size: var(--font-size-5);
+  --component-pagination-line-height: var(--font-line-height-5);
+  --component-pagination-text: var(--color-content-primary);
+  --component-pagination-bg: transparent;
+  --component-pagination-hover-bg: var(--color-fill-hover-2);
+  --component-pagination-active-bg: var(--color-fill-hover-1);
+  --component-pagination-current-bg: var(--color-action-primary);
+  --component-pagination-current-text: var(--color-content-on-dark);
+  --component-pagination-current-active-bg: var(--color-action-primary-active);
+  --component-pagination-disabled-text: var(--color-content-disabled);
+  --component-pagination-ellipsis-text: var(--color-content-assist);
+  --component-pagination-focus-ring: var(--color-interaction-focus-ring);
+}
+
+.tte-pagination { display: flex; flex-wrap: nowrap; align-items: center; gap: var(--component-pagination-gap); white-space: nowrap; }
+.tte-page,
+.tte-page-ellipsis { display: inline-flex; min-width: var(--component-pagination-item-size); height: var(--component-pagination-item-size); align-items: center; justify-content: center; padding: 0 8px; border: 0; border-radius: var(--component-pagination-radius); color: var(--component-pagination-text); background: var(--component-pagination-bg); font: var(--component-pagination-font-size)/var(--component-pagination-line-height) var(--font-family-ui-regular); font-variant-numeric: tabular-nums; }
+.tte-page { cursor: pointer; }
+.tte-page:hover { background: var(--component-pagination-hover-bg); }
+.tte-page:active { background: var(--component-pagination-active-bg); }
+.tte-page:focus-visible { outline: 3px solid var(--component-pagination-focus-ring); outline-offset: 1px; }
+.tte-page[aria-current="page"] { color: var(--component-pagination-current-text); background: var(--component-pagination-current-bg); }
+.tte-page[aria-current="page"]:hover { background: var(--component-pagination-current-bg); }
+.tte-page[aria-current="page"]:active { background: var(--component-pagination-current-active-bg); }
+.tte-page:disabled { color: var(--component-pagination-disabled-text); background: transparent; cursor: not-allowed; }
+.tte-page-ellipsis { color: var(--component-pagination-ellipsis-text); }
+.tte-pagination[data-pagination-style="web"] { width: 100%; justify-content: flex-end; }
+.tte-pagination[data-pagination-style="web"] .tte-page-total { color: var(--component-pagination-text); font: var(--component-pagination-font-size)/var(--component-pagination-line-height) var(--font-family-ui-regular); font-variant-numeric: tabular-nums; }
+.tte-pagination[data-pagination-style="web"] .tte-page-icon { width: var(--component-pagination-item-size); padding: 0; }
+.tte-pagination[data-pagination-style="web"] .tte-page-icon .tte-lucide { width: var(--component-icon-size-small); height: var(--component-icon-size-small); }
+.tte-page-size { position: relative; display: inline-flex; align-items: center; }
+.tte-page-size .tte-select-control { width: auto; }
+.tte-page-size .tte-select-trigger { width: auto; min-width: 88px; height: var(--component-pagination-item-size); min-height: var(--component-pagination-item-size); padding: 0 8px 0 12px; border-color: var(--color-border-main); border-radius: var(--component-pagination-radius); color: var(--component-pagination-text); background: var(--color-fill-white); font: var(--component-pagination-font-size)/var(--component-pagination-line-height) var(--font-family-ui-regular); }
+.tte-page-size .tte-select-trigger:hover,
+.tte-page-size .tte-select-control[data-open="true"] .tte-select-trigger { border-color: var(--color-border-main); }
+.tte-page-size .tte-select-menu { top: calc(100% + 4px); right: 0; bottom: auto; left: auto; width: 120px; border-radius: var(--component-pagination-radius); }
+.tte-page-size .tte-select-option { min-height: var(--component-dropdown-item-height); }

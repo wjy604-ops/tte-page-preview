@@ -1,0 +1,117 @@
+#component-message {
+  --cw-font: var(--component-button-font-family);
+  --cw-focus: var(--color-interaction-focus-ring);
+  --cw-text: var(--color-content-primary);
+  --cw-text-disabled: var(--color-content-disabled);
+  --cw-border: var(--color-border-default);
+}
+
+.tte-message {
+  --component-message-width: 400px;
+  --component-message-radius: var(--radius-md);
+  --component-message-bg: var(--color-surface-container);
+  --component-message-shadow: var(--component-popover-light-shadow);
+  --component-message-gap: var(--spacing-8);
+  --component-message-padding-block: 9px;
+  --component-message-padding-inline: var(--spacing-12);
+  --component-message-icon-size: var(--component-icon-size-small);
+  --component-message-text-color: var(--color-content-primary);
+  --component-message-text-size: var(--font-size-5);
+  --component-message-text-line-height: var(--font-line-height-5);
+  --component-message-close-size: 12px;
+  --component-message-close-color: var(--color-content-secondary);
+  --component-message-duration: 3s;
+  --component-message-offset: var(--spacing-8);
+  display: flex;
+  width: max-content;
+  max-width: min(var(--component-message-width), 100%);
+  align-items: center;
+  gap: var(--component-message-gap);
+  padding: var(--component-message-padding-block) var(--component-message-padding-inline);
+  border: 0;
+  border-radius: var(--component-message-radius);
+  color: var(--component-message-text-color);
+  background: var(--component-message-bg);
+  box-shadow: var(--component-message-shadow);
+}
+.tte-message[hidden] { display: none; }
+.tte-message.is-info { --component-message-icon: var(--color-action-primary); }
+.tte-message.is-success { --component-message-icon: var(--color-status-success); }
+.tte-message.is-warning { --component-message-icon: var(--color-status-warning); }
+.tte-message.is-error { --component-message-icon: var(--color-status-error); }
+.tte-message.is-loading { --component-message-icon: var(--color-action-primary); }
+.tte-message .tte-message-icon {
+  width: var(--component-message-icon-size);
+  height: var(--component-message-icon-size);
+  flex: none;
+  color: var(--component-message-icon);
+}
+.tte-message.is-loading .is-pending-icon { animation: tte-message-spin 0.8s linear infinite; }
+.tte-message.is-loading .is-done-icon,
+.tte-message.is-success .is-pending-icon { display: none; }
+.tte-message-text {
+  margin: 0;
+  min-width: 0;
+  flex: 1;
+  font: var(--component-message-text-size)/var(--component-message-text-line-height) var(--font-family-ui-regular);
+}
+.tte-message-close:focus-visible { outline: 2px solid var(--cw-focus); outline-offset: 2px; }
+.tte-message-close {
+  display: inline-flex;
+  width: var(--component-message-close-size);
+  height: var(--component-message-close-size);
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 0;
+  color: var(--component-message-close-color);
+  background: transparent;
+  cursor: pointer;
+}
+.tte-message .tte-message-close-icon {
+  width: var(--component-message-close-size);
+  height: var(--component-message-close-size);
+}
+@keyframes tte-message-spin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) {
+  .tte-message.is-loading .is-pending-icon { animation: none; }
+}
+.tte-message-viewport {
+  position: fixed;
+  z-index: 60;
+  top: calc(var(--topbar, 0px) + var(--spacing-8));
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-8);
+  pointer-events: none;
+}
+.tte-message-viewport .tte-message {
+  pointer-events: auto;
+  animation: tte-message-enter .24s ease;
+}
+.tte-message.is-leaving { animation: tte-message-leave .2s ease forwards; }
+@keyframes tte-message-enter {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes tte-message-leave {
+  to { opacity: 0; transform: translateY(-8px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .tte-message-viewport .tte-message,
+  .tte-message.is-leaving { animation: none; }
+}
+#patterns #component-message .button-preview-stack {
+  width: 100%;
+  max-width: none;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+#patterns #component-message .button-preview-canvas {
+  align-items: center;
+  justify-content: center;
+}

@@ -1,0 +1,18 @@
+:root {
+  --component-popover-max-width: 260px;
+  --component-popover-padding-block: 10px;
+  --component-popover-padding-inline: var(--spacing-12);
+  --component-popover-offset: var(--spacing-12);
+  --component-popover-radius: var(--radius-md);
+  --component-popover-font-size: var(--font-size-7);
+  --component-popover-line-height: 18px;
+  --component-popover-light-bg: var(--color-surface-container);
+  --component-popover-light-text: var(--color-content-primary);
+  --component-popover-light-border: var(--color-border-default);
+  --component-popover-light-shadow: 0 8px 24px rgba(15, 15, 15, 0.12);
+  --component-popover-dark-bg: #171717;
+  --component-popover-dark-text: var(--color-content-on-dark);
+  --component-popover-dark-border: #222222;
+  --component-popover-dark-shadow: 0 8px 20px rgba(15, 15, 15, 0.24);
+  --component-popover-arrow-size: 10px;
+}

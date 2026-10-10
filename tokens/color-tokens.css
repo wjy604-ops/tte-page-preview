@@ -1,0 +1,138 @@
+:root {
+  /* Source tokens｜按语义命名，与颜色规范图保持一致 */
+  --color-brand-normal: #2e7fff;
+  --color-brand-hover: #428fff;
+  --color-brand-active: #1a63dc;
+  --color-brand-soft: #e6f0ff;
+
+  --color-text-normal: #0f0f0f;
+  --color-text-secondary: rgba(15, 15, 15, 0.7);
+  --color-text-subtle: rgba(15, 15, 15, 0.6);
+  --color-text-assist: rgba(15, 15, 15, 0.5);
+  --color-text-disabled: rgba(15, 15, 15, 0.3);
+  --color-text-white: #ffffff;
+
+  --color-border-main: #c9cdd4;
+  --color-border-normal: #e5e6eb;
+  --color-border-disabled: #ececf0;
+
+  --color-fill-main: #dadce1;
+  --color-fill-hover-1: #eceef1;
+  --color-fill-hover-2: #f2f3f5;
+  --color-fill-normal: #f7f8fa;
+  --color-fill-white: #ffffff;
+
+  --color-bg-layout: #fafafa;
+  --color-bg-container: #ffffff;
+  --color-bg-popover: rgba(0, 0, 0, 0.9);
+  --color-bg-mask: rgba(0, 0, 0, 0.4);
+
+  --color-success-normal: #0e9c6c;
+  --color-success-border: #8be3bf;
+  --color-success-bg: #f2fdf5;
+  --color-warning-normal: #f0820c;
+  --color-warning-border: #f4c89a;
+  --color-warning-bg: #fdf2e7;
+  --color-error-normal: #d9363e;
+  /* [已确认规律] 参考颜色规范图中的 Error/Border */
+  --color-error-border: #ffc1bc;
+  --color-error-bg: #ffeeee;
+
+  --color-data-01: #2e7fff;
+  --color-data-02: #20a957;
+  --color-data-03: #f0820c;
+  --color-data-04: #7c5cfc;
+  --color-data-05: #d9363e;
+  --color-data-06: #14b8a6;
+  --color-data-07: #d46b8c;
+  --color-data-08: #86909c;
+
+  /* Semantic aliases｜组件优先使用 */
+  --color-action-primary: var(--color-brand-normal);
+  --color-action-primary-hover: var(--color-brand-hover);
+  --color-action-primary-active: var(--color-brand-active);
+  --color-action-primary-soft: var(--color-brand-soft);
+  --color-content-primary: var(--color-text-normal);
+  --color-content-secondary: var(--color-text-secondary);
+  --color-content-subtle: var(--color-text-subtle);
+  --color-content-assist: var(--color-text-assist);
+  --color-content-disabled: var(--color-text-disabled);
+  --color-content-on-dark: var(--color-text-white);
+  --color-text-primary: var(--color-text-normal);
+  --color-text-on-dark: var(--color-text-white);
+  --color-border-default: var(--color-border-normal);
+  --color-fill-default: var(--color-fill-normal);
+  --color-surface-page: var(--color-bg-layout);
+  --color-surface-container: var(--color-bg-container);
+  --color-surface-popover: var(--color-bg-popover);
+  --color-overlay-mask: var(--color-bg-mask);
+  --color-status-success: var(--color-success-normal);
+  --color-status-success-border: var(--color-success-border);
+  --color-status-success-bg: var(--color-success-bg);
+  --color-status-warning: var(--color-warning-normal);
+  --color-status-warning-border: var(--color-warning-border);
+  --color-status-warning-bg: var(--color-warning-bg);
+  --color-status-error: var(--color-error-normal);
+  --color-status-error-border: var(--color-error-border);
+  --color-status-error-bg: var(--color-error-bg);
+
+  /* P0 semantic tokens｜Info、焦点、选中、placeholder、禁用与链接 */
+  /* [统一建议] Info 复用品牌 active，避免在白底上引入不可读的浅色前景 */
+  --color-info-normal: var(--color-brand-active);
+  --color-info-border: #a8c9ff;
+  --color-info-bg: var(--color-brand-soft);
+  --color-status-info: var(--color-info-normal);
+  --color-status-info-border: var(--color-info-border);
+  --color-status-info-bg: var(--color-info-bg);
+
+  /* 白底上的列表、表格行和次按钮悬停。禁止改用 fill-hover-1 或 fill-hover-2。 */
+  --color-interaction-hover-bg: var(--color-fill-normal);
+  --color-interaction-focus-ring: rgba(46, 127, 255, 0.4);
+  --color-interaction-selected-bg: var(--color-brand-soft);
+  --color-interaction-selected-border: var(--color-brand-normal);
+  --color-interaction-selected-text: var(--color-brand-active);
+  /* placeholder 与 disabled 值可以复用，但语义必须独立，便于后续主题覆盖 */
+  --color-interaction-placeholder: var(--color-text-assist);
+  --color-interaction-disabled-text: var(--color-text-disabled);
+  --color-interaction-disabled-bg: var(--color-fill-normal);
+  --color-interaction-disabled-border: var(--color-border-disabled);
+
+  --color-action-primary-disabled: var(--color-fill-main);
+  --color-action-primary-disabled-text: var(--color-text-disabled);
+  --color-action-primary-disabled-border: var(--color-border-disabled);
+  --color-action-link: var(--color-brand-normal);
+  --color-action-link-hover: var(--color-brand-hover);
+  --color-action-link-active: var(--color-brand-active);
+
+  /* Legacy aliases｜迁移期保留，组件新代码不要继续使用 */
+  --color-brand-1: var(--color-brand-normal);
+  --color-brand-2: var(--color-brand-hover);
+  --color-brand-3: var(--color-brand-active);
+  --color-brand-4: var(--color-brand-soft);
+  --color-text-1: var(--color-text-normal);
+  --color-text-2: var(--color-text-secondary);
+  --color-text-3: var(--color-text-assist);
+  --color-text-4: var(--color-text-disabled);
+  --color-text-5: var(--color-text-white);
+  --color-border-1: var(--color-border-main);
+  --color-border-2: var(--color-border-normal);
+  --color-border-3: var(--color-border-disabled);
+  --color-fill-1: var(--color-fill-main);
+  --color-fill-2: var(--color-fill-hover-1);
+  --color-fill-3: var(--color-fill-normal);
+  --color-fill-4: var(--color-fill-white);
+  --color-bg-1: var(--color-bg-popover);
+  --color-bg-2: var(--color-bg-mask);
+  --color-bg-3: var(--color-bg-layout);
+  --color-bg-4: var(--color-bg-container);
+  --color-bg-5: var(--color-bg-container);
+  --color-success-1: var(--color-success-normal);
+  --color-success-2: var(--color-success-border);
+  --color-success-3: var(--color-success-bg);
+  --color-warning-1: var(--color-warning-normal);
+  --color-warning-2: var(--color-warning-border);
+  --color-warning-3: var(--color-warning-bg);
+  --color-error-1: var(--color-error-normal);
+  --color-error-2: var(--color-error-border);
+  --color-error-3: var(--color-error-bg);
+}

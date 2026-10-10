@@ -1,0 +1,72 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "name": "TTE B端间距 Tokens",
+  "version": "0.1.0",
+  "source": {
+    "tool": "MasterGo",
+    "documentName": "TTE desgin 1.0",
+    "evidence": "间距规范图 + 模型排行榜页面设计稿",
+    "inputQuality": "L2",
+    "status": "基础间距刻度与组件使用规则已整理"
+  },
+  "primitives": {
+    "spacing": {
+      "0": { "$type": "dimension", "$value": "0px", "description": "无间距或直角贴合" },
+      "4": { "$type": "dimension", "$value": "4px", "description": "最小间距刻度" },
+      "8": { "$type": "dimension", "$value": "8px", "description": "紧凑水平间距" },
+      "12": { "$type": "dimension", "$value": "12px", "description": "默认组件间距" },
+      "16": { "$type": "dimension", "$value": "16px", "description": "常规垂直间距" },
+      "24": { "$type": "dimension", "$value": "24px", "description": "较大组件或模块间距" },
+      "28": { "$type": "dimension", "$value": "28px", "description": "扩展间距刻度" },
+      "32": { "$type": "dimension", "$value": "32px", "description": "大模块间距" },
+      "36": { "$type": "dimension", "$value": "36px", "description": "扩展间距刻度" },
+      "40": { "$type": "dimension", "$value": "40px", "description": "大间距或页面级间距" }
+    }
+  },
+  "semanticTokens": {
+    "spacing": {
+      "component": {
+        "small": {
+          "$value": "{primitives.spacing.12}",
+          "description": "组件内部默认间距；未指定 size 时使用"
+        },
+        "middle": {
+          "$value": "{primitives.spacing.16}",
+          "description": "组件内部中等间距"
+        },
+        "large": {
+          "$value": "{primitives.spacing.24}",
+          "description": "组件内部较大间距"
+        }
+      },
+      "horizontal": {
+        "button-group": {
+          "$value": "{primitives.spacing.12}",
+          "description": "相邻按钮之间的水平间距"
+        },
+        "form-field": {
+          "$value": "{primitives.spacing.8}",
+          "description": "同一表单行内字段之间的水平间距"
+        }
+      },
+      "vertical": {
+        "form-field": {
+          "$value": "{primitives.spacing.12}",
+          "description": "表单字段之间的垂直间距"
+        },
+        "module": {
+          "$value": "{primitives.spacing.16}",
+          "description": "相邻模块或组件块之间的常规垂直间距"
+        }
+      }
+    }
+  },
+  "usageRules": [
+    "基础间距优先使用 4px 节奏，并复用已登记的 0、4、8、12、16、24、28、32、36、40px。",
+    "组件 size 预设为 small、middle、large，分别对应 12px、16px、24px；未设置 size 时默认为 small。",
+    "相邻按钮水平间距使用 12px；表单同一行字段之间使用 8px。",
+    "表单字段之间的垂直间距使用 12px；相邻模块的常规垂直间距使用 16px。",
+    "需要自定义间距时必须说明使用场景，不新增未登记的基础刻度。",
+    "优先使用 CSS gap、padding 和布局 Token，不用无语义的负 margin 修正间距。"
+  ]
+}

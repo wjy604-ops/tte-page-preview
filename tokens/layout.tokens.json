@@ -1,0 +1,207 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "name": "TTE B端布局 Tokens",
+  "version": "0.1.0",
+  "source": {
+    "tool": "MasterGo",
+    "documentName": "TTE desgin 1.0",
+    "evidence": "Layout web端布局规范图 + 对齐规则确认",
+    "inputQuality": "L2",
+    "status": "页面容器、固定侧栏、栅格、响应式与模块间距已整理"
+  },
+  "primitives": {
+    "layout": {
+      "base-unit": {
+        "$type": "dimension",
+        "$value": "8px",
+        "sourceName": "栅格 Section Size",
+        "description": "布局和栅格的基础单位"
+      },
+      "header-height": {
+        "$type": "dimension",
+        "$value": "56px",
+        "evidence": "[已确认规律]",
+        "description": "顶部 Header 高度"
+      },
+      "sider-expanded-width": {
+        "$type": "dimension",
+        "$value": "220px",
+        "evidence": "[已确认规律]",
+        "description": "左侧导航展开宽度"
+      },
+      "sider-collapsed-width": {
+        "$type": "dimension",
+        "$value": "68px",
+        "evidence": "[已确认规律]",
+        "description": "左侧导航收起宽度"
+      },
+      "content-max-width": {
+        "$type": "dimension",
+        "$value": "1360px",
+        "evidence": "[已确认规律]",
+        "description": "主内容区内部内容容器的最大宽度"
+      },
+      "content-padding-inline": {
+        "$type": "dimension",
+        "$value": "32px",
+        "evidence": "[已确认规律]",
+        "description": "内容容器默认左右内边距"
+      },
+      "page-min-width": {
+        "$type": "dimension",
+        "$value": "1200px",
+        "evidence": "[已确认规律]",
+        "description": "页面最小布局宽度；不足时允许横向滚动"
+      },
+      "grid-columns-desktop": {
+        "$type": "number",
+        "$value": 24,
+        "sourceName": "布局/24列栅格",
+        "description": "桌面端栅格列数"
+      },
+      "grid-columns-responsive": {
+        "$type": "number",
+        "$value": 12,
+        "evidence": "[统一建议]",
+        "description": "平板和小屏幕的响应式栅格列数"
+      },
+      "grid-gutter": {
+        "$type": "dimension",
+        "$value": "16px",
+        "sourceName": "布局/24列栅格 Gutter",
+        "description": "栅格列间距"
+      },
+      "grid-page-offset": {
+        "$type": "dimension",
+        "$value": "32px",
+        "sourceName": "布局/24列栅格 Offset",
+        "description": "页面内容相对布局边界的偏移"
+      },
+      "responsive-grid-breakpoint": {
+        "$type": "dimension",
+        "$value": "1200px",
+        "evidence": "[统一建议]",
+        "description": "24 列切换为 12 列的响应式断点"
+      },
+      "small-screen-breakpoint": {
+        "$type": "dimension",
+        "$value": "768px",
+        "evidence": "[统一建议]",
+        "description": "小屏幕布局规则断点，后续可按真实设备数据调整"
+      }
+    }
+  },
+  "semanticTokens": {
+    "layout": {
+      "container": {
+        "content": {
+          "max-width": {
+            "$value": "{primitives.layout.content-max-width}",
+            "description": "内容容器最大宽度"
+          },
+          "padding-inline": {
+            "$value": "{primitives.layout.content-padding-inline}",
+            "description": "内容容器默认左右内边距"
+          },
+          "alignment": {
+            "$type": "string",
+            "$value": "center",
+            "description": "内容容器在主区域内水平居中"
+          }
+        }
+      },
+      "header": {
+        "height": {
+          "$value": "{primitives.layout.header-height}",
+          "description": "Header 高度"
+        }
+      },
+      "sider": {
+        "expanded-width": {
+          "$value": "{primitives.layout.sider-expanded-width}",
+          "description": "Sider 展开宽度"
+        },
+        "collapsed-width": {
+          "$value": "{primitives.layout.sider-collapsed-width}",
+          "description": "Sider 收起宽度"
+        }
+      },
+      "page": {
+        "min-width": {
+          "$value": "{primitives.layout.page-min-width}",
+          "description": "页面最小宽度"
+        },
+        "overflow-x": {
+          "$type": "string",
+          "$value": "auto",
+          "description": "内容不足时允许横向滚动"
+        }
+      },
+      "grid": {
+        "desktop-columns": {
+          "$value": "{primitives.layout.grid-columns-desktop}",
+          "description": "桌面端 24 列栅格"
+        },
+        "responsive-columns": {
+          "$value": "{primitives.layout.grid-columns-responsive}",
+          "description": "平板和小屏幕 12 列栅格"
+        },
+        "gutter": {
+          "$value": "{primitives.layout.grid-gutter}",
+          "description": "栅格列间距"
+        },
+        "page-offset": {
+          "$value": "{primitives.layout.grid-page-offset}",
+          "description": "页面内容偏移"
+        }
+      },
+      "alignment": {
+        "container": {
+          "$type": "string",
+          "$value": "center",
+          "description": "内容容器对齐方式"
+        },
+        "content": {
+          "$type": "string",
+          "$value": "start",
+          "description": "页面标题、筛选区和内容模块默认左对齐"
+        },
+        "action": {
+          "$type": "string",
+          "$value": "end",
+          "description": "操作区默认右对齐"
+        },
+        "data": {
+          "$type": "string",
+          "$value": "end",
+          "description": "数字和数据默认右对齐"
+        },
+        "icon": {
+          "$type": "string",
+          "$value": "center",
+          "description": "图标与文字垂直居中"
+        }
+      },
+      "spacing": {
+        "module-vertical-gap": {
+          "$type": "dimension",
+          "$value": "16px",
+          "sourceToken": "spacing.vertical.module",
+          "description": "相邻独立模块之间的常规垂直间距"
+        }
+      }
+    }
+  },
+  "usageRules": [
+    "页面整体不设置最大宽度；最大宽度只作用于主内容区内部的内容容器。",
+    "内容容器使用 max-width: 1360px，并在可用空间内水平居中；默认左右内边距为 32px。",
+    "Header 高度固定为 56px，Header 内部内容与 Content 内容容器保持左右对齐。",
+    "Sider 宽度固定为 220px（展开）或 68px（收起）；侧栏宽度不随内容压缩。",
+    "页面最小布局宽度为 1200px；视口不足时允许页面或宽内容区域横向滚动。",
+    "桌面端使用 24 列栅格，平板和小屏幕可切换为 12 列；布局语义保持整行、二分之一、三分之一等关系不变。",
+    "页面标题、筛选区和内容模块默认左对齐；操作区和数字数据默认右对齐。",
+    "相邻独立模块的常规垂直间距使用 spacing.vertical.module，即 16px。",
+    "组件和模块必须落在栅格线，禁止通过无语义的负 margin 或随机空白修正对齐。",
+    "表格等宽内容优先使用局部横向滚动，不通过压缩字号或强制换行破坏数据可读性。"
+  ]
+}

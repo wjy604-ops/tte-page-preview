@@ -1,0 +1,14 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "name": "TTE Card Component Tokens",
+  "version": "0.1.0",
+  "source": { "base": "shadcn/ui Card", "evidence": "数据摘要卡片预览" },
+  "component": {
+    "card": {
+      "radius": { "$type": "dimension", "$value": "12px" },
+      "padding": { "$type": "dimension", "$value": "16px" },
+      "valueSize": { "$type": "dimension", "$value": "24px" },
+      "iconSize": { "$type": "dimension", "$value": "32px" }
+    }
+  }
+}

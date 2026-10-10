@@ -1,0 +1,35 @@
+:root {
+  --component-tabs-list-gap: 20px;
+  --component-tabs-list-border: var(--color-border-default);
+  --component-tabs-trigger-min-height: 36px;
+  --component-tabs-trigger-padding-bottom: var(--spacing-8);
+  --component-tabs-trigger-font-size: var(--font-size-5);
+  --component-tabs-trigger-line-height: var(--font-line-height-5);
+  --component-tabs-trigger-text: var(--color-content-assist);
+  --component-tabs-trigger-hover-text: var(--color-content-primary);
+  --component-tabs-trigger-active-text: var(--color-content-primary);
+  --component-tabs-trigger-active-family: var(--font-family-ui-medium);
+  --component-tabs-indicator-height: 2px;
+  --component-tabs-indicator: var(--color-action-primary);
+  --component-tabs-panel-padding: var(--spacing-12);
+  --component-tabs-panel-radius: var(--radius-md);
+  --component-tabs-panel-border: var(--color-border-default);
+  --component-tabs-panel-bg: var(--color-surface-container);
+  --component-tabs-panel-text: var(--color-content-secondary);
+  --component-tabs-panel-font-size: var(--font-size-6);
+  --component-tabs-panel-line-height: var(--font-line-height-7);
+  --component-tabs-segment-height: 36px;
+  --component-tabs-segment-padding: 2px;
+  --component-tabs-segment-gap: var(--spacing-8);
+  --component-tabs-segment-radius: var(--radius-md);
+  --component-tabs-segment-bg: var(--color-fill-default);
+  --component-tabs-segment-item-padding-inline: var(--spacing-12);
+  --component-tabs-segment-item-radius: var(--radius-sm);
+  --component-tabs-segment-item-font-size: var(--font-size-6);
+  --component-tabs-segment-item-line-height: var(--font-line-height-6);
+  --component-tabs-segment-item-text: var(--color-content-assist);
+  --component-tabs-segment-item-active-bg: var(--color-fill-white);
+  --component-tabs-segment-item-active-text: var(--color-content-primary);
+  --component-tabs-segment-item-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  --component-tabs-focus-ring: var(--color-interaction-focus-ring);
+}

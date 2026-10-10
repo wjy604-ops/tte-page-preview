@@ -1,0 +1,14 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "name": "TTE Tag Component Tokens",
+  "version": "0.1.0",
+  "source": { "evidence": "平台 Tag 预览：六类语义色、胶囊/圆角方形、有描边/无描边、可关闭" },
+  "component": {
+    "tag": {
+      "height": { "$type": "dimension", "$value": "24px" },
+      "fontSize": { "$type": "dimension", "$value": "12px" },
+      "closableRadius": { "$type": "dimension", "$value": "8px" },
+      "tones": ["blue", "green", "red", "orange", "purple", "gray", "trendUpStrong", "trendUp", "trendFlat", "trendDown", "trendDownStrong"]
+    }
+  }
+}

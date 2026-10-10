@@ -1,0 +1,47 @@
+:root {
+  /* Checkbox geometry from the P0 Checkbox preview and MasterGo page 210:12550. */
+  --component-checkbox-size: 16px;
+  --component-checkbox-radius: var(--radius-xs);
+  --component-checkbox-border-width: 1px;
+  --component-checkbox-icon-size: 12px;
+  --component-checkbox-icon-check: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E");
+  --component-checkbox-icon-indeterminate: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M5 12h14'/%3E%3C/svg%3E");
+  --component-checkbox-label-gap: var(--spacing-8);
+  --component-checkbox-group-gap: var(--spacing-8);
+  --component-checkbox-description-group-gap: var(--spacing-16);
+  --component-checkbox-copy-gap: var(--spacing-4);
+  --component-checkbox-font-size: var(--font-size-5);
+  --component-checkbox-line-height: var(--font-line-height-5);
+  --component-checkbox-description-size: var(--font-size-7);
+  --component-checkbox-description-line-height: var(--font-line-height-7);
+  --component-checkbox-organization-gap: var(--spacing-16);
+  --component-checkbox-organization-title-family: var(--font-family-ui-medium);
+  --component-checkbox-list-row-min-height: 48px;
+  --component-checkbox-list-padding-block: var(--spacing-8);
+  --component-checkbox-list-padding-inline: var(--spacing-12);
+  --component-checkbox-list-radius: var(--radius-md);
+  --component-checkbox-list-meta-size: var(--font-size-7);
+  --component-checkbox-list-meta-line-height: var(--font-line-height-7);
+  --component-checkbox-focus-ring-width: 3px;
+
+  /* Checkbox states. Checked, indeterminate and keyboard behavior stay with Radix. */
+  --component-checkbox-border: var(--color-border-main);
+  --component-checkbox-bg: var(--color-surface-container);
+  --component-checkbox-hover-border: var(--color-action-primary);
+  --component-checkbox-selected-bg: var(--color-action-primary);
+  --component-checkbox-selected-border: var(--color-action-primary);
+  --component-checkbox-icon: var(--color-content-on-dark);
+  --component-checkbox-text: var(--color-content-primary);
+  --component-checkbox-description: var(--color-content-assist);
+  --component-checkbox-disabled-border: var(--color-interaction-disabled-border);
+  --component-checkbox-disabled-bg: var(--color-interaction-disabled-bg);
+  --component-checkbox-disabled-text: var(--color-content-disabled);
+  --component-checkbox-selected-disabled-border: var(--color-status-info-border);
+  --component-checkbox-selected-disabled-bg: #b8d1fb;
+  --component-checkbox-list-border: var(--color-border-default);
+  --component-checkbox-list-bg: var(--color-surface-container);
+  --component-checkbox-list-hover-bg: var(--color-interaction-hover-bg);
+  --component-checkbox-list-disabled-bg: var(--color-fill-default);
+  --component-checkbox-list-meta: var(--color-content-assist);
+  --component-checkbox-focus-ring: var(--color-interaction-focus-ring);
+}

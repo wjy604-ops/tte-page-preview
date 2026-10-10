@@ -1,0 +1,19 @@
+{
+  "component": {
+    "pageHeader": {
+      "gap": { "$type": "dimension", "$value": "{spacing.12}" },
+      "stackGap": { "$type": "dimension", "$value": "{spacing.16}" },
+      "copyGap": { "$type": "dimension", "$value": "{spacing.4}" },
+      "title": {
+        "color": { "$type": "color", "$value": "{color.content.primary}" },
+        "fontSize": { "$type": "dimension", "$value": "{font.size.2}" }
+      },
+      "description": {
+        "color": { "$type": "color", "$value": "{color.content.assist}" },
+        "fontSize": { "$type": "dimension", "$value": "{font.size.5}" }
+      },
+      "iconSize": { "$type": "dimension", "$value": "16px" },
+      "searchWidth": { "$type": "dimension", "$value": "320px" }
+    }
+  }
+}

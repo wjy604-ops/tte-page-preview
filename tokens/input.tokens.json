@@ -1,0 +1,61 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "name": "TTE Input Component Tokens",
+  "version": "0.1.0",
+  "source": {
+    "tool": "MasterGo",
+    "documentName": "TTE desgin 1.0",
+    "documentId": "204524623968506",
+    "pageId": "244:96934",
+    "layerId": "244:96955",
+    "evidence": "Input 输入框组件集与基础样式实例"
+  },
+  "component": {
+    "input": {
+      "size": {
+        "small": { "$type": "dimension", "$value": "32px", "evidence": "[已确认规律] MasterGo 组件属性：32" },
+        "middle": { "$type": "dimension", "$value": "36px", "evidence": "[已确认规律] MasterGo 组件属性：36" },
+        "large": { "$type": "dimension", "$value": "40px", "evidence": "[已确认规律] MasterGo 组件属性：40" }
+      },
+      "padding": {
+        "small": { "$type": "dimension", "$value": "8px", "evidence": "[统一建议] 复用 TTE 控件间距" },
+        "middle": { "$type": "dimension", "$value": "12px", "evidence": "[统一建议] 复用 TTE 控件间距" },
+        "large": { "$type": "dimension", "$value": "12px", "evidence": "[统一建议] 复用 TTE 控件间距" }
+      },
+      "radius": { "$type": "dimension", "$value": "8px", "evidence": "[统一建议] 复用 radius.control.large；输入框内控件统一为 8px" },
+      "typography": {
+        "fontFamily": { "$type": "fontFamily", "$value": "{primitives.font.face.regular}", "evidence": "[已确认规律] Regular 字体文件" },
+        "fontSize": { "$type": "dimension", "$value": "14px", "evidence": "[已确认规律] 与 Button 文本层级一致" },
+        "lineHeight": { "$type": "dimension", "$value": "22px", "evidence": "[已确认规律] 与平台 UI 文本行高一致" }
+      },
+      "icon": {
+        "size": { "$type": "dimension", "$value": "16px", "evidence": "[已确认规律] 前缀/后缀图标显示属性" },
+        "gap": { "$type": "dimension", "$value": "4px", "evidence": "[统一建议] 复用 Button 图标间距" },
+        "searchTextGap": { "$type": "dimension", "$value": "8px", "evidence": "[已确认规律] 搜索输入框图标与文字间距" }
+      }
+    }
+  },
+  "variants": {
+    "type": ["基础样式", "搜索", "域名", "input/addon/域名", "文本域"],
+    "state": ["normal", "hover", "focus", "blur", "disabled"],
+    "prefixIcon": [true, false],
+    "suffixIcon": [true, false]
+  },
+  "rules": [
+    "Input 保留原生输入、键盘和表单提交行为。",
+    "错误状态通过 aria-invalid 和错误语义 Token 表达，不只依赖背景色。",
+    "禁用状态同时阻断交互，并使用 disabled 文本、边框和填充 Token。",
+    "前缀/后缀图标不能挤压输入文本，输入内容区域保持可伸缩。",
+    "文本域使用同一套边框、圆角、状态和字体 Token，只改变内容区域高度。"
+  ],
+  "shadcnToTte": {
+    "base": "Input",
+    "inputSize": "small | middle | large",
+    "invalid": "aria-invalid + error state",
+    "prefixSuffix": "InputGroup / InputAddon composition"
+  },
+  "gaps": [
+    "设计稿明确了尺寸、状态和前后缀属性；内部输入框圆角的精确变量名尚未从 MasterGo 变量面板单独确认。",
+    "清除、密码显示和字数统计未在当前 Input 组件页中看到，不在本轮默认契约内。"
+  ]
+}

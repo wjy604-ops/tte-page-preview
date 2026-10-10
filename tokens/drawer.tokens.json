@@ -1,0 +1,12 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "name": "TTE Drawer Component Tokens",
+  "version": "0.1.0",
+  "source": { "base": "shadcn/ui Sheet", "evidence": "MasterGo《TTE desgin 1.0》没有抽屉；遮罩使用 color.overlay.mask，宽度取 8px 栅格上的 400px" },
+  "component": {
+    "drawer": {
+      "width": { "$type": "dimension", "$value": "400px" },
+      "detailWidth": { "$type": "dimension", "$value": "600px" }
+    }
+  }
+}

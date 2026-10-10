@@ -1,0 +1,56 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "name": "TTE B端滚动条 Tokens",
+  "version": "0.1.0",
+  "source": {
+    "tool": "MasterGo",
+    "documentName": "TTE desgin 1.0",
+    "evidence": "图表地理分布 / 硬件构型滑动条，以及 Ticket 总览列表与页面滚动",
+    "inputQuality": "L2",
+    "status": "形状、颜色、出现方式和拖拽已整理为平台规则"
+  },
+  "primitives": {
+    "scrollbar": {
+      "size": {
+        "$type": "dimension",
+        "$value": "4px",
+        "description": "默认厚度"
+      },
+      "sizeHover": {
+        "$type": "dimension",
+        "$value": "8px",
+        "description": "悬停或拖拽时的厚度"
+      },
+      "inset": {
+        "$type": "dimension",
+        "$value": "4px",
+        "description": "距容器边缘的内缩"
+      },
+      "thumb": {
+        "$type": "color",
+        "$value": "#E2E2E2",
+        "description": "滑块颜色"
+      },
+      "thumbRadius": {
+        "$type": "dimension",
+        "$value": "86px",
+        "description": "两端全圆"
+      },
+      "minLength": {
+        "$type": "dimension",
+        "$value": "24px",
+        "description": "滑块最短长度"
+      },
+      "hideDelay": {
+        "$type": "duration",
+        "$value": "1000ms",
+        "description": "停止滚动后隐藏的等待时间"
+      }
+    }
+  },
+  "usageRules": [
+    "出现滚动条时一律使用本 Token，隐藏系统原生滚动条。",
+    "悬停或拖拽时厚度从 size 加 4px 到 sizeHover。",
+    "即时型滚动后显示，停 1s 或离开后隐藏；常驻型在溢出时保持可见。"
+  ]
+}

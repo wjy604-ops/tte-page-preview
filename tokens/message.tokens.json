@@ -1,0 +1,34 @@
+{
+  "component": {
+    "message": {
+      "width": { "$type": "dimension", "$value": "400px" },
+      "radius": { "$type": "dimension", "$value": "{radius.md}" },
+      "paddingBlock": { "$type": "dimension", "$value": "9px" },
+      "paddingInline": { "$type": "dimension", "$value": "{spacing.12}" },
+      "gap": { "$type": "dimension", "$value": "{spacing.8}" },
+      "duration": { "$type": "duration", "$value": "3s" },
+      "background": { "$type": "color", "$value": "{color.surface.container}" },
+      "shadow": { "$type": "shadow", "$value": "{component.popover.light.shadow}" },
+      "text": { "$type": "color", "$value": "{color.content.primary}" },
+      "info": {
+        "icon": { "$type": "color", "$value": "{color.action.primary}" }
+      },
+      "success": {
+        "icon": { "$type": "color", "$value": "{color.status.success}" }
+      },
+      "warning": {
+        "icon": { "$type": "color", "$value": "{color.status.warning}" }
+      },
+      "error": {
+        "icon": { "$type": "color", "$value": "{color.status.error}" }
+      },
+      "loading": {
+        "icon": { "$type": "color", "$value": "{color.action.primary}" }
+      },
+      "close": {
+        "size": { "$type": "dimension", "$value": "12px" },
+        "color": { "$type": "color", "$value": "{color.content.secondary}" }
+      }
+    }
+  }
+}

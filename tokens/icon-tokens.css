@@ -1,0 +1,20 @@
+:root {
+  /* Icon foundation｜Lucide SVG defaults mapped to TTE semantic tokens. */
+  --component-icon-viewbox: 24px;
+  --component-icon-stroke-width: 2px;
+  --component-icon-linecap: round;
+  --component-icon-linejoin: round;
+  --component-icon-size-small: 16px;
+  --component-icon-size-middle: 20px;
+  --component-icon-size-large: 24px;
+  --component-icon-gap: var(--component-button-icon-gap);
+  --component-icon-color-default: var(--color-content-assist);
+  --component-icon-color-primary: var(--color-content-primary);
+  --component-icon-color-secondary: var(--color-content-secondary);
+  --component-icon-color-disabled: var(--color-content-disabled);
+  --component-icon-color-brand: var(--color-brand-active);
+  --component-icon-tile-size: 80px;
+  --component-icon-tile-padding: 8px;
+  --component-icon-tile-radius: 12px;
+  --component-icon-tile-bg: #F8FAFC;
+}

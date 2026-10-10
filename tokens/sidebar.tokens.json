@@ -1,0 +1,17 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "name": "TTE Sidebar Component Tokens",
+  "version": "0.1.0",
+  "source": { "base": "shadcn/ui Sidebar，视觉对齐 MasterGo 左侧导航 336:61411", "evidence": "展开宽 220px、收起宽 64px、底色 #F6F7F9；选项高 36px、圆角 8px、图标 20px、文字 14px、默认字体 Regular；未选中文字 color.content.secondary；选中底色 #ECEEF1；有子级的项不可选中；工作区默认无底色，悬停 #ECEEF1" },
+  "component": {
+    "sidebar": {
+      "width": { "$type": "dimension", "$value": "220px" },
+      "collapsedWidth": { "$type": "dimension", "$value": "64px" },
+      "itemHeight": { "$type": "dimension", "$value": "36px" },
+      "itemRadius": { "$type": "dimension", "$value": "8px" },
+      "markSize": { "$type": "dimension", "$value": "28px" },
+      "brandHeight": { "$type": "dimension", "$value": "56px", "$description": "字标行与顶栏同高" },
+      "iconSize": { "$type": "dimension", "$value": "20px" }
+    }
+  }
+}

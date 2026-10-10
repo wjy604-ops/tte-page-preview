@@ -1,0 +1,14 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "name": "TTE Date Picker Component Tokens",
+  "version": "0.1.0",
+  "source": { "base": "shadcn/ui Date Picker", "evidence": "MasterGo《TTE desgin 1.0》没有日期组件，触发器对齐输入框中尺寸" },
+  "component": {
+    "datePicker": {
+      "triggerHeight": { "$type": "dimension", "$value": "32px" },
+      "triggerIconSize": { "$type": "dimension", "$value": "16px" },
+      "panelWidth": { "$type": "dimension", "$value": "284px" },
+      "daySize": { "$type": "dimension", "$value": "36px" }
+    }
+  }
+}
