@@ -2,11 +2,75 @@
 <html lang="zh-CN">
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>TTE 页面预览</title>
+  <link rel="stylesheet" href="tokens/typography-tokens.css">
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: #fff;
+      color: #0f0f0f;
+      font-family: var(--font-family-ui-regular), "PingFang SC", "Microsoft YaHei", sans-serif;
+    }
+    main {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 28px 24px 48px;
+      display: grid;
+      gap: 28px;
+    }
+    .block-toolbar h2 {
+      margin: 0;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 24px;
+    }
+    .block-toolbar p {
+      margin: 2px 0 0;
+      color: rgba(15, 15, 15, 0.5);
+      font-size: 13px;
+      line-height: 20px;
+    }
+    .block-preview {
+      overflow: hidden;
+      height: 720px;
+      margin-top: 10px;
+      border: 1px solid #e5e6eb;
+      border-radius: 12px;
+      background: #fff;
+    }
+    .block-preview iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      background: #f6f7f9;
+    }
+  </style>
 </head>
 <body>
-  <p><a href="templates/ticket-overview.html">Ticket 总览</a></p>
-  <p><a href="templates/scene-search.html">场景搜索</a></p>
-  <p><a href="templates/dashboard-01.html">Dashboard</a></p>
+  <main>
+    <article>
+      <div class="block-toolbar">
+        <h2>导航壳层</h2>
+        <p>导航壳保持不变，内容区是三块占位卡加一块铺满的骨架。</p>
+      </div>
+      <div class="block-preview"><iframe src="templates/dashboard-01.html" title="导航壳层"></iframe></div>
+    </article>
+    <article>
+      <div class="block-toolbar">
+        <h2>场景检索</h2>
+        <p>选树、传统检索与 AI 检索、筛选，以及列表、卡片和洞察三种结果。</p>
+      </div>
+      <div class="block-preview"><iframe src="templates/scene-search.html" title="场景检索"></iframe></div>
+    </article>
+    <article>
+      <div class="block-toolbar">
+        <h2>Ticket总览</h2>
+        <p>单据范围、筛选，以及带固定操作列的列表。</p>
+      </div>
+      <div class="block-preview"><iframe src="templates/ticket-overview.html" title="Ticket总览"></iframe></div>
+    </article>
+  </main>
 </body>
 </html>
